@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="https://www.inmotiontools.com:8083/FrontOffice/DataManager.svc?wsdl" docRef="https://www.inmotiontools.com:8083/FrontOffice/DataManager.svc" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+</discovery>

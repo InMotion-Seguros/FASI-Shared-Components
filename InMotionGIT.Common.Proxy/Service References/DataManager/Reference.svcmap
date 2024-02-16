@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="c491a7b3-1c40-4f47-8b14-bfa4b99475a4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://www.inmotiontools.com:8083/FrontOffice/DataManager.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DataManager7.xsd" MetadataType="Schema" ID="5c7c35b5-92cb-4165-b8aa-8fdfb339d881" SourceId="1" SourceUrl="https://www.inmotiontools.com:8083/FrontOffice/DataManager.svc?xsd=xsd7" />
+    <MetadataFile FileName="DataManager8.xsd" MetadataType="Schema" ID="cb6ac791-17ab-40c9-bf03-aa10ffe3805c" SourceId="1" SourceUrl="https://www.inmotiontools.com:8083/FrontOffice/DataManager.svc?xsd=xsd4" />
+    <MetadataFile FileName="DataManager15.xsd" MetadataType="Schema" ID="7c9e439d-7026-4216-b194-ba330e9402ec" SourceId="1" SourceUrl="https://www.inmotiontools.com:8083/FrontOffice/DataManager.svc?xsd=xsd5" />
+    <MetadataFile FileName="DataManager1.disco" MetadataType="Disco" ID="fcd8a08a-8154-482f-aba2-893a020cc992" SourceId="1" SourceUrl="https://www.inmotiontools.com:8083/FrontOffice/DataManager.svc?disco" />
+    <MetadataFile FileName="DataManager1.wsdl" MetadataType="Wsdl" ID="9a0bf476-856b-46fb-8f42-a03105ed46b7" SourceId="1" SourceUrl="https://www.inmotiontools.com:8083/FrontOffice/DataManager.svc?wsdl" />
+    <MetadataFile FileName="DataManager16.xsd" MetadataType="Schema" ID="73760643-e95d-4c61-b9d6-b9e5a2436795" SourceId="1" SourceUrl="https://www.inmotiontools.com:8083/FrontOffice/DataManager.svc?xsd=xsd2" />
+    <MetadataFile FileName="DataManager17.xsd" MetadataType="Schema" ID="9f3ef400-3ef5-4fdb-954e-e3eed73bb378" SourceId="1" SourceUrl="https://www.inmotiontools.com:8083/FrontOffice/DataManager.svc?xsd=xsd3" />
+    <MetadataFile FileName="DataManager18.xsd" MetadataType="Schema" ID="adae5040-0778-4b20-88e3-987a2b864f4f" SourceId="1" SourceUrl="https://www.inmotiontools.com:8083/FrontOffice/DataManager.svc?xsd=xsd0" />
+    <MetadataFile FileName="DataManager19.xsd" MetadataType="Schema" ID="5e40c2ae-5126-437f-8e09-5fd5d3273426" SourceId="1" SourceUrl="https://www.inmotiontools.com:8083/FrontOffice/DataManager.svc?xsd=xsd1" />
+    <MetadataFile FileName="DataManager20.xsd" MetadataType="Schema" ID="2c48bbfa-c8ba-414f-90e0-a9114790e731" SourceId="1" SourceUrl="https://www.inmotiontools.com:8083/FrontOffice/DataManager.svc?xsd=xsd6" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

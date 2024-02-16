@@ -1,0 +1,53 @@
+﻿Module Module1
+
+    Sub Main()
+        Dim firstName = "Test"
+        Dim name = New With { _
+         .First = firstName, _
+         .Second = "Object" _
+        }
+        Dim secondThingValue = 2
+        Dim obj = New With { _
+         .Name = name, _
+         .Things = New Object() {New With { _
+          .Name = "One", _
+          .Value = 1 _
+         }, New With { _
+          .Name = "Two", _
+          .Value = secondThingValue _
+         }, New With { _
+          .Name = "Three", _
+          .Value = 3 _
+         }} _
+        }
+
+
+        Dim name2 As String = InMotionGIT.Utils.Reflection.Query2.GetValue(Of String)(obj, "Name.First")
+
+
+
+
+
+        Dim xx As InMotionGIT.Database.Model.Data.DataSourceModel =
+            InMotionGIT.Database.Model.Data.DataSourceModel.DeserializeFromFile("C:\DesignerWorkbench\ApplicationSuite\LatCombined.temp.schml")
+
+        Dim name3 = InMotionGIT.Utils.Reflection.QueryX.Query(Of InMotionGIT.Database.Model.Data.DataSourceModel)(xx, "Name.First")
+
+
+        Dim z = InMotionGIT.Utils.Reflection.Query2.GetValue(Of IEnumerable)(xx, "Schemas[0].Tables[Name=Acc_lines]")
+
+        Dim o = InMotionGIT.Utils.Reflection.Query2.GetValue(Of IEnumerable)(xx, "Schemas[0].Tables")
+
+        For Each x In o
+            Console.WriteLine(InMotionGIT.Utils.Reflection.Query2.GetValue(Of Object)(x, "Name"))
+        Next
+
+
+        Dim o1 = InMotionGIT.Utils.Reflection.Query2.GetValue(Of Object)(o, "this[0]")
+
+        o = InMotionGIT.Utils.Reflection.Query2.GetValue(Of Object)(xx, "Name")
+
+
+    End Sub
+
+End Module

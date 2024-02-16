@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="c491a7b3-1c40-4f47-8b14-bfa4b99475a4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:64439/DataManager.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DataManager9.xsd" MetadataType="Schema" ID="6a89d2fb-8f77-4bd0-846f-09ba3acee6a2" SourceId="1" SourceUrl="http://localhost:64439/DataManager.svc?xsd=xsd7" />
+    <MetadataFile FileName="DataManager12.xsd" MetadataType="Schema" ID="8b9083ae-0f33-4268-9680-01cbb906154b" SourceId="1" SourceUrl="http://localhost:64439/DataManager.svc?xsd=xsd3" />
+    <MetadataFile FileName="DataManager14.xsd" MetadataType="Schema" ID="9410fe25-dbbf-4356-b98d-c559287e6020" SourceId="1" SourceUrl="http://localhost:64439/DataManager.svc?xsd=xsd2" />
+    <MetadataFile FileName="DataManager8.xsd" MetadataType="Schema" ID="085750ec-5110-44d3-b614-706c4200f394" SourceId="1" SourceUrl="http://localhost:64439/DataManager.svc?xsd=xsd1" />
+    <MetadataFile FileName="DataManager13.xsd" MetadataType="Schema" ID="cada156a-c4e7-42f2-99e9-ac31c7942cab" SourceId="1" SourceUrl="http://localhost:64439/DataManager.svc?xsd=xsd0" />
+    <MetadataFile FileName="DataManager1.wsdl" MetadataType="Wsdl" ID="7924d870-4075-4021-8a61-86971980b482" SourceId="1" SourceUrl="http://localhost:64439/DataManager.svc?wsdl" />
+    <MetadataFile FileName="DataManager11.xsd" MetadataType="Schema" ID="661a685b-0a8e-43f8-9dbe-27f86ce99147" SourceId="1" SourceUrl="http://localhost:64439/DataManager.svc?xsd=xsd6" />
+    <MetadataFile FileName="DataManager7.xsd" MetadataType="Schema" ID="8e7af45f-4dc4-4c2c-b2a9-a284db633b81" SourceId="1" SourceUrl="http://localhost:64439/DataManager.svc?xsd=xsd5" />
+    <MetadataFile FileName="DataManager10.xsd" MetadataType="Schema" ID="a9a93492-273e-4336-a3b7-009fe5fd8e58" SourceId="1" SourceUrl="http://localhost:64439/DataManager.svc?xsd=xsd4" />
+    <MetadataFile FileName="DataManager1.disco" MetadataType="Disco" ID="35e312e6-da87-4eb9-8f35-f26ba97c6aa4" SourceId="1" SourceUrl="http://localhost:64439/DataManager.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

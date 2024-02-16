@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{6EF1E94F-7371-45A8-A6CC-8E0E28AB260F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>InMotionGIT.Common.Proxy</RootNamespace>
+    <AssemblyName>InMotionGIT.Common.Proxy</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>InMotionGIT.Common.Proxy.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>InMotionGIT.Common.Proxy.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>InMotionGIT.Common.Proxy.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\InMotionGIT.Common\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="InMotionGIT.Common" />
+    <Import Include="InMotionGIT.Common.Extensions" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataManagerFactory.vb" />
+    <Compile Include="Helpers\Language.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DataManager\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bk.ps1" />
+    <None Include="InMotionGIT.Common.Proxy.snk" />
+    <Resource Include="InMotionGIT.Common.Proxy.Source.zip" />
+    <None Include="My Project\DataSources\InMotionGIT.Common.DataType.LookUpPackage.datasource" />
+    <None Include="My Project\DataSources\InMotionGIT.Common.DataType.LookUpValue.datasource" />
+    <None Include="My Project\DataSources\InMotionGIT.Common.Services.Contracts.ConnectionString.datasource" />
+    <None Include="My Project\DataSources\InMotionGIT.Common.Services.Contracts.Credential.datasource" />
+    <None Include="My Project\DataSources\InMotionGIT.Common.Services.Contracts.info.datasource" />
+    <None Include="My Project\DataSources\InMotionGIT.Common.Services.Contracts.QueryResult.datasource" />
+    <None Include="My Project\DataSources\InMotionGIT.Common.Services.Contracts.StoredProcedureResult.datasource" />
+    <None Include="My Project\DataSources\System.Data.DataTable.datasource" />
+    <None Include="packages.config" />
+    <None Include="Service References\DataManager\DataManager1.wsdl" />
+    <None Include="Service References\DataManager\DataManager15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataManager\DataManager16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataManager\DataManager17.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataManager\DataManager18.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataManager\DataManager19.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataManager\DataManager20.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataManager\DataManager7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataManager\DataManager8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="track.info" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NUGET_ItMustBePackaged.txt" />
+    <Content Include="Resources\flags\es.png" />
+    <Content Include="Resources\flags\netherlands.png" />
+    <Content Include="Resources\flags\nl.png" />
+    <Content Include="Resources\flags\portugal.png" />
+    <Content Include="Resources\flags\pt.png" />
+    <Content Include="Resources\flags\spain.png" />
+    <Content Include="Resources\flags\unitedStates.png" />
+    <Content Include="Resources\flags\us.png" />
+    <None Include="Service References\DataManager\DataManager1.disco" />
+    <None Include="Service References\DataManager\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\DataManager\configuration.svcinfo" />
+    <None Include="Service References\DataManager\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DataManager\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InMotionGIT.Common\InMotionGIT.Common.vbproj">
+      <Project>{7e7360b0-ea6a-4b93-852e-6f0ec759c02b}</Project>
+      <Name>InMotionGIT.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>Powershell -ExecutionPolicy Bypass -File "$(ProjectDir)bk.ps1" "$(ProjectDir)@"$(ProjectName)"</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

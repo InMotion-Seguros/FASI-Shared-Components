@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="urn:InMotionGIT.Common.DataType" elementFormDefault="qualified" targetNamespace="urn:InMotionGIT.Common.DataType" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfLookUpValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LookUpValue" nillable="true" type="tns:LookUpValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLookUpValue" nillable="true" type="tns:ArrayOfLookUpValue" />
+  <xs:complexType name="LookUpValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LookUpValue" nillable="true" type="tns:LookUpValue" />
+</xs:schema>
