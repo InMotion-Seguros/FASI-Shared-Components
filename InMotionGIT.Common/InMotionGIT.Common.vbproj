@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{7E7360B0-EA6A-4B93-852E-6F0EC759C02B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>InMotionGIT.Common</RootNamespace>
+    <AssemblyName>InMotionGIT.Common</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>InMotionGIT.Common.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>InMotionGIT.Common.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>InMotionGIT.Common.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\app\client\jeffr\product\19.0.0\client_1\odp.net\bin\4\Oracle.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="InMotionGIT.Common" />
+    <Import Include="InMotionGIT.Common.Extensions" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BackOffice\CryptSupport.vb" />
+    <Compile Include="BackOffice\MultiCompany.vb" />
+    <Compile Include="BackOffice\Values.vb" />
+    <Compile Include="BackOffice\VisualTimeConfig.vb" />
+    <Compile Include="DataAcceess\Command.vb" />
+    <Compile Include="DataAcceess\CommandExecution.vb" />
+    <Compile Include="DataAcceess\Connection.vb" />
+    <Compile Include="DataAcceess\Interface\ICommand.vb" />
+    <Compile Include="DataAcceess\Interface\ICommandExecution.vb" />
+    <Compile Include="DataAcceess\Interface\ITransaction.vb" />
+    <Compile Include="DataAcceess\ModelMapper.vb" />
+    <Compile Include="DataAcceess\Reader.vb" />
+    <Compile Include="DataAcceess\Transaction.vb" />
+    <Compile Include="DataAcceess\WhereStatements\BooleanCondition.vb" />
+    <Compile Include="DataAcceess\WhereStatements\DateCondition.vb" />
+    <Compile Include="DataAcceess\WhereStatements\IWhereStatement.vb" />
+    <Compile Include="DataAcceess\WhereStatements\LogicalOperator.vb" />
+    <Compile Include="DataAcceess\WhereStatements\NumericCondition.vb" />
+    <Compile Include="DataAcceess\WhereStatements\EffectiveDateCondition.vb" />
+    <Compile Include="DataAcceess\WhereStatements\StringCondition.vb" />
+    <Compile Include="Base\Action.vb" />
+    <Compile Include="Base\ActionCollection.vb" />
+    <Compile Include="DataType\Argument.vb" />
+    <Compile Include="DataType\LookUpPackage.vb" />
+    <Compile Include="DataType\Notify.vb" />
+    <Compile Include="DataType\LookUpNumericValue.vb" />
+    <Compile Include="DataType\Parameter.vb" />
+    <Compile Include="DataType\LocalizedString.vb" />
+    <Compile Include="DataType\LocalizedStringCollection.vb" />
+    <Compile Include="DataType\LookUpValue.vb" />
+    <Compile Include="DataType\LookUpValueCollection.vb" />
+    <Compile Include="DataType\LookUpValueExtend.vb" />
+    <Compile Include="DataType\LookUpValueExtendCollection.vb" />
+    <Compile Include="DataType\ResultBehavior.vb" />
+    <Compile Include="DataType\ResultDataBehavior.vb" />
+    <Compile Include="DataType\ResultData.vb" />
+    <Compile Include="DataType\Result.vb" />
+    <Compile Include="Enumerations\EnumApplicationVersion.vb" />
+    <Compile Include="Enumerations\EnumCache.vb" />
+    <Compile Include="Enumerations\EnumFormControls.vb" />
+    <Compile Include="Enumerations\EnumFriendlyMode.vb" />
+    <Compile Include="Enumerations\EnumLanguage.vb" />
+    <Compile Include="Enumerations\EnumNotifySeverity.vb" />
+    <Compile Include="Enumerations\EnumSourceType.vb" />
+    <Compile Include="Enumerations\EnumTrace.vb" />
+    <Compile Include="Events\ProgressEventArgs.vb" />
+    <Compile Include="Exceptions\DataAccessException.vb" />
+    <Compile Include="Exceptions\InMotionGITException.vb" />
+    <Compile Include="Exceptions\SecurityException.vb" />
+    <Compile Include="Exceptions\ServiceFaultException.vb" />
+    <Compile Include="Extensions\AppSettingsExtensions.vb" />
+    <Compile Include="Extensions\CollectionExtensions.vb" />
+    <Compile Include="Extensions\DataCommandExtensions.vb" />
+    <Compile Include="Extensions\IEnumerableExtensions.vb" />
+    <Compile Include="Extensions\ListExtensions.vb" />
+    <Compile Include="Extensions\BinaryExtensions.vb" />
+    <Compile Include="Extensions\DataReaderExtensions.vb" />
+    <Compile Include="Extensions\DataRowExtensions.vb" />
+    <Compile Include="Extensions\DataSetExtensions.vb" />
+    <Compile Include="Extensions\DataTableExtensions.vb" />
+    <Compile Include="Extensions\DateExtensions.vb" />
+    <Compile Include="Extensions\DbDataReaderExtensions.vb" />
+    <Compile Include="Extensions\EnumExtensions.vb" />
+    <Compile Include="Extensions\NotifyPropertyChangedExtensions.vb" />
+    <Compile Include="Extensions\NumericExtensions.vb" />
+    <Compile Include="Extensions\ObjectExtensions.vb" />
+    <Compile Include="Extensions\StringExtensions.vb" />
+    <Compile Include="Helpers\ActiveDirectoryHelpers.vb" />
+    <Compile Include="Helpers\AplicationSetting.vb" />
+    <Compile Include="Helpers\AssemblyHandler.vb" />
+    <Compile Include="Helpers\AuthenticationHandler.vb" />
+    <Compile Include="Helpers\ByteHandler.vb" />
+    <Compile Include="Helpers\Caching.vb" />
+    <Compile Include="Helpers\Context.vb" />
+    <Compile Include="Helpers\GeoLocationHelper.vb" />
+    <Compile Include="Helpers\MD5Helper.vb" />
+    <Compile Include="Helpers\RegistryHandler.vb" />
+    <Compile Include="Helpers\Certificate.vb" />
+    <Compile Include="Helpers\Connection.vb" />
+    <Compile Include="Helpers\ConnectionStrings.vb" />
+    <Compile Include="Helpers\CryptAes.vb" />
+    <Compile Include="Helpers\FileHandler.vb" />
+    <Compile Include="Helpers\SessionHandler.vb" />
+    <Compile Include="Helpers\SQL.vb" />
+    <Compile Include="Helpers\CryptSupport.vb" />
+    <Compile Include="Helpers\CryptSupportNew.vb" />
+    <Compile Include="Helpers\Data.vb" />
+    <Compile Include="Helpers\DataAccessLayer.vb" />
+    <Compile Include="Helpers\Directory.vb" />
+    <Compile Include="Helpers\KeyValidator.vb" />
+    <Compile Include="Helpers\LogHandler.vb" />
+    <Compile Include="Helpers\MultiCompany.vb" />
+    <Compile Include="Helpers\QuickData.vb" />
+    <Compile Include="Helpers\SettingsConfiguration.vb" />
+    <Compile Include="Helpers\Values.vb" />
+    <Compile Include="Helpers\VisualTimeConfig.vb" />
+    <Compile Include="MetadataCatalogAttributes\ElementSourceAttribute.vb" />
+    <Compile Include="MetadataCatalogAttributes\EntityCommonlyUsedAttribute.vb" />
+    <Compile Include="MetadataCatalogAttributes\EntitySourceAttribute.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="PrivilegedAccessSecurity.vb" />
+    <Compile Include="Service References\EventLogClient\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Contracts\ConnectionString.vb" />
+    <Compile Include="Services\Contracts\Credential.vb" />
+    <Compile Include="Services\Contracts\DataParameter.vb" />
+    <Compile Include="Services\Contracts\DataCommand.vb" />
+    <Compile Include="Helpers\ExceptionHandlers.vb" />
+    <Compile Include="Helpers\Inflector.vb" />
+    <Compile Include="Helpers\Language.vb" />
+    <Compile Include="Helpers\Names.vb" />
+    <Compile Include="Helpers\Serialize.vb" />
+    <Compile Include="Helpers\Utility.vb" />
+    <Compile Include="Interfaces\IBusinessEntities.vb" />
+    <Compile Include="MetadataCatalogAttributes\ElementBehaviorAttribute.vb" />
+    <Compile Include="MetadataCatalogAttributes\ElementDesignerAttribute.vb" />
+    <Compile Include="MetadataCatalogAttributes\ElementEnglishDesigner.vb" />
+    <Compile Include="MetadataCatalogAttributes\ElementIncludeAttribute.vb" />
+    <Compile Include="MetadataCatalogAttributes\ElementLookUpAttribute.vb" />
+    <Compile Include="MetadataCatalogAttributes\ElementRequiredAttribute.vb" />
+    <Compile Include="MetadataCatalogAttributes\ElementSpanishDesigner.vb" />
+    <Compile Include="MetadataCatalogAttributes\ElementVersionsAttribute.vb" />
+    <Compile Include="MetadataCatalogAttributes\EntityDesignerAttribute.vb" />
+    <Compile Include="MetadataCatalogAttributes\EntityEnglishDesigner.vb" />
+    <Compile Include="MetadataCatalogAttributes\EntityExcludeAttribute.vb" />
+    <Compile Include="MetadataCatalogAttributes\EntityPrimaryKeyMembersAttribute.vb" />
+    <Compile Include="MetadataCatalogAttributes\EntitySpanishDesigner.vb" />
+    <Compile Include="MetadataCatalogAttributes\TypeStructureAttribute.vb" />
+    <Compile Include="MetadataCatalogAttributes\EntityVersionsAttribute.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Services\Contracts\GeoInformation.vb" />
+    <Compile Include="Services\Contracts\info.vb" />
+    <Compile Include="Services\Contracts\Language.vb" />
+    <Compile Include="Services\Contracts\QueryResult.vb" />
+    <Compile Include="Services\Contracts\Source.vb" />
+    <Compile Include="Services\Contracts\StoredProcedureResult.vb" />
+    <Compile Include="Services\DataManager.vb" />
+    <Compile Include="Services\Interfaces\IDataManager.vb" />
+    <Compile Include="Services\Interfaces\IRestDataManager.vb" />
+    <Compile Include="Services\RestDataManager.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bk.ps1" />
+    <None Include="InMotionGIT.Common.snk" />
+    <Resource Include="InMotionGIT.Common.Source.zip" />
+    <None Include="My Project\DataSources\System.Data.DataTable.datasource" />
+    <None Include="packages.config" />
+    <None Include="track.info" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\Enumerations\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\EventLogClient\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EventLogClient\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EventLogClient\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EventLogClient\EventLogManagerService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EventLogClient\EventLogManagerService31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EventLogClient\EventLogManagerService32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EventLogClient\Manager1.wsdl" />
+    <None Include="Service References\EventLogClient\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EventLogClient\EventLogManagerService1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="NUGET_ItMustBePackaged.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>Powershell -ExecutionPolicy Bypass -File "$(ProjectDir)bk.ps1" "$(ProjectDir)@@$(ProjectName)@@$(SolutionDir)"</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

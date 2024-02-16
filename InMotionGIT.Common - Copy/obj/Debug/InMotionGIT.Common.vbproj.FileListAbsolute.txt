@@ -1,0 +1,12 @@
+C:\DLI\FASI Shared Components\InMotionGIT.Common\bin\Debug\InMotionGIT.Common.dll.config
+C:\DLI\FASI Shared Components\InMotionGIT.Common\bin\Debug\InMotionGIT.Common.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Common\bin\Debug\InMotionGIT.Common.pdb
+C:\DLI\FASI Shared Components\InMotionGIT.Common\bin\Debug\InMotionGIT.Common.xml
+C:\DLI\FASI Shared Components\InMotionGIT.Common\bin\Debug\Newtonsoft.Json.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Common\bin\Debug\Newtonsoft.Json.xml
+C:\DLI\FASI Shared Components\InMotionGIT.Common\obj\Debug\InMotionGIT.Common.vbproj.CoreCompileInputs.cache
+C:\DLI\FASI Shared Components\InMotionGIT.Common\obj\Debug\InMotionGIT.Common.vbproj.CopyComplete
+C:\DLI\FASI Shared Components\InMotionGIT.Common\obj\Debug\InMotionGIT.Common.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Common\obj\Debug\InMotionGIT.Common.xml
+C:\DLI\FASI Shared Components\InMotionGIT.Common\obj\Debug\InMotionGIT.Common.pdb
+C:\DLI\FASI Shared Components\InMotionGIT.Common\obj\Debug\InMotionGIT.Common.vbproj.AssemblyReference.cache

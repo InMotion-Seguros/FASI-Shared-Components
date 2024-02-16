@@ -1,0 +1,16 @@
+C:\DLI\FASI Shared Components\InMotionGIT.Assembly.Model\bin\Debug\InMotionGIT.Assembly.Model.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Assembly.Model\bin\Debug\InMotionGIT.Assembly.Model.pdb
+C:\DLI\FASI Shared Components\InMotionGIT.Assembly.Model\bin\Debug\InMotionGIT.Assembly.Model.xml
+C:\DLI\FASI Shared Components\InMotionGIT.Assembly.Model\bin\Debug\InMotionGIT.Common.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Assembly.Model\bin\Debug\Oracle.DataAccess.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Assembly.Model\bin\Debug\Newtonsoft.Json.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Assembly.Model\bin\Debug\InMotionGIT.Common.pdb
+C:\DLI\FASI Shared Components\InMotionGIT.Assembly.Model\bin\Debug\InMotionGIT.Common.xml
+C:\DLI\FASI Shared Components\InMotionGIT.Assembly.Model\bin\Debug\InMotionGIT.Common.dll.config
+C:\DLI\FASI Shared Components\InMotionGIT.Assembly.Model\bin\Debug\Newtonsoft.Json.xml
+C:\DLI\FASI Shared Components\InMotionGIT.Assembly.Model\obj\Debug\InMotionGIT.Assembly.Model.vbproj.AssemblyReference.cache
+C:\DLI\FASI Shared Components\InMotionGIT.Assembly.Model\obj\Debug\InMotionGIT.Assembly.Model.vbproj.CoreCompileInputs.cache
+C:\DLI\FASI Shared Components\InMotionGIT.Assembly.Model\obj\Debug\InMotionGIT.Assembly.Model.vbproj.CopyComplete
+C:\DLI\FASI Shared Components\InMotionGIT.Assembly.Model\obj\Debug\InMotionGIT.Assembly.Model.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Assembly.Model\obj\Debug\InMotionGIT.Assembly.Model.xml
+C:\DLI\FASI Shared Components\InMotionGIT.Assembly.Model\obj\Debug\InMotionGIT.Assembly.Model.pdb

@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Elastic.Apm.AspNetFullFramework</name>
+    </assembly>
+    <members>
+        <member name="T:Elastic.Apm.AspNetFullFramework.AgentDependencies">
+            <summary>
+            Dependencies to initialize the APM agent with
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.AspNetFullFramework.AgentDependencies.Logger">
+            <summary>
+            The logger
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.AspNetFullFramework.AspNetVersion.GetEngineVersion(Elastic.Apm.Logging.IApmLogger)">
+            <summary>
+            Gets the ASP.NET engine version
+            </summary>
+            <param name="logger">The logger</param>
+            <returns>the engine version, or N/A if it cannot be found</returns>
+        </member>
+        <member name="T:Elastic.Apm.AspNetFullFramework.ElasticApmModule">
+            <summary>
+            Captures each request in an APM transaction
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.AspNetFullFramework.ElasticApmModule.Init(System.Web.HttpApplication)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elastic.Apm.AspNetFullFramework.ElasticApmModule.CreateAgentComponents">
+            <summary>
+            Creates a new instance of <see cref="T:Elastic.Apm.AgentComponents"/> configured
+            to use with ASP.NET Full Framework.
+            </summary>
+            <returns>a new instance of <see cref="T:Elastic.Apm.AgentComponents"/></returns>
+        </member>
+        <member name="M:Elastic.Apm.AspNetFullFramework.ElasticApmModule.ExtractIncomingDistributedTracingData(System.Web.HttpRequest)">
+            <summary>
+            Extracts the traceparent and the tracestate headers from the request
+            </summary>
+            <param name="request">The request</param>
+            <returns>Null if traceparent is not set, otherwise the filled DistributedTracingData instance</returns>
+        </member>
+        <member name="M:Elastic.Apm.AspNetFullFramework.ElasticApmModule.CaptureException(System.Web.HttpApplication,Elastic.Apm.Api.ITransaction)">
+            <summary>
+            Captures the last exception, if present
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.AspNetFullFramework.ElasticApmModule.CreateWebApiAttributeRouteTemplateGetter">
+            <summary>
+            Compiles a delegate from a lambda expression to get the route template from HttpRouteData when
+            System.Web.Http is referenced.
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.AspNetFullFramework.Extensions.SoapRequest">
+            <summary>
+            Extract details about a SOAP request from a HTTP request
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.AspNetFullFramework.Extensions.SoapRequest.TryExtractSoapAction(Elastic.Apm.Logging.IApmLogger,System.Web.HttpRequest,System.String@)">
+            <summary>
+            Try to extract a Soap 1.1 or Soap 1.2 action from the request.
+            </summary>
+            <param name="logger">The logger</param>
+            <param name="request">The request</param>
+            <param name="soapAction">The extracted soap action. <c>null</c> if no soap action is extracted</param>
+            <returns><c>true</c> if a soap action can be extracted, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Elastic.Apm.AspNetFullFramework.Extensions.SoapRequest.GetSoap11Action(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Extracts the soap action from the header if exists only with Soap 1.1
+            </summary>
+            <param name="headers">the request headers</param>
+        </member>
+        <member name="T:Elastic.Apm.AspNetFullFramework.FullFrameworkAgentComponents">
+            <summary>
+            Agent components for ASP.NET Full Framework
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.AspNetFullFramework.Helper.ConfigHelper.CreateReader(Elastic.Apm.Logging.IApmLogger)">
+            <summary>
+            Instantiate a custom ConfigurationReader
+            </summary>
+            <param name="logger"></param>
+            <returns>The custom <see cref="T:Elastic.Apm.Config.IConfigurationReader"/> implementation if it can be initialized, <code>null</code> otherwise</returns>
+        </member>
+        <member name="T:Elastic.Apm.AspNetFullFramework.HttpContextCurrentExecutionSegmentsContainer">
+            <summary>
+            An <see cref="T:Elastic.Apm.ICurrentExecutionSegmentsContainer"/> that stores the current transaction
+            and current span in both async local storage and the current <see cref="P:System.Web.HttpContext.Items"/>
+            </summary>
+        </member>
+    </members>
+</doc>

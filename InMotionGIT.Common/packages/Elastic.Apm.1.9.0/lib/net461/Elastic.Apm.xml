@@ -1,0 +1,2816 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Elastic.Apm</name>
+    </assembly>
+    <members>
+        <member name="P:Elastic.Apm.Agent.Tracer">
+            <summary>
+            The entry point for manual instrumentation. Gets an <see cref="T:Elastic.Apm.Api.ITracer" /> from
+            which the currently active transaction and span can be accessed, and enables starting
+            or capturing a new transaction.
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Agent.AddFilter(System.Func{Elastic.Apm.Api.ITransaction,Elastic.Apm.Api.ITransaction})">
+            <summary>
+            Adds a filter which gets called before each transaction gets sent to APM Server.
+            In the <paramref name="filter" />, you have access to the <see cref="T:Elastic.Apm.Api.ITransaction" />
+            instance which gets sent to APM Server and you can modify it. With the return value of the
+            <paramref name="filter" />, you can also control if the <see cref="T:Elastic.Apm.Api.ITransaction" />
+            should be sent to the server or not. If the <paramref name="filter" />
+            returns a non-null <see cref="T:Elastic.Apm.Api.ITransaction" /> instance then it will be sent to the APM Server,
+            and if it returns <code>null</code>, the event will be dropped and won't be sent to the APM server.
+            </summary>
+            <param name="filter">
+            The filter that can process the <see cref="T:Elastic.Apm.Api.ITransaction" /> and decide if it should be sent to APM
+            Server or not.
+            </param>
+            <returns>
+            <code>true</code> if the filter was added successfully, <code>false</code> otherwise. In case the method
+            returns <code>false</code> the filter won't be called.
+            </returns>
+        </member>
+        <member name="M:Elastic.Apm.Agent.AddFilter(System.Func{Elastic.Apm.Api.ISpan,Elastic.Apm.Api.ISpan})">
+            <summary>
+            Adds a filter which gets called before each span gets sent to APM Server.
+            In the <paramref name="filter" />, you have access to the <see cref="T:Elastic.Apm.Api.ISpan" />
+            instance which gets sent to APM Server and you can modify it. With the return value of the
+            <paramref name="filter" />, you can also control if the <see cref="T:Elastic.Apm.Api.ISpan" />
+            should be sent to the server or not. If the <paramref name="filter" />
+            returns a non-null <see cref="T:Elastic.Apm.Api.ISpan" /> instance then it will be sent to the APM Server, and
+            if it returns <code>null</code>, the event will be dropped and won't be sent to the APM server.
+            </summary>
+            <param name="filter">
+            The filter that can process the <see cref="T:Elastic.Apm.Api.ISpan" /> and decide if it should be sent to APM Server
+            or not.
+            </param>
+            <returns>
+            <code>true</code> if the filter was added successfully, <code>false</code> otherwise. In case the method
+            returns <code>false</code> the filter won't be called.
+            </returns>
+        </member>
+        <member name="M:Elastic.Apm.Agent.AddFilter(System.Func{Elastic.Apm.Api.IError,Elastic.Apm.Api.IError})">
+            <summary>
+            Adds a filter which gets called before each error gets sent to APM Server.
+            In the <paramref name="filter" />, you have access to the <see cref="T:Elastic.Apm.Api.IError" />
+            instance which gets sent to APM Server and you can modify it. With the return value of the
+            <paramref name="filter" /> you can also control if the <see cref="T:Elastic.Apm.Api.IError" />
+            should be sent to the server or not. If the <paramref name="filter" />
+            returns a non-null <see cref="T:Elastic.Apm.Api.IError" /> instance then it will be sent to the APM Server, and
+            if it returns <code>null</code>, the event will be dropped and won't be sent to the APM server.
+            </summary>
+            <param name="filter">
+            The filter that can process the <see cref="T:Elastic.Apm.Api.IError" /> and decide if it should be sent to APM
+            Server or not.
+            </param>
+            <returns>
+            <code>true</code> if the filter was added successfully, <code>false</code> otherwise. In case the method
+            returns <code>false</code> the filter won't be called.
+            </returns>
+        </member>
+        <member name="M:Elastic.Apm.Agent.Subscribe(Elastic.Apm.DiagnosticSource.IDiagnosticsSubscriber[])">
+            <summary>
+            Sets up multiple <see cref="T:Elastic.Apm.DiagnosticSource.IDiagnosticsSubscriber" />s to start listening to one or more
+            <see cref="T:Elastic.Apm.DiagnosticSource.IDiagnosticListener" />s.
+            <para />
+            If the agent is not enabled, subscribers are not subscribed.
+            </summary>
+            <param name="subscribers">
+            An array of <see cref="T:Elastic.Apm.DiagnosticSource.IDiagnosticsSubscriber" /> that will set up <see cref="T:Elastic.Apm.DiagnosticSource.IDiagnosticListener" /> subscriptions.
+            </param>
+            <returns>
+            A disposable referencing all the subscriptions. Disposing this is not necessary for clean up, only to unsubscribe if
+            desired.
+            </returns>
+        </member>
+        <member name="P:Elastic.Apm.AgentComponents.Service">
+            <summary>
+            Identifies the monitored service. If this remains unset the agent
+            automatically populates it based on the entry assembly.
+            </summary>
+            <value>The service.</value>
+        </member>
+        <member name="P:Elastic.Apm.Api.CapturedStackFrame.AbsPath">
+            <summary>
+            The absolute path of the file involved in the stack frame.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.CapturedStackFrame.LineNo">
+            <summary>
+            The line number of code part of the stack frame.
+            Zero value means the actual line number could not have been obtained.
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Api.Cloud">
+            <summary>
+            Fields related to the cloud or infrastructure the events are coming from.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.Cloud.Provider">
+            <summary>
+            The cloud provider, for example, aws, gcp, azure.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.CloudProject.Name">
+            <summary>
+            Cloud project name
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.CloudProject.Id">
+            <summary>
+            Cloud project id
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Api.CloudInstance">
+            <summary>
+            An instance in a cloud provider
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.CloudInstance.Id">
+            <summary>
+            Instance ID of the host machine.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.CloudInstance.Name">
+            <summary>
+            Instance name of the host machine.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.CloudAccount.Id">
+            <summary>
+            The cloud account or organization id used to identify different entities in a multi-tenant environment.
+            <para/>
+            <para/>
+            Examples: AWS account id, Google Cloud ORG Id, or other unique identifier.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.CloudAccount.Name">
+            <summary>
+            The cloud account name
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.CloudMachine.Type">
+            <summary>
+            Machine type of the host machine.
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Api.Constraints.MaxLengthAttribute">
+            <summary>
+            Specifies the maximum length of string data allowed in a property, based on the APM server specification.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.Constraints.MaxLengthAttribute.Length">
+            <summary>
+            The maximum length.
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Api.Constraints.MaxLengthAttribute.#ctor">
+            <summary>
+            Initializes a new instance of <see cref="T:Elastic.Apm.Api.Constraints.MaxLengthAttribute"/>
+            with a maximum length of <see cref="F:Elastic.Apm.Consts.PropertyMaxLength"/>
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Api.Constraints.MaxLengthAttribute.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of <see cref="T:Elastic.Apm.Api.Constraints.MaxLengthAttribute"/> with a given maximum length
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Api.Constraints.RequiredAttribute">
+            <summary>
+            Specifies that a data field value is required.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.Context.Labels">
+            <summary>
+            <seealso cref="M:Elastic.Apm.Api.Context.ShouldSerializeLabels" />
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.Context.Request">
+            <summary>
+            If a log record was generated as a result of a http request, the http interface can be used to collect this
+            information.
+            This property is by default null! You have to assign a <see cref="P:Elastic.Apm.Api.Context.Request" /> instance to this property in order to use
+            it.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.Context.Response">
+            <summary>
+            If a log record was generated as a result of a http request, the http interface can be used to collect this
+            information.
+            This property is by default null! You have to assign a <see cref="P:Elastic.Apm.Api.Context.Response" /> instance to this property in order to
+            use
+            it.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.Context.Service">
+            <summary>
+            Service related information can be sent per event. Provided information will override the more generic information from
+            metadata, non provided fields will be set according to the metadata information.
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Api.Context.ShouldSerializeLabels">
+            <summary>
+            Method to conditionally serialize <see cref="F:Elastic.Apm.Api.Context.InternalLabels" /> - serialize only when there is at least one label.
+            See
+            <a href="https://www.newtonsoft.com/json/help/html/ConditionalProperties.htm">the relevant Json.NET Documentation</a>
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Api.Database">
+            <summary>
+            An object containing contextual data for database spans.
+            It can be attached to an <see cref="T:Elastic.Apm.Api.ISpan" /> through <see cref="P:Elastic.Apm.Api.ISpan.Context" />
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Api.Destination">
+            <summary>
+            Public API to set properties that are stored under <c>span.destination</c> in
+            <a href="https://www.elastic.co/guide/en/apm/get-started/current/transaction-spans.html">the APM data model</a>.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.Destination.Address">
+            <summary>
+            Either an IP (v4 or v6) or a host/domain name.
+            See <a href="https://github.com/elastic/apm/issues/115#issuecomment-555814374">this issue</a> for more information.
+            If this property is not set via this public API it will be deduced from other parts of <see cref="T:Elastic.Apm.Api.SpanContext" />
+            (for example <see cref="P:Elastic.Apm.Api.SpanContext.Http" /> or <see cref="P:Elastic.Apm.Api.SpanContext.Db" />).
+            Explicitly setting this property to <c>null</c> will prohibit this automatic deduction.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.Destination.Port">
+            <summary>
+            Port number - it should not be omitted even if it's the default port number for the corresponding protocol.
+            See <a href="https://github.com/elastic/apm/issues/115#issuecomment-555814374">this issue</a> for more information.
+            If this property is not set via this public API it will be deduced from other parts of <see cref="T:Elastic.Apm.Api.SpanContext" />
+            (for example <see cref="P:Elastic.Apm.Api.SpanContext.Http" /> or <see cref="P:Elastic.Apm.Api.SpanContext.Db" />).
+            Explicitly setting this property to <c>null</c> will prohibit this automatic deduction.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.Destination.Service">
+            <summary>
+            Destination service context.
+            <see cref="T:Elastic.Apm.Api.Destination.DestinationService" />
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Api.Destination.DestinationService">
+            <summary>
+            Destination service context.
+            This represents the logical destination of a span, in order to discover the unique connections between services.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.Destination.DestinationService.Name">
+            <summary>
+            Identifier for the destination service (e.g. 'http://elastic.co', 'elasticsearch', 'rabbitmq')"
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.Destination.DestinationService.Resource">
+            <summary>
+            Identifier for the destination service resource being operated on (e.g. 'http://elastic.co:80', 'elasticsearch',
+            'rabbitmq/queue_name')
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.Destination.DestinationService.Type">
+            <summary>
+            Type of the destination service (e.g. 'db', 'elasticsearch'). Should typically be the same as span.type.
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Api.Destination.Optional`1">
+            <summary>
+            The goal is to allow public API user to prohibit automatic deduction of any of  `context.destination` properties.
+            To achieve that we need a way to distinguish between `null` as the initial value
+            (meaning public API user is okay with us automatically deducing it) and `null` explicitly set via public API
+            (meaning the user doesn't want us to automatically deduce it).
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Api.DistributedTracingData">
+            <summary>
+            Encapsulates distributed tracing data passed from the caller to the callee in order to correlate calls between them.
+            Its purpose is similar to that of traceparent and tracestate headers described in the
+            <a href="https://www.w3.org/TR/trace-context/">Trace Context specification</a>
+            </summary>
+            <example>
+            See sample/ApiSamples/Program.cs for an example on how to manually pass distributed tracing data between the caller
+            and the callee
+            </example>
+        </member>
+        <member name="M:Elastic.Apm.Api.DistributedTracingData.SerializeToString">
+            <summary>
+            Serializes this instance to a string.
+            This method should be used at the caller side and the return value should be passed to the (possibly remote) callee
+            side.
+            <see cref="M:Elastic.Apm.Api.DistributedTracingData.TryDeserializeFromString(System.String)" /> should be used to deserialize the instance at the callee side.
+            </summary>
+            <returns>
+            String containing the instance in serialized form.
+            </returns>
+        </member>
+        <member name="M:Elastic.Apm.Api.DistributedTracingData.TryDeserializeFromString(System.String)">
+            <summary>
+            Deserializes an instance from a string.
+            This method should be used at the callee side and the deserialized instance can be passed to
+            <see cref="M:Elastic.Apm.Api.ITracer.StartTransaction(System.String,System.String,Elastic.Apm.Api.DistributedTracingData,System.Boolean)" />.
+            </summary>
+            <param name="serialized">should be a return value from a call to <see cref="M:Elastic.Apm.Api.DistributedTracingData.SerializeToString" />.</param>
+            <returns>
+            Instance deserialized from <paramref name="serialized" />.
+            </returns>
+        </member>
+        <member name="T:Elastic.Apm.Api.Http">
+            <summary>
+            An object containing contextual data of the related http request.
+            It can be attached to an <see cref="T:Elastic.Apm.Api.ISpan" /> through <see cref="P:Elastic.Apm.Api.ISpan.Context" />
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.Http.OriginalUrl">
+            <summary>
+            The Url in its original form as it was passed to the Agent, without sanitization or any other trimming.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.Http.Url">
+            <summary>
+            Sets the URL of the HTTP request.
+            The setter will parse and sanitize the URL and filter out user name and password from the URL in case it contains
+            those.
+            In case you have an <see cref="T:System.Uri" /> instance, consider using the <see cref="M:Elastic.Apm.Api.Http.SetUrl(System.Uri)" /> method on this class.
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Api.Http.SetUrl(System.Uri)">
+            <summary>
+            Sets the <see cref="P:Elastic.Apm.Api.Http.Url" /> string property directly with a <see cref="T:System.Uri" /> instance.
+            The advantage of using this method is that the sanitization of the <paramref name="uri" />
+            is allocation free in case there is nothing to sanitize in the <paramref name="uri" />.
+            </summary>
+            <param name="uri"></param>
+        </member>
+        <member name="M:Elastic.Apm.Api.Http.Sanitize(System.Uri)">
+            <summary>
+            Removes the username and password from the <paramref name="uri" /> and returns it as a <see cref="T:System.String" />.
+            If there is no username and password in the <paramref name="uri" />, the simple string representation is returned.
+            </summary>
+            <param name="uri">The URI that you'd like to sanitize.</param>
+            <returns>The string representation of <paramref name="uri" /> without username and password.</returns>
+        </member>
+        <member name="M:Elastic.Apm.Api.Http.HttpRequestSanitizedToString(System.Net.Http.HttpRequestMessage)">
+            <summary>
+            Returns the .ToString representation of an <see cref="T:System.Net.Http.HttpRequestMessage" />
+            but makes sure that the username and the password is sanitized.
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Elastic.Apm.Api.Http.Sanitize(System.String,System.String@)">
+            <summary>
+            Returns <code>true</code> if sanitization was applied, <code>false</code> otherwise.
+            In some cases turning a string into a URL and then turning it back to a string adds a trailing `/`.
+            To avoid this problem, in the <paramref name="result" /> parameter the input is returned if there is nothing to change
+            on the input.
+            </summary>
+            <param name="uriString">The Uri to sanitize.</param>
+            <param name="result">
+            The result, which is the sanitized string. If no sanitization was needed
+            (because there was no username and password in the URL) then this contains the <paramref name="result" /> parameter.
+            </param>
+            <returns></returns>
+        </member>
+        <member name="T:Elastic.Apm.Api.IError">
+            <summary>
+            Represents an error which was captured by the agent.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.IError.Culprit">
+            <summary>
+            The culprit that caused this error.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.IError.Exception">
+            <summary>
+            In case the error instance was caused by an exception, this property contains all the
+            details about the exception.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.IError.Id">
+            <summary>
+            The Id of the error. This unequally identifies the given error.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.IError.Log">
+            <summary>
+            Log holds additional information added when the error is logged.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.IError.ParentId">
+            <summary>
+            The Parent id of the error
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.IError.TraceId">
+            <summary>
+            The id of the trace where this error happened
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.IError.TransactionId">
+            <summary>
+            The id of the transaction where this error happened
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Api.ErrorLog">
+            <summary>
+            Represents a log event which is captured as part of an APM error.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.ErrorLog.Level">
+            <summary>
+            The severity of the record.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.ErrorLog.LoggerName">
+            <summary>
+            The name of the logger instance used.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.ErrorLog.Message">
+            <summary>
+            The additionally logged error message.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.ErrorLog.ParamMessage">
+            <summary>
+            A parameterized message. E.g. 'Could not connect to %s'. The property message is still required, and should be equal
+            to the param_message, but with placeholders replaced. In some situations the param_message is used to group errors
+            together.
+            The string is not interpreted, so feel free to use whichever placeholders makes sense in the client language."
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Api.IExecutionSegment">
+            <summary>
+            A base interface that encapsulates basic functionality of a piece of work that the agent can measure (e.g.
+            <see cref="T:Elastic.Apm.Api.ISpan" /> and <see cref="T:Elastic.Apm.Api.ITransaction" />)
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.IExecutionSegment.Duration">
+            <summary>
+            The duration of the item.
+            If it's not set (its HasValue property is false) then the value
+            is automatically calculated when <see cref="M:Elastic.Apm.Api.IExecutionSegment.End" /> is called.
+            </summary>
+            <value>The duration.</value>
+        </member>
+        <member name="P:Elastic.Apm.Api.IExecutionSegment.Id">
+            <summary>
+            The id of the item.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.IExecutionSegment.IsSampled">
+            <summary>
+            It's true if and only of this segment is sampled.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.IExecutionSegment.Labels">
+            <summary>
+            A flat mapping of user-defined labels with string values.
+            Dots (<code>.</code>) in the keys are not allowed. In case you have a <code>.</code> in your label key, it will be
+            replaced by <code>_</code>.
+            For example <code>foo.bar</code> will be stored as <code>foo_bar</code> in Elasticsearch.
+            Note: values added through the <see cref="M:Elastic.Apm.Api.IExecutionSegment.SetLabel(System.String,System.String)" /> method won't be visible through this property.
+            </summary>
+            <exception cref="T:System.ArgumentException"><c>null</c> as key is not allowed.</exception>
+        </member>
+        <member name="P:Elastic.Apm.Api.IExecutionSegment.Name">
+            <summary>
+            The name of the item.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.IExecutionSegment.Outcome">
+            <summary>
+            The outcome of the IExecutionSegment: success, failure, or unknown.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.IExecutionSegment.OutgoingDistributedTracingData">
+            <summary>
+            Distributed tracing data for this segment as the distributed tracing caller.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.IExecutionSegment.ParentId">
+            <summary>
+            Hex encoded 64 random bits ID of the parent transaction or span.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.IExecutionSegment.TraceId">
+            <summary>
+            Hex encoded 128 random bits ID of the correlated trace.
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Api.IExecutionSegment.CaptureError(System.String,System.String,System.Diagnostics.StackFrame[],System.String,System.Collections.Generic.Dictionary{System.String,Elastic.Apm.Api.Label})">
+            <summary>
+            Captures a custom error and reports it to the APM server.
+            </summary>
+            <param name="message">The error message.</param>
+            <param name="culprit">The culprit of the error.</param>
+            <param name="frames">The stack trace when the error occured.</param>
+            <param name="parentId">
+            The parent ID that is attached to the error. In case it's null the parent
+            will be automatically set to the current instance
+            </param>
+            <param name="labels">Labels that will be added to the captured error</param>
+        </member>
+        <member name="M:Elastic.Apm.Api.IExecutionSegment.CaptureException(System.Exception,System.String,System.Boolean,System.String,System.Collections.Generic.Dictionary{System.String,Elastic.Apm.Api.Label})">
+            <summary>
+            Captures an exception and reports it to the APM server.
+            </summary>
+            <param name="exception">The exception to capture.</param>
+            <param name="culprit">The value of this parameter is shown as 'Culprit' on the APM UI.</param>
+            <param name="isHandled">Indicates whether the exception is handled or not.</param>
+            <param name="parentId">
+            The parent ID that is attached to the error. In case it's null the parent
+            will be automatically set to the current instance
+            </param>
+            <param name="labels">Labels that will be added to the captured error</param>
+        </member>
+        <member name="M:Elastic.Apm.Api.IExecutionSegment.CaptureErrorLog(Elastic.Apm.Api.ErrorLog,System.String,System.Exception,System.Collections.Generic.Dictionary{System.String,Elastic.Apm.Api.Label})">
+            <summary>
+            Captures a log event as an APM error.
+            </summary>
+            <param name="errorLog"> The log event itself </param>
+            <param name="parentId"> ParentId pointing to the parent transaction or span. </param>
+            <param name="exception"> Exception which was captured as part of the log. </param>
+            <param name="labels">Labels that will be added to the captured error</param>
+        </member>
+        <member name="M:Elastic.Apm.Api.IExecutionSegment.CaptureSpan(System.String,System.String,System.Action{Elastic.Apm.Api.ISpan},System.String,System.String)">
+            <summary>
+            This is a convenient method which starts and ends a span on the given execution segment and captures unhandled
+            exceptions
+            and schedules it to be reported to the APM Server.
+            The created span will be a child span of this execution segment.
+            </summary>
+            <param name="name">The name of the span.</param>
+            <param name="type">The type of the span.</param>
+            <param name="capturedAction">
+            The <see cref="T:System.Action`1" /> that points to the code that you want to capture as a span.
+            The <see cref="T:Elastic.Apm.Api.ISpan" /> parameter gives you access to the span which is created by this method.
+            </param>
+            <param name="subType">The subtype of the span.</param>
+            <param name="action">The action of the span.</param>
+        </member>
+        <member name="M:Elastic.Apm.Api.IExecutionSegment.CaptureSpan(System.String,System.String,System.Action,System.String,System.String)">
+            <summary>
+            This is a convenient method which starts and ends a span on the given execution segment and captures unhandled
+            exceptions
+            and schedules it to be reported to the APM Server.
+            The created span will be a child span of this execution segment.
+            </summary>
+            <param name="name">The name of the span.</param>
+            <param name="type">The type of the span.</param>
+            <param name="capturedAction">The <see cref="T:System.Action" /> that points to the code that you want to capture as a span.</param>
+            <param name="subType">The subtype of the span.</param>
+            <param name="action">The action of the span.</param>
+        </member>
+        <member name="M:Elastic.Apm.Api.IExecutionSegment.CaptureSpan``1(System.String,System.String,System.Func{Elastic.Apm.Api.ISpan,``0},System.String,System.String)">
+            <summary>
+            This is a convenient method which starts and ends a span on the given execution segment and captures unhandled
+            exceptions
+            and schedules it to be reported to the APM Server.
+            The created span will be a child span of this execution segment.
+            </summary>
+            <param name="name">The name of the span.</param>
+            <param name="type">The type of the span.</param>
+            <param name="func">
+            The <see cref="T:System.Func`2" /> that points to the code with a return value that you want to capture as a span.
+            The <see cref="T:Elastic.Apm.Api.ISpan" /> parameter gives you access to the span which is created by this method.
+            </param>
+            <param name="subType">The subtype of the span.</param>
+            <param name="action">The action of the span.</param>
+            <typeparam name="T">The return type of the code that you want to capture as span.</typeparam>
+            <returns>
+            The result of the <paramref name="func" />.
+            </returns>
+        </member>
+        <member name="M:Elastic.Apm.Api.IExecutionSegment.CaptureSpan``1(System.String,System.String,System.Func{``0},System.String,System.String)">
+            <summary>
+            This is a convenient method which starts and ends a span on the given execution segment and captures unhandled
+            exceptions
+            and schedules it to be reported to the APM Server.
+            The created span will be a child span of this execution segment.
+            </summary>
+            <param name="name">The name of the span.</param>
+            <param name="type">The type of the span.</param>
+            <param name="func">
+            The <see cref="T:System.Func`1" /> that points to the code with a return value that you want to capture as a
+            span.
+            </param>
+            <param name="subType">The subtype of the span.</param>
+            <param name="action">The action of the span.</param>
+            <typeparam name="T">The return type of the code that you want to capture as span.</typeparam>
+            <returns>
+            The result of the <paramref name="func" />.
+            </returns>
+        </member>
+        <member name="M:Elastic.Apm.Api.IExecutionSegment.CaptureSpan(System.String,System.String,System.Func{System.Threading.Tasks.Task},System.String,System.String)">
+            <summary>
+            This is a convenient method which starts and ends a span on the given execution segment and captures unhandled
+            exceptions
+            and schedules it to be reported to the APM Server.
+            The created span will be a child span of this execution segment.
+            </summary>
+            <param name="name">The name of the span.</param>
+            <param name="type">The type of the span.</param>
+            <param name="func">The <see cref="T:System.Func`1" /> that points to the async code that you want to capture as a span.</param>
+            <param name="subType">The subtype of the span.</param>
+            <param name="action">The action of the span.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task" /> that you can await on.</returns>
+        </member>
+        <member name="M:Elastic.Apm.Api.IExecutionSegment.CaptureSpan(System.String,System.String,System.Func{Elastic.Apm.Api.ISpan,System.Threading.Tasks.Task},System.String,System.String)">
+            <summary>
+            This is a convenient method which starts and ends a span on the given execution segment and captures unhandled
+            exceptions
+            and schedules it to be reported to the APM Server.
+            The created span will be a child span of this execution segment.
+            </summary>
+            <param name="name">The name of the span.</param>
+            <param name="type">The type of the span.</param>
+            <param name="func">
+            The <see cref="T:System.Func`2" /> that points to the async code that you want to capture as a span.
+            The <see cref="T:Elastic.Apm.Api.ISpan" /> parameter gives you access to the span which is created by this method.
+            </param>
+            <param name="subType">The subtype of the span.</param>
+            <param name="action">The action of the span.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task" /> that you can await on.</returns>
+        </member>
+        <member name="M:Elastic.Apm.Api.IExecutionSegment.CaptureSpan``1(System.String,System.String,System.Func{System.Threading.Tasks.Task{``0}},System.String,System.String)">
+            <summary>
+            This is a convenient method which starts and ends a span on the given execution segment and captures unhandled
+            exceptions
+            and schedules it to be reported to the APM Server.
+            The created span will be a child span of this execution segment.
+            </summary>
+            <param name="name">The name of the span.</param>
+            <param name="type">The type of the span.</param>
+            <param name="func">
+            The <see cref="T:System.Func`1" /> that points to the async code with a return value that you want to
+            capture as a span.
+            </param>
+            <param name="subType">The subtype of the span.</param>
+            <param name="action">The action of the span.</param>
+            <typeparam name="T">The return type of the <see cref="T:System.Threading.Tasks.Task`1" /> that you want to capture as span.</typeparam>
+            <returns>The <see cref="T:System.Threading.Tasks.Task`1" /> that you can await on.</returns>
+        </member>
+        <member name="M:Elastic.Apm.Api.IExecutionSegment.CaptureSpan``1(System.String,System.String,System.Func{Elastic.Apm.Api.ISpan,System.Threading.Tasks.Task{``0}},System.String,System.String)">
+            <summary>
+            This is a convenient method which starts and ends a span on the given execution segment and captures unhandled
+            exceptions
+            and schedules it to be reported to the APM Server.
+            The created span will be a child span of this execution segment.
+            </summary>
+            <param name="name">The name of the span.</param>
+            <param name="type">The type of the span.</param>
+            <param name="func">
+            The <see cref="T:System.Func`2" /> that points to the async code with a return value that you want to capture as a
+            span.
+            The <see cref="T:Elastic.Apm.Api.ISpan" /> parameter gives you access to the span which is created by this method.
+            </param>
+            <param name="subType">The subtype of the span.</param>
+            <param name="action">The action of the span.</param>
+            <typeparam name="T">The return type of the <see cref="T:System.Threading.Tasks.Task`1" /> that you want to capture as span.</typeparam>
+            <returns>The <see cref="T:System.Threading.Tasks.Task`1" /> that you can await on.</returns>
+        </member>
+        <member name="M:Elastic.Apm.Api.IExecutionSegment.End">
+            <summary>
+            Ends the item and schedules it to be reported to the APM Server.
+            It is illegal to call any methods on a span instance which has already ended.
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Api.IExecutionSegment.SetLabel(System.String,System.String)">
+            <summary>
+            Labels are used to add indexed information to transactions, spans, and errors. Indexed means the data is searchable and
+            aggregatable in Elasticsearch. Multiple labels can be defined with different key-value pairs.
+            Note: Values added through this method won't be visible through <see cref="P:Elastic.Apm.Api.IExecutionSegment.Labels" />.
+            <param name="key">
+            <inheritdoc cref="M:Elastic.Apm.Api.IExecutionSegment.SetLabel(System.String,System.Boolean)" />
+            </param>
+            <param name="value">
+            <inheritdoc cref="M:Elastic.Apm.Api.IExecutionSegment.SetLabel(System.String,System.Boolean)" />
+            </param>
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Api.IExecutionSegment.SetLabel(System.String,System.Boolean)">
+            <summary>
+            Labels are used to add indexed information to transactions, spans, and errors. Indexed means the data is searchable and
+            aggregatable in Elasticsearch. Multiple labels can be defined with different key-value pairs.
+            </summary>
+            <param name="key">
+            The key of the label. If the key contains any special characters (., *, "), they will be replaced
+            with underscores.
+            </param>
+            <param name="value">The value of the label</param>
+        </member>
+        <member name="M:Elastic.Apm.Api.IExecutionSegment.SetLabel(System.String,System.Double)">
+            <summary>
+            <inheritdoc cref="M:Elastic.Apm.Api.IExecutionSegment.SetLabel(System.String,System.Boolean)" />
+            </summary>
+            <param name="key">
+            <inheritdoc cref="M:Elastic.Apm.Api.IExecutionSegment.SetLabel(System.String,System.Boolean)" />
+            </param>
+            <param name="value">
+            <inheritdoc cref="M:Elastic.Apm.Api.IExecutionSegment.SetLabel(System.String,System.Boolean)" />
+            </param>
+        </member>
+        <member name="M:Elastic.Apm.Api.IExecutionSegment.SetLabel(System.String,System.Int32)">
+            <summary>
+            <inheritdoc cref="M:Elastic.Apm.Api.IExecutionSegment.SetLabel(System.String,System.Boolean)" />
+            </summary>
+            <param name="key">
+            <inheritdoc cref="M:Elastic.Apm.Api.IExecutionSegment.SetLabel(System.String,System.Boolean)" />
+            </param>
+            <param name="value">
+            <inheritdoc cref="M:Elastic.Apm.Api.IExecutionSegment.SetLabel(System.String,System.Boolean)" />
+            </param>
+        </member>
+        <member name="M:Elastic.Apm.Api.IExecutionSegment.SetLabel(System.String,System.Int64)">
+            <summary>
+            <inheritdoc cref="M:Elastic.Apm.Api.IExecutionSegment.SetLabel(System.String,System.Boolean)" />
+            </summary>
+            <param name="key">
+            <inheritdoc cref="M:Elastic.Apm.Api.IExecutionSegment.SetLabel(System.String,System.Boolean)" />
+            </param>
+            <param name="value">
+            <inheritdoc cref="M:Elastic.Apm.Api.IExecutionSegment.SetLabel(System.String,System.Boolean)" />
+            </param>
+        </member>
+        <member name="M:Elastic.Apm.Api.IExecutionSegment.SetLabel(System.String,System.Decimal)">
+            <summary>
+            <inheritdoc cref="M:Elastic.Apm.Api.IExecutionSegment.SetLabel(System.String,System.Boolean)" />
+            </summary>
+            <param name="key">
+            <inheritdoc cref="M:Elastic.Apm.Api.IExecutionSegment.SetLabel(System.String,System.Boolean)" />
+            </param>
+            <param name="value">
+            <inheritdoc cref="M:Elastic.Apm.Api.IExecutionSegment.SetLabel(System.String,System.Boolean)" />
+            </param>
+        </member>
+        <member name="M:Elastic.Apm.Api.IExecutionSegment.StartSpan(System.String,System.String,System.String,System.String)">
+            <summary>
+            Start and return a new custom span as a child of this execution segment.
+            </summary>
+            <param name="name">The name of the span.</param>
+            <param name="type">The type of the span.</param>
+            <param name="subType">The subtype of the span.</param>
+            <param name="action">The action of the span.</param>
+            <returns>Returns the newly created and active span.</returns>
+        </member>
+        <member name="M:Elastic.Apm.Api.IExecutionSegment.TryGetLabel``1(System.String,``0@)">
+            <summary>
+            Returns the value of a label.
+            </summary>
+            <typeparam name="T">The type of the value for the label that you would like to read.</typeparam>
+            <param name="key">The key of the label that you would like to read.</param>
+            <param name="value">The out parameter to receive the value of the label.</param>
+            <returns>
+            <code>true</code> if the label was witten into <paramref name="value" />, <code>false</code> otherwise, which
+            can be because the label does not exit or <typeparamref name="T" /> does not match the type of the given label.
+            </returns>
+        </member>
+        <member name="T:Elastic.Apm.Api.IMetricSet">
+            <summary>
+            Data captured by the agent representing a metric occurring in a monitored service
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.IMetricSet.Samples">
+            <summary>
+            List of captured metrics as key - value pairs
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.IMetricSet.Timestamp">
+            <summary>
+            Number of milliseconds in unix time
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Api.ISpan">
+            <summary>
+            An event captured by an agent occurring in a monitored service
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.ISpan.Action">
+            <summary>
+            The action of the span.
+            Examples: 'query'.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.ISpan.Context">
+            <summary>
+            Any other arbitrary data captured by the agent, optionally provided by the user.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.ISpan.StackTrace">
+            <summary>
+            The stack trace which was captured for the given span.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.ISpan.Subtype">
+            <summary>
+            The subtype of the span.
+            Examples: 'http', 'mssql'.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.ISpan.Timestamp">
+            <summary>
+            The timestamp of the span
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.ISpan.TransactionId">
+            <summary>
+            Hex encoded 64 random bits ID of the correlated transaction.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.ISpan.Type">
+            <summary>
+            The type of the span.
+            Examples: 'db', 'external'.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.ITracer.CurrentSpan">
+            <summary>
+            Gets the currently active span.
+            Returns <c>null</c> if there's no currently active span.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.ITracer.CurrentTransaction">
+            <summary>
+            Gets the currently active transaction.
+            Returns <c>null</c> if there's no currently active transaction.
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Api.ITracer.CaptureError(System.String,System.String,System.Diagnostics.StackFrame[],System.String,System.Collections.Generic.Dictionary{System.String,Elastic.Apm.Api.Label})">
+            <summary>
+            Captures a custom error and reports it to the APM server.
+            </summary>
+            <param name="message">The error message.</param>
+            <param name="culprit">The culprit of the error.</param>
+            <param name="frames">The stack trace when the error occured.</param>
+            <param name="parentId">
+            The parent ID that is attached to the error. In case it's null the parent
+            will be automatically set to the current instance
+            </param>
+            <param name="labels">Labels that will be added to the captured error</param>
+        </member>
+        <member name="M:Elastic.Apm.Api.ITracer.CaptureException(System.Exception,System.String,System.Boolean,System.String,System.Collections.Generic.Dictionary{System.String,Elastic.Apm.Api.Label})">
+            <summary>
+            Captures an exception and reports it to the APM server.
+            </summary>
+            <param name="exception">The exception to capture.</param>
+            <param name="culprit">The value of this parameter is shown as 'Culprit' on the APM UI.</param>
+            <param name="isHandled">Indicates whether the exception is handled or not.</param>
+            <param name="parentId">
+            The parent ID that is attached to the error. In case it's null the parent
+            will be automatically set to the current instance
+            </param>
+            <param name="labels">Labels that will be added to the captured error</param>
+        </member>
+        <member name="M:Elastic.Apm.Api.ITracer.CaptureErrorLog(Elastic.Apm.Api.ErrorLog,System.String,System.Exception,System.Collections.Generic.Dictionary{System.String,Elastic.Apm.Api.Label})">
+            <summary>
+            Captures a log event as an APM error.
+            </summary>
+            <param name="errorLog"> The log event itself </param>
+            <param name="parentId"> ParentId pointing to the parent transaction or span. </param>
+            <param name="exception"> Exception which was captured as part of the log. </param>
+            <param name="labels">Labels that will be added to the captured error</param>
+        </member>
+        <member name="M:Elastic.Apm.Api.ITracer.CaptureTransaction(System.String,System.String,System.Action{Elastic.Apm.Api.ITransaction},Elastic.Apm.Api.DistributedTracingData)">
+            <summary>
+            This is a convenient method which starts and ends a transaction and captures unhandled exceptions
+            and schedules it to be reported to the APM Server.
+            </summary>
+            <param name="name">The name of the transaction.</param>
+            <param name="type">The type of the transaction.</param>
+            <param name="action">
+            The <see cref="T:System.Action`1" /> that points to the code that you want to capture as a transaction.
+            The <see cref="T:Elastic.Apm.Api.ITransaction" /> parameter gives you access to the transaction which is created by this method.
+            </param>
+            <param name="distributedTracingData">
+            In case of a distributed trace, you can pass distributed tracing data to the API. By doing so, the new transaction will
+            be
+            automatically part of a distributed trace.
+            Use <see cref="P:Elastic.Apm.Api.IExecutionSegment.OutgoingDistributedTracingData" /> to obtain distributed tracing data on the caller
+            side.
+            </param>
+        </member>
+        <member name="M:Elastic.Apm.Api.ITracer.CaptureTransaction(System.String,System.String,System.Action,Elastic.Apm.Api.DistributedTracingData)">
+            <summary>
+            This is a convenient method which starts and ends a transaction and captures unhandled exceptions
+            and schedules it to be reported to the APM Server.
+            </summary>
+            <param name="name">The name of the transaction.</param>
+            <param name="type">The type of the transaction.</param>
+            <param name="action">
+            The <see cref="T:System.Action`1" /> that points to the code that you want to capture as a
+            transaction.
+            </param>
+            <param name="distributedTracingData">
+            In case of a distributed trace, you can pass distributed tracing data to the API. By doing so, the new transaction will
+            be
+            automatically part of a distributed trace.
+            Use <see cref="P:Elastic.Apm.Api.IExecutionSegment.OutgoingDistributedTracingData" /> to obtain distributed tracing data on the caller
+            side.
+            </param>
+        </member>
+        <member name="M:Elastic.Apm.Api.ITracer.CaptureTransaction``1(System.String,System.String,System.Func{Elastic.Apm.Api.ITransaction,``0},Elastic.Apm.Api.DistributedTracingData)">
+            <summary>
+            This is a convenient method which starts and ends a transaction and captures unhandled exceptions
+            and schedules it to be reported to the APM Server.
+            </summary>
+            <param name="name">The name of the transaction.</param>
+            <param name="type">The type of the transaction.</param>
+            <param name="func">
+            The <see cref="T:System.Action`1" /> that points to the code that you want to capture as a transaction.
+            The <see cref="T:Elastic.Apm.Api.ITransaction" /> parameter gives you access to the transaction which is created by this method.
+            </param>
+            <typeparam name="T">The return type of the code that you want to capture as transaction.</typeparam>
+            <param name="distributedTracingData">
+            In case of a distributed trace, you can pass distributed tracing data to the API. By doing so, the new transaction will
+            be
+            automatically part of a distributed trace.
+            Use <see cref="P:Elastic.Apm.Api.IExecutionSegment.OutgoingDistributedTracingData" /> to obtain distributed tracing data on the caller
+            side.
+            </param>
+            <returns>
+            The result of the <paramref name="func" />.
+            </returns>
+        </member>
+        <member name="M:Elastic.Apm.Api.ITracer.CaptureTransaction``1(System.String,System.String,System.Func{``0},Elastic.Apm.Api.DistributedTracingData)">
+            <summary>
+            This is a convenient method which starts and ends a transaction and captures unhandled exceptions
+            and schedules it to be reported to the APM Server.
+            </summary>
+            <param name="name">The name of the transaction.</param>
+            <param name="type">The type of the transaction.</param>
+            <param name="func">
+            The <see cref="T:System.Func`1" /> that points to the code that you want to capture as a
+            transaction.
+            </param>
+            <typeparam name="T">The return type of the code that you want to capture as transaction.</typeparam>
+            <param name="distributedTracingData">
+            In case of a distributed trace, you can pass distributed tracing data to the API. By doing so, the new transaction will
+            be
+            automatically part of a distributed trace.
+            Use <see cref="P:Elastic.Apm.Api.IExecutionSegment.OutgoingDistributedTracingData" /> to obtain distributed tracing data on the caller
+            side.
+            </param>
+            <returns>
+            The result of the <paramref name="func" />.
+            </returns>
+        </member>
+        <member name="M:Elastic.Apm.Api.ITracer.CaptureTransaction(System.String,System.String,System.Func{System.Threading.Tasks.Task},Elastic.Apm.Api.DistributedTracingData)">
+            <summary>
+            This is a convenient method which starts and ends a transaction and captures unhandled exceptions
+            and schedules it to be reported to the APM Server.
+            </summary>
+            <param name="name">The name of the transaction.</param>
+            <param name="type">The type of the transaction.</param>
+            <param name="func">
+            The <see cref="T:System.Func`1" /> that points to the async code that you want to capture as a
+            transaction.
+            </param>
+            <param name="distributedTracingData">
+            In case of a distributed trace, you can pass distributed tracing data to the API. By doing so, the new transaction will
+            be
+            automatically part of a distributed trace.
+            Use <see cref="P:Elastic.Apm.Api.IExecutionSegment.OutgoingDistributedTracingData" /> to obtain distributed tracing data on the caller
+            side.
+            </param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task" /> that can be awaited</returns>
+        </member>
+        <member name="M:Elastic.Apm.Api.ITracer.CaptureTransaction(System.String,System.String,System.Func{Elastic.Apm.Api.ITransaction,System.Threading.Tasks.Task},Elastic.Apm.Api.DistributedTracingData)">
+            <summary>
+            This is a convenient method which starts and ends a transaction and captures unhandled exceptions
+            and schedules it to be reported to the APM Server.
+            </summary>
+            <param name="name">The name of the transaction.</param>
+            <param name="type">The type of the transaction.</param>
+            <param name="func">
+            The <see cref="T:System.Func`1" /> that points to the async code that you want to capture as a transaction.
+            The <see cref="T:Elastic.Apm.Api.ITransaction" /> parameter gives you access to the transaction which is created by this method.
+            </param>
+            <param name="distributedTracingData">
+            In case of a distributed trace, you can pass distributed tracing data to the API. By doing so, the new transaction will
+            be
+            automatically part of a distributed trace.
+            Use <see cref="P:Elastic.Apm.Api.IExecutionSegment.OutgoingDistributedTracingData" /> to obtain distributed tracing data on the caller
+            side.
+            </param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task" /> that can be awaited</returns>
+        </member>
+        <member name="M:Elastic.Apm.Api.ITracer.CaptureTransaction``1(System.String,System.String,System.Func{System.Threading.Tasks.Task{``0}},Elastic.Apm.Api.DistributedTracingData)">
+            <summary>
+            This is a convenient method which starts and ends a transaction and captures unhandled exceptions
+            and schedules it to be reported to the APM Server.
+            </summary>
+            <param name="name">The name of the transaction.</param>
+            <param name="type">The type of the transaction.</param>
+            <param name="func">
+            The <see cref="T:System.Func`1" /> that points to the async code with a return value that you want to
+            capture as a transaction.
+            </param>
+            <typeparam name="T">The return type of the <see cref="T:System.Threading.Tasks.Task`1" /> that you want to capture as transaction.</typeparam>
+            <param name="distributedTracingData">
+            In case of a distributed trace, you can pass distributed tracing data to the API. By doing so, the new transaction will
+            be
+            automatically part of a distributed trace.
+            Use <see cref="P:Elastic.Apm.Api.IExecutionSegment.OutgoingDistributedTracingData" /> to obtain distributed tracing data on the caller
+            side.
+            </param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1" /> that can be awaited</returns>
+        </member>
+        <member name="M:Elastic.Apm.Api.ITracer.CaptureTransaction``1(System.String,System.String,System.Func{Elastic.Apm.Api.ITransaction,System.Threading.Tasks.Task{``0}},Elastic.Apm.Api.DistributedTracingData)">
+            <summary>
+            This is a convenient method which starts and ends a transaction and captures unhandled exceptions
+            and schedules it to be reported to the APM Server.
+            </summary>
+            <param name="name">The name of the transaction.</param>
+            <param name="type">The type of the transaction.</param>
+            <param name="func">
+            The <see cref="T:System.Func`1" /> that points to the async code with a return value that you want to capture as a
+            transaction.
+            The <see cref="T:Elastic.Apm.Api.ITransaction" /> parameter gives you access to the transaction which is created by this method.
+            </param>
+            <typeparam name="T">The return type of the <see cref="T:System.Threading.Tasks.Task`1" /> that you want to capture as transaction.</typeparam>
+            <param name="distributedTracingData">
+            In case of a distributed trace, you can pass distributed tracing data to the API. By doing so, the new transaction will
+            be
+            automatically part of a distributed trace.
+            Use <see cref="P:Elastic.Apm.Api.IExecutionSegment.OutgoingDistributedTracingData" /> to obtain distributed tracing data on the caller
+            side.
+            </param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1" /> that can be awaited.</returns>
+        </member>
+        <member name="M:Elastic.Apm.Api.ITracer.StartTransaction(System.String,System.String,Elastic.Apm.Api.DistributedTracingData,System.Boolean)">
+            <summary>
+            Starts and returns a custom transaction.
+            </summary>
+            <param name="name">The name of the transaction.</param>
+            <param name="type">The type of the transaction.</param>
+            <param name="distributedTracingData">
+            In case of a distributed trace, you can pass distributed tracing data to the API. By doing so, the new transaction will
+            be
+            automatically part of a distributed trace.
+            Use <see cref="P:Elastic.Apm.Api.IExecutionSegment.OutgoingDistributedTracingData" /> to obtain distributed tracing data on the caller
+            side.
+            </param>
+            <param name="ignoreActivity">
+            The agent by default does a best effort to keep <see cref="P:System.Diagnostics.Activity.TraceId" /> in sync with the trace id used in
+            Elastic APM.
+            By setting <paramref name="ignoreActivity" /> to <c>false</c> you can turn off this functionality.
+            </param>
+            <returns>The transaction that is created based on the parameters. This transaction is already active.</returns>
+        </member>
+        <member name="T:Elastic.Apm.Api.ITransaction">
+            <summary>
+            A transaction describes an event captured by the APM agent instrumentation. They are a special kind of Span that have
+            additional
+            attributes associated with them.
+            </summary>
+            <remarks>
+            This interface is the public contract for a transaction. It is not intended to be used by a consumer of the agent to
+            provide different transaction implementations.
+            </remarks>
+        </member>
+        <member name="P:Elastic.Apm.Api.ITransaction.Context">
+            <summary>
+            Any arbitrary contextual information regarding the event, captured by the agent, optionally provided by the user.
+            This field is lazily initialized, you don't have to assign a value to it and you don't have to null check it either.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.ITransaction.Custom">
+            <summary>
+            An arbitrary mapping of additional metadata to store with the event.
+            Custom is used to add non-indexed, custom contextual information to transactions. Non-indexed means the data is
+            not searchable or aggregatable in Elasticsearch, and you cannot build dashboards on top of the data. However,
+            non-indexed information is useful for other reasons, like providing contextual information to help you quickly debug
+            performance issues or errors.
+            Unlike <see cref="P:Elastic.Apm.Api.IExecutionSegment.Labels" /> the data in this property is not trimmed.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.ITransaction.Result">
+            <summary>
+            A string describing the result of the transaction.
+            This is typically the HTTP status code, or e.g. "success" for a background task.
+            </summary>
+            <value>The result.</value>
+        </member>
+        <member name="P:Elastic.Apm.Api.ITransaction.SpanCount">
+            <summary>
+            The total number of correlated spans, including started and dropped
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.ITransaction.Type">
+            <summary>
+            The type of the transaction.
+            Example: 'request'
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Api.ITransaction.EnsureParentId">
+            <summary>
+            If the transaction does not have a ParentId yet, calling this method generates a new ID, sets it as the ParentId of
+            this transaction,
+            and returns it as a <see cref="T:System.String" />. If there is already a ParentId, the method just returns the existing
+            ParentId.
+            This enables the correlation of the spans the JavaScript Real User Monitoring (RUM) agent
+            creates for the initial page load with the transaction of the backend service.
+            </summary>
+            <returns>
+            The generated <see cref="P:Elastic.Apm.Api.IExecutionSegment.ParentId" /> that was applied to the current transaction, or the
+            existing one.
+            </returns>
+        </member>
+        <member name="M:Elastic.Apm.Api.ITransaction.SetService(System.String,System.String)">
+            <summary>
+            With this method you can overwrite the service name and version on a per transaction basis.
+            If this is not set, the transaction will be associated with the default service.
+            </summary>
+            <param name="serviceName">The name of the service which the transaction will be associated with.</param>
+            <param name="serviceVersion">The version of the service which the transaction will be associated with.</param>
+        </member>
+        <member name="T:Elastic.Apm.Api.Label">
+            <summary>
+            Represents the value of a label (see <see cref="M:Elastic.Apm.Api.IExecutionSegment.SetLabel(System.String,System.String)"/> with all its overloads).
+            It contains implicit operators to convert all supported types to a new instance of <see cref="T:Elastic.Apm.Api.Label"/>
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Api.MetricSample">
+            <summary>
+            A single metric sample.
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Api.Request">
+            <summary>
+            Encapsulates Request related information that can be attached to an <see cref="T:Elastic.Apm.Api.ITransaction" /> through
+            <see cref="P:Elastic.Apm.Api.ITransaction.Context" />
+            See <see cref="P:Elastic.Apm.Api.Context.Request" />
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.Request.Headers">
+            <summary>
+            This field is sanitized by a filter
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.Url.Search">
+            <summary>
+            The search describes the query string of the request.
+            It is expected to have values delimited by ampersands.
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Api.Response">
+            <summary>
+            Encapsulates Response related information that can be attached to an <see cref="T:Elastic.Apm.Api.ITransaction" /> through
+            <see cref="P:Elastic.Apm.Api.ITransaction.Context" />
+            See <see cref="P:Elastic.Apm.Api.Context.Response" />
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.Response.StatusCode">
+            <summary>
+            The HTTP status code of the response.
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Api.Runtime">
+            <summary>
+            Name and version of the language runtime running this service
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.SpanContext.Labels">
+            <summary>
+            <seealso cref="M:Elastic.Apm.Api.SpanContext.ShouldSerializeLabels" />
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Api.SpanContext.ShouldSerializeLabels">
+            <summary>
+            Method to conditionally serialize <see cref="F:Elastic.Apm.Api.SpanContext.InternalLabels" /> - serialize only when there is at least one label.
+            See
+            <a href="https://www.newtonsoft.com/json/help/html/ConditionalProperties.htm">the relevant Json.NET Documentation</a>
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.SpanCount.Dropped">
+            <summary>
+            Number of spans that have been dropped by the agent recording the transaction
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.SpanCount.Started">
+            <summary>
+            Number of correlated spans that are recorded
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Api.SpecificationAttribute">
+            <summary>
+            Defines the apm server specification that the type adheres to
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Api.SpecificationAttribute.Path">
+            <summary>
+            Path of the specification, relative to the apm-server directory
+            </summary>
+            <remarks>
+            The path also aligns with the APM server specification $id
+            </remarks>
+        </member>
+        <member name="M:Elastic.Apm.Api.Tracer.RegisterContinuation(System.Threading.Tasks.Task,Elastic.Apm.Api.ITransaction)">
+            <summary>
+            Registers a continuation on the task.
+            Within the continuation it ends the transaction and captures errors
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.ApmAgentExtensions.Subscribe(Elastic.Apm.IApmAgent,Elastic.Apm.DiagnosticSource.IDiagnosticsSubscriber[])">
+            <summary>
+            Sets up multiple <see cref="T:Elastic.Apm.DiagnosticSource.IDiagnosticsSubscriber" />s to start listening to one or more
+            <see cref="T:Elastic.Apm.DiagnosticSource.IDiagnosticListener" />s.
+            <para />
+            If the agent is not enabled, subscribers are not subscribed.
+            </summary>
+            <param name="agent">The agent to report diagnostics over</param>
+            <param name="subscribers">
+            An array of <see cref="T:Elastic.Apm.DiagnosticSource.IDiagnosticsSubscriber" /> that will set up
+            <see cref="T:Elastic.Apm.DiagnosticSource.IDiagnosticListener" /> subscriptions
+            </param>
+            <returns>
+            A disposable referencing all the subscriptions. Disposing this is not necessary for clean up, only to unsubscribe if
+            desired.
+            </returns>
+        </member>
+        <member name="T:Elastic.Apm.CompositeDisposable">
+            <summary>
+            A collection of <see cref="T:System.IDisposable"/> instances
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.CompositeDisposable.Add(System.IDisposable)">
+            <summary>
+            Adds an instance of <see cref="T:System.IDisposable"/> to the collection
+            </summary>
+            <param name="disposable">A disposable</param>
+            <returns>This instance of <see cref="T:Elastic.Apm.CompositeDisposable"/></returns>
+        </member>
+        <member name="M:Elastic.Apm.BackendComm.BackendCommUtils.ApmServerEndpoints.BuildIntakeV2EventsAbsoluteUrl(System.Uri)">
+            <summary>
+            Builds the absolute URL that points to APM server's intake API endpoint which is used by agents to send events.
+            </summary>
+            <param name="baseUrl">Absolute URL pointing to APM Server's base for API endpoints.</param>
+        </member>
+        <member name="M:Elastic.Apm.BackendComm.BackendCommUtils.ApmServerEndpoints.BuildGetConfigAbsoluteUrl(System.Uri,Elastic.Apm.Api.Service)">
+            <summary>
+            Builds the absolute URL that points to APM server's central-config API endpoint which is used by agents to fetch configuration.
+            Configuration is selected by the backend based on the agent's service.name and service.environment.
+            </summary>
+            <param name="baseUrl">Absolute URL pointing to APM Server's base for API endpoints.</param>
+            <param name="service">Service info to pass to APM Server.
+            service.name and service.environment are URL encoded in the returned URL.</param>
+        </member>
+        <member name="M:Elastic.Apm.BackendComm.BackendCommUtils.ApmServerEndpoints.UrlEncode(System.String)">
+            <summary>
+            Credit: System.Net.Http.FormUrlEncodedContent.Encode
+            https://github.com/dotnet/corefx/blob/450f49a1a80663529b31d3defafbd5e59822a16a/src/System.Net.Http/src/System/Net/Http/FormUrlEncodedContent.cs#L53
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.BackendComm.CentralConfig.CentralConfigFetcher.#ctor(Elastic.Apm.Logging.IApmLogger,Elastic.Apm.Config.IConfigStore,Elastic.Apm.Config.IConfigSnapshot,Elastic.Apm.Api.Service,System.Net.Http.HttpMessageHandler,Elastic.Apm.Helpers.IAgentTimer,System.String)">
+            <summary>
+            We need this private ctor to avoid calling configStore.CurrentSnapshot twice (and thus possibly using different
+            snapshots)
+            when passing isEnabled: initialConfigSnapshot.CentralConfig and config: initialConfigSnapshot to base
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Cloud.AwsCloudMetadataProvider">
+            <summary>
+            Provides cloud metadata for Amazon Web Services (AWS)
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Cloud.AwsCloudMetadataProvider.Provider">
+            <inheritdoc />
+        </member>
+        <member name="M:Elastic.Apm.Cloud.AwsCloudMetadataProvider.GetMetadataAsync">
+            <inheritdoc />
+        </member>
+        <member name="T:Elastic.Apm.Cloud.AzureAppServiceMetadataProvider">
+            <summary>
+            Provides cloud metadata for Microsoft Azure App Services
+            </summary>
+        </member>
+        <member name="F:Elastic.Apm.Cloud.AzureAppServiceMetadataProvider.WebsiteOwnerName">
+            <summary>
+            Value of the form {subscription id}+{app service plan resource group}-{region}webspace
+            </summary>
+            <example>
+            f5940f10-2e30-3e4d-a259-63451ba6dae4+elastic-apm-AustraliaEastwebspace
+            </example>
+        </member>
+        <member name="T:Elastic.Apm.Cloud.AzureCloudMetadataProvider">
+            <summary>
+            Provides cloud metadata for Microsoft Azure VM
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Cloud.AzureCloudMetadataProvider.Provider">
+            <inheritdoc />
+        </member>
+        <member name="M:Elastic.Apm.Cloud.AzureCloudMetadataProvider.GetMetadataAsync">
+            <inheritdoc />
+        </member>
+        <member name="T:Elastic.Apm.Cloud.CloudMetadataProviderCollection">
+            <summary>
+            A collection of <see cref="T:Elastic.Apm.Cloud.ICloudMetadataProvider"/> that provide metadata for cloud platforms
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Cloud.CloudMetadataProviderCollection.GetMetadataAsync">
+            <summary>
+            Retrieves the cloud metadata for the given provider(s)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Elastic.Apm.Cloud.GcpCloudMetadataProvider">
+            <summary>
+            Provides cloud metadata for Google Cloud Platform (GCP)
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Cloud.GcpCloudMetadataProvider.Provider">
+            <inheritdoc />
+        </member>
+        <member name="M:Elastic.Apm.Cloud.GcpCloudMetadataProvider.GetMetadataAsync">
+            <inheritdoc />
+        </member>
+        <member name="T:Elastic.Apm.Cloud.ICloudMetadataProvider">
+            <summary>
+            Provides metadata for a cloud provider
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Cloud.ICloudMetadataProvider.Provider">
+            <summary>
+            The name of the cloud provider
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Cloud.ICloudMetadataProvider.GetMetadataAsync">
+            <summary>
+            Retrieves the cloud metadata for the provider
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Elastic.Apm.Config.AbstractConfigurationWithEnvFallbackReader.ServerUrls">
+            <inheritdoc />
+        </member>
+        <member name="P:Elastic.Apm.Config.AbstractConfigurationWithEnvFallbackReader.ServerUrl">
+            <inheritdoc />
+        </member>
+        <member name="P:Elastic.Apm.Config.EnvironmentConfigurationReader.ServerUrls">
+            <inheritdoc />
+        </member>
+        <member name="P:Elastic.Apm.Config.EnvironmentConfigurationReader.ServerUrl">
+            <inheritdoc />
+        </member>
+        <member name="T:Elastic.Apm.Config.IConfigurationReader">
+            <summary>
+            Reads configuration values used to configure the agent
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.ApiKey">
+            <summary>
+            The API key used to send data to the APM server.
+            Ensures that only your agents can send data to your APM server.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.ApplicationNamespaces">
+            <summary>
+            When defined, all namespaces not starting with one of the values of this collection are ignored when determining
+            Exception culprit.
+            This suppresses any configuration of <see cref="P:Elastic.Apm.Config.IConfigurationReader.ExcludedNamespaces" />
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.CaptureBody">
+            <summary>
+            For transactions that are HTTP requests, the agent can optionally capture the request body, e.g., POST variables.
+            If the request has a body and this setting is disabled, the body will be shown as [REDACTED].
+            Valid values are <c>off</c>, <c>errors</c>, <c>transactions</c> and <c>all</c>.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.CaptureBodyContentTypes">
+            <summary>
+            Configures for which content types the body should be captured.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.CaptureHeaders">
+            <summary>
+            Capture request and response headers, including cookies.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.CentralConfig">
+            <summary>
+            Whether the agent is configured to make periodic requests to the APM server to fetch and use the latest
+            APM agent central configuration.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.CloudProvider">
+            <summary>
+            Specify which cloud provider should be assumed for metadata collection. By default, the agent will attempt to detect the cloud
+            provider or, if that fails, will use trial and error to collect the metadata. Valid options are "aws", "gcp", and "azure".
+            If this config value is set to "False", no cloud metadata will be collected.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.DisableMetrics">
+            <summary>
+            Disables the collection of certain metrics. If the name of a metric matches any of the wildcard expressions, it will
+            not be collected
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.Enabled">
+            <summary>
+            Enables the agent.
+            When set to <c>true</c> (the default), the agent is enabled.
+            When set to <c>false</c>, the agent is disabled, including instrumentation and remote config polling.
+            The value of <see cref="P:Elastic.Apm.Config.IConfigurationReader.Enabled" /> cannot be changed during the lifetime of the application.
+            <para />
+            To dynamically change agent operation, use <see cref="P:Elastic.Apm.Config.IConfigurationReader.Recording" />
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.Environment">
+            <summary>
+            The name of the environment this service is deployed in.
+            </summary>
+            <example>production</example>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.ExcludedNamespaces">
+            <summary>
+            A list of namespaces to exclude when reading an exception's StackTrace to determine the culprit.
+            Namespaces are checked with string.StartsWith() so "System." matches all System namespaces
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.FlushInterval">
+            <summary>
+            The maximal amount of time (in seconds) events are held in queue until there is enough to send a batch.
+            It's possible for a batch to contain less then <seealso cref="P:Elastic.Apm.Config.IConfigurationReader.MaxBatchEventCount" /> events
+            if there are events that need to be sent out because they were held for too long.
+            A lower value will increase the load on your APM server,
+            while a higher value can increase the memory pressure on your app.
+            A higher value also impacts the time until transactions are indexed and searchable in Elasticsearch.
+            <list type="bullet">
+            	<item>
+            		<description>
+            			Positive number - The maximal amount of time to hold events in queue.
+            		</description>
+            	</item>
+            	<item>
+            		<description>
+            			0 - Events are not held in queue but are sent immediately.
+            		</description>
+            	</item>
+            	<item>
+            		<description>
+            			Negative - Invalid and the default value is used instead.
+            		</description>
+            	</item>
+            </list>
+            Default value: <seealso cref="F:Elastic.Apm.Config.ConfigConsts.DefaultValues.FlushIntervalInMilliseconds" />
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.HostName">
+            <summary>
+            Allows for the reported hostname to be manually specified. If unset, the hostname will be detected.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.LogLevel">
+            <summary>
+            The logging level for the agent.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.MaxBatchEventCount">
+            <summary>
+            The maximal number of events to send in a batch.
+            It's possible for a batch contain less then the maximum events
+            if there are events that need to be sent out because they were held for too long.
+            <list type="bullet">
+            	<item>
+            		<description>
+            			Positive number - The maximal number of of events to send in a batch.
+            		</description>
+            	</item>
+            	<item>
+            		<description>
+            			0  and negative - Invalid and the default value is used instead.
+            		</description>
+            	</item>
+            </list>
+            Default value: <seealso cref="F:Elastic.Apm.Config.ConfigConsts.DefaultValues.MaxBatchEventCount" />
+            Also see: <seealso cref="P:Elastic.Apm.Config.IConfigurationReader.FlushInterval" /> and <seealso cref="P:Elastic.Apm.Config.IConfigurationReader.MaxQueueEventCount" />
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.MaxQueueEventCount">
+            <summary>
+            The maximal number of events to hold in queue as candidates to be sent.
+            If the queue is at its maximum capacity then the agent discards the new events
+            until the queue has free space.
+            <list type="bullet">
+            	<item>
+            		<description>
+            			Positive number - The maximal number of of events to send in a batch.
+            				If <c>MaxQueueEventCount</c> is less than <seealso cref="P:Elastic.Apm.Config.IConfigurationReader.MaxBatchEventCount" /> then
+            <seealso cref="P:Elastic.Apm.Config.IConfigurationReader.MaxBatchEventCount" /> is used as <c>MaxQueueEventCount</c>.
+            		</description>
+            	</item>
+            	<item>
+            		<description>
+            			0  and negative - Invalid and the default value is used instead.
+            		</description>
+            	</item>
+            </list>
+            Default value: <seealso cref="F:Elastic.Apm.Config.ConfigConsts.DefaultValues.MaxQueueEventCount" />
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.Recording">
+            <summary>
+            Whether the agent is recording.
+            When set to <c>true</c>. the agent instruments and capture requests, tracks errors, and
+            collects and sends metrics.
+            When set to <c>false</c>, the agent does not collect data or communicate with the APM server, except to
+            fetch central configuration.
+            Recording can be changed during the lifetime of the application.
+            </summary>
+            <remarks>
+            As this is a reversible switch, agent threads are not terminated when inactivated, but they will be mostly
+            idle in this state, so the overhead should be negligible.
+            </remarks>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.SanitizeFieldNames">
+            <summary>
+            Sometimes it is necessary to sanitize the data sent to Elastic APM, e.g. remove sensitive data.
+            Configure a list of wildcard patterns of field names which should be sanitized.
+            These apply for example to HTTP headers and application/x-www-form-urlencoded data.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.SecretToken">
+            <summary>
+            A secret token to ensure that only your agents can send data to your APM server.
+            Both agents and APM server have to be configured with the same secret token.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.ServerCert">
+            <summary>
+            The path to the PEM-encoded certificate used by APM server. This can be used when using a certificate
+            signed by a Certificate Authority (CA) that is not in the trust store, such as a self-signed certificate,
+            to perform validation through certificate pinning.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.ServerUrls">
+            <summary>
+            The URLs for APM server.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.ServerUrl">
+            <summary>
+            The URL for APM server.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.ServiceName">
+            <summary>
+            The name of service instrumented by the APM agent. This is used to group all the errors and transactions
+            of the service together, and is the primary filter in the Elastic APM user interface.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.ServiceNodeName">
+            <summary>
+            A name used to differentiate between nodes in a service. If not set, data aggregations will be done
+            based on a container ID (where valid) or on the reported hostname (automatically discovered).
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.ServiceVersion">
+            <summary>
+            The version of the service.
+            If deployments are not versioned, it is recommended to set this to the commit identifier of the deployed revision,
+            e.g. the output of <code>git rev-parse HEAD</code>.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.SpanFramesMinDurationInMilliseconds">
+            <summary>
+            The agent limits stack trace collection to spans with durations equal or longer than the given value
+            0: Disables stack trace collection for spans completely
+            negative value: stacktrace will be collected for all spans
+            positive value n: stacktrace will be captured for spans with a duration equal or longer than n ms.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.StackTraceLimit">
+            <summary>
+            The number of stack frames the agent collects.
+            0: no stacktrace is collected - This also applies to spans no matter what is the value of
+            SpanFramesMinDurationInMilliseconds.
+            negative: all frames must be collected
+            positive number n: top n frames must be collected
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.TransactionIgnoreUrls">
+            <summary>
+            A list of patterns to match HTTP requests to ignore. An incoming HTTP request whose request line matches any of the
+            patterns will not be reported as a transaction.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.TransactionMaxSpans">
+            <summary>
+            The number of spans that are recorded per transaction.
+            <list type="bullet">
+            	<item>
+            		<description>
+            			0: no spans will be collected.
+            		</description>
+            	</item>
+            	<item>
+            		<description>
+            			-1: all spans will be collected.
+            		</description>
+            	</item>
+            </list>
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.TransactionSampleRate">
+            <summary>
+            The sample rate for transactions.
+            By default, the agent will sample every transaction (e.g. a request to your service). To reduce overhead and storage requirements,
+            the sample rate can be set to a value between 0.0 and 1.0. The agent still records the overall time and result for unsampled
+            transactions, but no context information, labels, or spans are recorded.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.UseElasticTraceparentHeader">
+            <summary>
+            If <c>true</c>, for all outgoing HTTP requests the agent stores the traceparent in a "elastic-apm-traceparent" header name.
+            Otherwise, it'll use the official w3c "traceparent" header name.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Config.IConfigurationReader.VerifyServerCert">
+            <summary>
+            The agent verifies the server's certificate if an HTTPS connection to the APM server is used.
+            Verification can be disabled by setting to <c>false</c>.
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.DiagnosticListeners.DiagnosticListenerBase">
+            <summary>
+            A base class for DiagnosticSource listeners which encapsulates common functionality - e.g. exception handling.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.DiagnosticListeners.DiagnosticListenerBase.Logger">
+            <summary>
+            A logger scoped to the child class.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.DiagnosticListeners.DiagnosticListenerBase.ApmAgent">
+            <summary>
+            Current Agent instance.
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.DiagnosticListeners.DiagnosticListenerBase.HandleOnNext(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            Fires each time when <see cref="M:Elastic.Apm.DiagnosticListeners.DiagnosticListenerBase.OnNext(System.Collections.Generic.KeyValuePair{System.String,System.Object})"/> is called.
+            Code within this method is guarded by a try-catch.
+            </summary>
+            <param name="kv"></param>
+        </member>
+        <member name="T:Elastic.Apm.DiagnosticListeners.HttpDiagnosticListener">
+            <summary>
+            Captures web requests initiated by <see cref="T:System.Net.Http.HttpClient" />
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.DiagnosticListeners.HttpDiagnosticListenerFullFrameworkImpl.ProcessExceptionEvent(System.Object,System.Uri)">
+            <summary>
+            In Full Framework "System.Net.Http.Desktop.HttpRequestOut.Ex.Stop" does not send the exception property.
+            Therefore we have a specialized ProcessExceptionEvent for Full Framework.
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.DiagnosticListeners.HttpDiagnosticListenerImplBase`2">
+            <inheritdoc />
+            <summary>
+            Captures web requests initiated by <see cref="T:System.Net.Http.HttpClient" />
+            </summary>
+        </member>
+        <member name="F:Elastic.Apm.DiagnosticListeners.HttpDiagnosticListenerImplBase`2.ProcessingRequests">
+            <summary>
+            Keeps track of ongoing requests
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.DiagnosticListeners.HttpDiagnosticListenerImplBase`2.IsRequestFilteredOut(System.Uri)">
+            <summary>
+            Tells if the given request should be filtered from being captured.
+            </summary>
+            <returns><c>true</c>, if request should not be captured, <c>false</c> otherwise.</returns>
+            <param name="requestUri">Request URI. It cannot be null</param>
+        </member>
+        <member name="T:Elastic.Apm.DiagnosticSource.HttpDiagnosticsSubscriber">
+            <summary>
+            Activates the <see cref="T:Elastic.Apm.DiagnosticListeners.HttpDiagnosticListener" /> which enables
+            capturing outgoing web requests created by <see cref="T:System.Net.Http.HttpClient" />.
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.DiagnosticSource.HttpDiagnosticsSubscriber.Subscribe(Elastic.Apm.IApmAgent)">
+            <summary>
+            Start listening for HttpClient diagnostic source events.
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.DiagnosticSource.IDiagnosticListener">
+            <summary>
+            Common interface for every diagnostic listener
+            The DiagnosticInitializer works through this interface with the different listeners
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.DiagnosticSource.IDiagnosticListener.Name">
+            <summary>
+            Represents the component associated with the event.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="M:Elastic.Apm.DiagnosticSource.IDiagnosticsSubscriber.Subscribe(Elastic.Apm.IApmAgent)">
+            <summary>
+            Subscribes to diagnostic listeners
+            </summary>
+            <param name="components">The agent components</param>
+            <returns>A disposable</returns>
+        </member>
+        <member name="T:Elastic.Apm.DistributedTracing.TraceContext">
+             <summary>
+             An implementation of the
+             <a href="https://www.w3.org/TR/trace-context/#traceparent-field">w3c 'Trace Context' traceparent and tracestate</a>:
+            
+             traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-01
+             (_________)  () (______________________________) (______________) ()
+                  v       v                 v                        v         v
+             Header name Version           Trace-Id                Span-Id     Flags
+             </summary>
+        </member>
+        <member name="M:Elastic.Apm.DistributedTracing.TraceContext.TryExtractTracingData(System.String,System.String)">
+            <summary>
+            Parses the traceparent and tracestate headers
+            </summary>
+            <param name="traceParentValue">The value of the traceparent header</param>
+            <param name="traceStateValue">The value of the tracestate headers</param>
+            <returns>The parsed data if parsing was successful, null otherwise.</returns>
+        </member>
+        <member name="M:Elastic.Apm.DistributedTracing.TraceContext.HexStringTwoCharToByte(System.String,System.Int32)">
+            <summary>
+            Converts 2 selected chars from the input string into a byte
+            </summary>
+            <param name="src">The string to convert - must be at least 2 char long</param>
+            <param name="start">The position of the first character to convert.</param>
+            <returns>The byte representation of the string</returns>
+        </member>
+        <member name="T:Elastic.Apm.DistributedTracing.TraceState">
+            <summary>
+            Handles <see cref="T:Elastic.Apm.DistributedTracing.TraceContext"/> tracestate
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.DistributedTracing.TraceState.SetSampleRate(System.Double)">
+            <summary>
+            Sets the sample rate. If a sample rate has already been set, the existing sample rate is removed
+            and the new sample rate appended to the front of tracestate.
+            </summary>
+            <param name="sampleRate">The sample rate</param>
+        </member>
+        <member name="M:Elastic.Apm.DistributedTracing.TraceState.AddTextHeader(System.String)">
+            <summary>
+            Adds a text header to tracestate
+            </summary>
+            <param name="headerValue">The header value</param>
+        </member>
+        <member name="M:Elastic.Apm.DistributedTracing.TraceState.ValidateTracestate(System.String)">
+            <summary>
+            Validates the tracestate value
+            </summary>
+            <param name="traceState">The value to validate</param>
+            <returns>The <paramref name="traceState"/> if the value is a valid trace state, <code>null</code> otherwise</returns>
+        </member>
+        <member name="M:Elastic.Apm.DistributedTracing.TraceState.GetHeaderValue(System.Double)">
+            <summary>
+            Gets the tracestate header value for the agent
+            </summary>
+            <param name="sampleRate">The sample rate</param>
+            <returns>The tracestate header</returns>
+        </member>
+        <member name="M:Elastic.Apm.DistributedTracing.TraceState.ToTextHeader">
+            <summary>
+            Creates the tracestate text header to send in outgoing requests
+            </summary>
+            <returns>The tracestate text header</returns>
+        </member>
+        <member name="T:Elastic.Apm.DistributedTracing.TraceState.TracestateBuilder">
+            <summary>
+            Per thread <see cref="T:System.Text.StringBuilder"/> used to concatenate tracestate header.
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Filters.HeaderDictionarySanitizerFilter">
+            <summary>
+            A filter that redacts HTTP headers based on the <see cref="P:Elastic.Apm.Config.IConfigurationReader.SanitizeFieldNames"/> setting
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Filters.SpanStackTraceCapturingFilter">
+            <summary>
+            Stack trace capturing itself happens on the application thread (in order to get the real stack trace).
+            This filter turns <see cref="F:Elastic.Apm.Model.Span.RawStackTrace" /> (which is a plain .NET System.Diagnostics.StackTrace instance) into
+            <see cref="P:Elastic.Apm.Model.Span.StackTrace" /> (which is the representation of the intake API stacktrace model).
+            This can be done on a non-application thread right before the span gets sent to the APM Server.
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Filters.TransactionIgnoreUrlsFilter">
+            <summary>
+            Contains a transaction filter which filters out transactions based on request url path.
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Helpers.AgentSpinLock">
+            <summary>
+            Credit:
+            https://stackoverflow.com/questions/6661055/using-interlocked-compareexchange-operation-on-a-bool-value/18027246
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.AgentSpinLock.TryAcquire">
+            <summary>
+            Attempts to acquire this lock
+            </summary>
+            <returns>
+            true - if the attempt was successful
+            false - otherwise
+            </returns>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.AgentSpinLock.Release">
+            <summary>
+            Releases this lock
+            </summary>
+            <exception cref="T:System.InvalidOperationException">If this lock is not currently in acquired state</exception>
+        </member>
+        <member name="T:Elastic.Apm.Helpers.Assertion">
+            <summary>
+            Assertion.IfEnabled?.That(...) is a replacement for System.Diagnostics.Contracts.Contract.Assert for agent's internal
+            use -
+            for us to catch bugs in agent's code. It might be problematic to use Contract.Assert because application might have it
+            disabled or
+            configured to do some strange things (pop GUI dialog boxes, etc.) so we need a separate runtime assertion facility
+            that we can control independently of whatever monitored application uses.
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.DbConnectionStringParser.ExtractDestination(System.String)">
+            <returns><c>Destination</c> if successful and <c>null</c> otherwise</returns>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.DbConnectionStringParser.ExtractDestination(System.String,System.Boolean@)">
+            <summary>
+            Used only by tests.
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.DbConnectionStringParser.ParseConnectionString(System.String)">
+            <returns><c>Destination</c> if successful and <c>null</c> otherwise</returns>
+        </member>
+        <member name="T:Elastic.Apm.Helpers.EnvironmentHelper">
+            <summary>
+            Gets Environment variables, catching and logging any exception that may be thrown.
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Helpers.ExceptionFilter">
+            <summary>
+            Offers methods that can be used as exception filters.
+            Within the filter we return false and capture the exception.
+            Advantage: it avoid stack unwinding.
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.AgentTimerExtensions.TryAwaitOrTimeout(Elastic.Apm.Helpers.IAgentTimer,System.Threading.Tasks.Task,Elastic.Apm.Helpers.AgentTimeInstant,System.Threading.CancellationToken)">
+            <summary>
+            It's recommended to use this method (or another TryAwaitOrTimeout or AwaitOrTimeout method)
+            instead of just Task.WhenAny(taskToAwait, Task.Delay(timeout))
+            because this method cancels the timer for timeout while <c>Task.Delay(timeout)</c>.
+            If the number of “zombie” timer jobs starts becoming significant, performance could suffer.
+            For more detailed explanation see https://devblogs.microsoft.com/pfxteam/crafting-a-task-timeoutafter-method/
+            </summary>
+            <returns><c>true</c> if <c>taskToAwait</c> completed before the timeout, <c>false</c> otherwise</returns>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.AgentTimerExtensions.TryAwaitOrTimeout``1(Elastic.Apm.Helpers.IAgentTimer,System.Threading.Tasks.Task{``0},Elastic.Apm.Helpers.AgentTimeInstant,System.Threading.CancellationToken)">
+            <summary>
+            It's recommended to use this method (or another TryAwaitOrTimeout or AwaitOrTimeout method)
+            instead of just Task.WhenAny(taskToAwait, Task.Delay(timeout))
+            because this method cancels the timer for timeout while <c>Task.Delay(timeout)</c>.
+            If the number of “zombie” timer jobs starts becoming significant, performance could suffer.
+            For more detailed explanation see https://devblogs.microsoft.com/pfxteam/crafting-a-task-timeoutafter-method/
+            </summary>
+            <returns>
+            (<c>true</c>, result of <c>taskToAwait</c>) if <c>taskToAwait</c> completed before the timeout, <c>false</c>
+            otherwise
+            </returns>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.AgentTimerExtensions.AwaitOrTimeout(Elastic.Apm.Helpers.IAgentTimer,System.Threading.Tasks.Task,Elastic.Apm.Helpers.AgentTimeInstant,System.Threading.CancellationToken)">
+            <summary>
+            It's recommended to use this method (or another TryAwaitOrTimeout or AwaitOrTimeout method)
+            instead of just Task.WhenAny(taskToAwait, Task.Delay(timeout))
+            because this method cancels the timer for timeout while <c>Task.Delay(timeout)</c>.
+            If the number of “zombie” timer jobs starts becoming significant, performance could suffer.
+            For more detailed explanation see https://devblogs.microsoft.com/pfxteam/crafting-a-task-timeoutafter-method/
+            </summary>
+            <exception cref="T:System.TimeoutException">Thrown when timeout expires before <c>taskToAwait</c> completes</exception>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.AgentTimerExtensions.AwaitOrTimeout``1(Elastic.Apm.Helpers.IAgentTimer,System.Threading.Tasks.Task{``0},Elastic.Apm.Helpers.AgentTimeInstant,System.Threading.CancellationToken)">
+            <summary>
+            It's recommended to use this method (or another TryAwaitOrTimeout or AwaitOrTimeout method)
+            instead of just Task.WhenAny(taskToAwait, Task.Delay(timeout))
+            because this method cancels the timer for timeout while <c>Task.Delay(timeout)</c>.
+            If the number of “zombie” timer jobs starts becoming significant, performance could suffer.
+            For more detailed explanation see https://devblogs.microsoft.com/pfxteam/crafting-a-task-timeoutafter-method/
+            </summary>
+            <exception cref="T:System.TimeoutException">Thrown when timeout expires before <c>taskToAwait</c> completes</exception>
+            <returns>
+            (<c>true</c>, result of <c>taskToAwait</c>) if <c>taskToAwait</c> completed before the timeout, <c>false</c>
+            otherwise
+            </returns>
+        </member>
+        <member name="F:Elastic.Apm.Helpers.LazyContextualInit`1._lock">
+            <summary>
+            Lock object is created on demand by LazyInitializer.EnsureInitialized
+            https://docs.microsoft.com/en-us/dotnet/api/system.threading.lazyinitializer.ensureinitialized?view=netframework-4.8#System_Threading_LazyInitializer_EnsureInitialized__1___0__System_Boolean__System_Object__System_Func___0__
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Helpers.LazyContextualInit`1.IfNotInited">
+            <summary>
+            This method allows to optimize creating <c>producer</c>
+            To use in the following manner: <c>ctxLazy.IfNotInited?.InitOrGet( ... ) ?? ctxLazy.Value</c>
+            </summary>
+            <returns><c>null</c> if value is already initialized and some non-<c>null</c> object otherwise</returns>
+        </member>
+        <member name="F:Elastic.Apm.Helpers.LazyContextualInit._lock">
+            <summary>
+            Lock object is created on demand by LazyInitializer.EnsureInitialized
+            https://docs.microsoft.com/en-us/dotnet/api/system.threading.lazyinitializer.ensureinitialized?view=netframework-4.8#System_Threading_LazyInitializer_EnsureInitialized__1___0__System_Boolean__System_Object__System_Func___0__
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Helpers.LazyContextualInit.IfNotInited">
+            <summary>
+            This method allows to optimize creating <c>producer</c>
+            To use in the following manner: <c>ctxLazy.IfNotInited?.Init( ... ) ?? false</c>
+            <returns><c>null</c> if value is already initialized and some non-<c>null</c> object otherwise</returns>
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.PropertyFetcher.PropertyFetch.FetcherForProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Create a property fetcher from a .NET Reflection PropertyInfo class that
+            represents a property of a particular type.
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.PropertyFetcher.PropertyFetch.Fetch(System.Object)">
+            <summary>
+            Given an object, fetch the property that this propertyFetch represents.
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.RandomGenerator.GenerateRandomBytesAsString(System.Byte[])">
+            <summary>
+            Creates a random generated byte array hex encoded into a string.
+            </summary>
+            <param name="bytes">
+            The byte array that will be filled with a random number - this defines the length of the generated
+            random bits
+            </param>
+            <returns>The random number hex encoded as string</returns>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.SingleThreadTaskScheduler.GetScheduledTasks">
+            <summary>Provides a list of the scheduled tasks for the debugger to consume.</summary>
+            <returns>An enumerable of all tasks currently scheduled.</returns>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.SingleThreadTaskScheduler.QueueTask(System.Threading.Tasks.Task)">
+            <summary>Queues a Task to be executed by this scheduler.</summary>
+            <param name="task">The task to be executed.</param>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.SingleThreadTaskScheduler.TryExecuteTaskInline(System.Threading.Tasks.Task,System.Boolean)">
+            <summary>Determines whether a Task may be inlined.</summary>
+            <param name="task">The task to be executed.</param>
+            <param name="taskWasPreviouslyQueued">Whether the task was previously queued.</param>
+            <returns>true if the task was successfully inlined; otherwise, false.</returns>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.SingleThreadTaskScheduler.Dispose">
+            <summary>
+            Cleans up the scheduler by indicating that no more tasks will be queued.
+            This method blocks until all threads successfully shutdown.
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.StacktraceHelper.GenerateApmStackTrace(System.Diagnostics.StackFrame[],Elastic.Apm.Logging.IApmLogger,Elastic.Apm.Config.IConfigurationReader,Elastic.Apm.ServerInfo.IApmServerInfo,System.String)">
+            <summary>
+            Turns a System.Diagnostic.StackFrame[] into a <see cref="T:Elastic.Apm.Api.CapturedStackFrame" /> list which can be reported to the APM
+            Server
+            </summary>
+            <param name="frames">The stack frames to rewrite into APM stack traces</param>
+            <param name="logger">The logger to emit exceptions on should one occur</param>
+            <param name="apmServerInfo">The ServerInfo instance to query the server version</param>
+            <param name="dbgCapturingFor">Just for logging.</param>
+            <param name="configurationReader">
+            Config reader - this controls the collection of stack traces (e.g. limit on frames,
+            etc)
+            </param>
+            <returns>A prepared List that can be passed to the APM server</returns>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.StacktraceHelper.GenerateApmStackTrace(System.Exception,Elastic.Apm.Logging.IApmLogger,System.String,Elastic.Apm.Config.IConfigurationReader,Elastic.Apm.ServerInfo.IApmServerInfo)">
+            <summary>
+             Turns an <see cref="T:System.Exception" /> into a <see cref="T:Elastic.Apm.Api.CapturedStackFrame" /> list which can be reported to the APM
+            Server
+            </summary>
+            <param name="exception">The exception to rewrite into APM stack traces</param>
+            <param name="logger">The logger to emit exceptions on should one occur</param>
+            <param name="dbgCapturingFor">Just for logging.</param>
+            <param name="configurationReader">
+            Config reader - this controls the collection of stack traces (e.g. limit on frames,
+            etc)
+            </param>
+            <param name="apmServerInfo">The server info instance to query the APM Server version</param>
+            <returns>A prepared List that can be passed to the APM server</returns>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.StacktraceHelper.GetRealMethodName(System.Reflection.MethodBase)">
+            <summary>
+             Finds real method name even for Async methods, full description of the issue is available here
+            https://stackoverflow.com/a/28633192
+            </summary>
+            <param name="inputMethod">Method to discover</param>
+            <returns>A real method name (even for async methods)</returns>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.StringExtensions.Truncate(System.String,System.Int32)">
+            <summary>
+            Truncates the string to a given length, if longer than the length
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.TimeExtensions.ToHms(System.TimeSpan)">
+            <summary>
+            Converts time duration to "9d 8h 7m 6s 5ms" string representation
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.TimeExtensions.ToHmsInSeconds(System.TimeSpan)">
+            <summary>
+            Converts time duration to "9d 8h 7m 6s" (seconds resolution) string representation.
+            If time duration has non-integer number of seconds the fractional part is truncated.
+            If time duration is [0, 1s) range it is converted to "&lt;1s".
+            If time duration is (-1s, 0] range it is converted to "&gt;-1s".
+            </summary>
+        </member>
+        <member name="F:Elastic.Apm.Helpers.TimeUtils.UnixEpochDateTime">
+            <summary>
+            DateTime.UnixEpoch Field does not exist in .NET Standard 2.0
+            https://docs.microsoft.com/en-us/dotnet/api/system.datetime.unixepoch
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.TimeUtils.ToTimestamp(System.DateTime)">
+            <summary>
+            UTC based and formatted as microseconds since Unix epoch.
+            </summary>
+            <param name="dateTimeToConvert">
+            DateTime instance to convert to timestamp - its <see cref="P:System.DateTime.Kind" /> should be
+            <see cref="F:System.DateTimeKind.Utc" />
+            </param>
+            <returns>UTC based and formatted as microseconds since Unix epoch</returns>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.TimeUtils.DurationBetweenTimestamps(System.Int64,System.Int64)">
+            <summary>
+            Duration between timestamps in ms with 3 decimal points
+            </summary>
+            <returns>Duration between timestamps in ms with 3 decimal points</returns>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.UrlUtils.ExtractDestination(System.Uri,Elastic.Apm.Logging.IApmLogger)">
+            <returns><c>Destination</c> if successful and <c>null</c> otherwise</returns>
+        </member>
+        <member name="T:Elastic.Apm.Helpers.WildcardMatcher">
+            <summary>
+            Heavily inspired by the Java Elastic APM Agent.
+            Wildcard matcher to e.g. sanitize strings.
+            Examples: `/foo/*/bar/*/baz*`, `*foo*`.
+            Matching is case insensitive by default.
+            Prepending an element with `(?-i)` makes the matching case sensitive.
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.WildcardMatcher.Matches(System.String)">
+            <summary>
+            Checks if the given string matches the wildcard pattern.
+            </summary>
+            <param name="s">The string to match</param>
+            <returns>Whether the string matches the given pattern</returns>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.WildcardMatcher.Matches(System.String,System.String)">
+            <summary>
+            This is a different version of <see cref="M:Elastic.Apm.Helpers.WildcardMatcher.Matches(System.String)" /> which has the same semantics as calling
+            <see cref="M:Elastic.Apm.Helpers.WildcardMatcher.Matches(System.String)" param=" firstPart + secondPart" />.
+            The difference is that this method does not allocate memory.
+            </summary>
+            <param name="firstPart">The first part of the string to match against.</param>
+            <param name="secondPart">The second part of the string to match against.</param>
+            <returns><code>true</code> when the wildcard pattern matches the partitioned string, <code>false</code> otherwise. </returns>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.WildcardMatcher.ValueOf(System.String)">
+            <summary>
+            Constructs a new <see cref="T:Elastic.Apm.Helpers.WildcardMatcher" /> via a wildcard string.
+            By default, matches are a case insensitive.
+            It supports the <code>*</code> wildcard which matches zero or more characters.
+            Prepend <code>(?-i)</code> to your pattern to make it case sensitive.
+            Example: <code>(?-i)foo*</code> matches the string <code>foobar</code> but does not match <code>FOOBAR</code>.
+            </summary>
+            <param name="wildcardString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.WildcardMatcher.IsAnyMatch(System.Collections.Generic.IReadOnlyList{Elastic.Apm.Helpers.WildcardMatcher},System.String)">
+            <summary>
+            Returns <code>true</code>, if any of the matchers match the provided string.
+            </summary>
+            <param name="matchers">The matchers which should be used to match the provided string</param>
+            <param name="s">The string to match against</param>
+            <returns><code>true</code>, if any of the matchers match the provided string</returns>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.WildcardMatcher.AnyMatch(System.Collections.Generic.IReadOnlyList{Elastic.Apm.Helpers.WildcardMatcher},System.String)">
+            <summary>
+            Returns the first <see cref="T:Elastic.Apm.Helpers.WildcardMatcher" /> that matches the provided string.
+            </summary>
+            <param name="matchers"> The matchers which should be used to match the provided string</param>
+            <param name="s">The string to match against</param>
+            <returns>The first matching <see cref="T:Elastic.Apm.Helpers.WildcardMatcher" />, or <code>null</code> if none match.</returns>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.WildcardMatcher.AnyMatch(System.Collections.Generic.IReadOnlyCollection{Elastic.Apm.Helpers.WildcardMatcher},System.String,System.String)">
+            <summary>
+            Returns the first <see cref="T:Elastic.Apm.Helpers.WildcardMatcher" /> that matches the provided partitioned string.
+            </summary>
+            <param name="matchers"> The matchers which should be used to match the provided string</param>
+            <param name="firstPart"> The first part of the string to match against.</param>
+            <param name="secondPart"> The second part of the string to match against.</param>
+            <returns>The first matching <see cref="T:Elastic.Apm.Helpers.WildcardMatcher" />, or <code>null</code> if none match.</returns>
+        </member>
+        <member name="M:Elastic.Apm.Helpers.WildcardMatcher.IndexOfIgnoreCase(System.String,System.String,System.String,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            Based on https://stackoverflow.com/a/29809553/1125055
+            Thx to Zach Vorhies
+            </summary>
+            <param name="haystack1"></param>
+            <param name="haystack2"></param>
+            <param name="needle"></param>
+            <param name="ignoreCase"></param>
+            <param name="start"></param>
+            <param name="end"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Elastic.Apm.Helpers.WildcardMatcher.CompoundWildcardMatcher">
+            <summary>
+            This <see cref="T:Elastic.Apm.Helpers.WildcardMatcher" /> supports wildcards in the middle of the matcher by decomposing the matcher into
+            several
+            <see cref="T:Elastic.Apm.Helpers.WildcardMatcher.SimpleWildcardMatcher" />.
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Helpers.WildcardMatcher.SimpleWildcardMatcher">
+            <summary>
+            This <see cref="T:Elastic.Apm.Helpers.WildcardMatcher" /> does not support wildcards in the middle of a matcher.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.ICurrentExecutionSegmentsContainer.CurrentSpan">
+            <summary>
+            Gets or sets the current span
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.ICurrentExecutionSegmentsContainer.CurrentTransaction">
+            <summary>
+            Gets or sets the current transaction
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Logging.IApmLogger">
+            <summary>
+            Performs logging for the Elastic APM agent
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Logging.IApmLogger.IsEnabled(Elastic.Apm.Logging.LogLevel)">
+            <summary>
+            Checks if the given log level is enabled
+            </summary>
+            <param name="level">the log level</param>
+            <returns><c>true</c> if the log level is enabled, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Elastic.Apm.Logging.IApmLogger.Log``1(Elastic.Apm.Logging.LogLevel,``0,System.Exception,System.Func{``0,System.Exception,System.String})">
+            <summary>Writes a log entry.</summary>
+            <param name="level">Entry will be written on this level.</param>
+            <param name="state">The entry to be written. Can be also an object.</param>
+            <param name="e">The exception related to this entry.</param>
+            <param name="formatter">Function to create a <see cref="T:System.String" />
+            message of the <paramref name="state" /> and <paramref name="e" />.</param>
+            <typeparam name="TState">The type of the object to be written.</typeparam>
+        </member>
+        <member name="T:Elastic.Apm.Logging.ILogLevelSwitchable">
+            <summary>
+            Has a log level that can be dynamically changed at runtime
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Logging.ILogLevelSwitchable.LogLevelSwitch">
+            <summary>
+            A switch to dynamically control the log level at runtime
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Logging.LoggingExtensions.IfLevel(Elastic.Apm.Logging.IApmLogger,Elastic.Apm.Logging.LogLevel)">
+            <summary>
+            Depending on the two parameters it either returns a MaybeLogger instance or null.
+            </summary>
+            <param name="logger">The logger you want to log with</param>
+            <param name="level">The level to compare with</param>
+            <returns>If the return value is not null you can call <see cref="M:Elastic.Apm.Logging.LoggingExtensions.MaybeLogger.Log(System.String,System.Object[])" /> to log</returns>
+        </member>
+        <member name="M:Elastic.Apm.Logging.LoggingExtensions.Trace(Elastic.Apm.Logging.IApmLogger)">
+            <summary>
+            If the logger has a loglevel, which is higher than or equal to Trace then it returns a MaybeLogger instance,
+            otherwise it returns null.
+            By using the return value with `?.` you can avoid executing code that is not necessary to execute
+            in case the log won't be printed because the loglevel would not allow it.
+            </summary>
+            <param name="logger">The logger instance you want to log with</param>
+            <returns>Either a MaybeLogger or null</returns>
+        </member>
+        <member name="M:Elastic.Apm.Logging.LoggingExtensions.Debug(Elastic.Apm.Logging.IApmLogger)">
+            <summary>
+            If the logger has a loglevel, which is higher than or equal to Debug then it returns a MaybeLogger instance,
+            otherwise it returns null.
+            By using the return value with `?.` you can avoid executing code that is not necessary to execute
+            in case the log won't be printed because the loglevel would not allow it.
+            </summary>
+            <param name="logger">The logger instance you want to log with</param>
+            <returns>Either a MaybeLogger or null</returns>
+        </member>
+        <member name="M:Elastic.Apm.Logging.LoggingExtensions.Info(Elastic.Apm.Logging.IApmLogger)">
+            <summary>
+            If the logger has a loglevel, which is higher than Info then it returns a MaybeLogger instance,
+            otherwise it returns null.
+            By using the return value with `?.` you can avoid executing code that is not necessary to execute
+            in case the log won't be printed because the loglevel would not allow it.
+            </summary>
+            <param name="logger">The logger instance you want to log with</param>
+            <returns>Either a MaybeLogger or null</returns>
+        </member>
+        <member name="M:Elastic.Apm.Logging.LoggingExtensions.Warning(Elastic.Apm.Logging.IApmLogger)">
+            <summary>
+            If the logger has a loglevel, which is higher than or equal to Warning then it returns a MaybeLogger instance,
+            otherwise it returns null.
+            By using the return value with `?.` you can avoid executing code that is not necessary to execute
+            in case the log won't be printed because the loglevel would not allow it.
+            </summary>
+            <param name="logger">The logger instance you want to log with</param>
+            <returns>Either a MaybeLogger or null</returns>
+        </member>
+        <member name="M:Elastic.Apm.Logging.LoggingExtensions.Error(Elastic.Apm.Logging.IApmLogger)">
+            <summary>
+            If the logger has a loglevel, which is higher than or equal to Error then it returns a MaybeLogger instance,
+            otherwise it returns null.
+            By using the return value with `?.` you can avoid executing code that is not necessary to execute
+            in case the log won't be printed because the loglevel would not allow it.
+            </summary>
+            <param name="logger">The logger instance you want to log with</param>
+            <returns>Either a MaybeLogger or null</returns>
+        </member>
+        <member name="M:Elastic.Apm.Logging.LoggingExtensions.Critical(Elastic.Apm.Logging.IApmLogger)">
+            <summary>
+            If the logger has a loglevel, which is higher than or equal to Critical then it returns a MaybeLogger instance,
+            otherwise it returns null.
+            By using the return value with `?.` you can avoid executing code that is not necessary to execute
+            in case the log won't be printed because the loglevel would not allow it.
+            </summary>
+            <param name="logger">The logger instance you want to log with</param>
+            <returns>Either a MaybeLogger or null</returns>
+        </member>
+        <member name="F:Elastic.Apm.Logging.LogLevel.Trace">
+            <summary>
+            Logs that contain the most detailed messages. These messages may contain sensitive application data. These messages are
+            disabled by default and should never be enabled in a production environment.
+            </summary>
+        </member>
+        <member name="F:Elastic.Apm.Logging.LogLevel.Debug">
+            <summary>
+            Logs that are used for interactive investigation during development. These logs should primarily contain information
+            useful for debugging and have no long-term value.
+            </summary>
+        </member>
+        <member name="F:Elastic.Apm.Logging.LogLevel.Information">
+            <summary>
+            Logs that track the general flow of the application. These logs should have long-term value.
+            </summary>
+        </member>
+        <member name="F:Elastic.Apm.Logging.LogLevel.Warning">
+            <summary>
+            Logs that highlight an abnormal or unexpected event in the application flow, but do not otherwise cause the application
+            execution to stop.
+            </summary>
+        </member>
+        <member name="F:Elastic.Apm.Logging.LogLevel.Error">
+            <summary>
+            Logs that highlight when the current flow of execution is stopped due to a failure. These should indicate a failure
+            in the current activity, not an application-wide failure.
+            </summary>
+        </member>
+        <member name="F:Elastic.Apm.Logging.LogLevel.Critical">
+            <summary>
+            Logs that describe an unrecoverable application or system crash, or a catastrophic failure that requires immediate
+            attention.
+            </summary>
+        </member>
+        <member name="F:Elastic.Apm.Logging.LogLevel.None">
+            <summary>
+            Not used for writing log messages. Specifies that a logging category should not write any messages.
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Logging.LogLevelSwitch">
+            <summary>
+            Dynamically controls the log level
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Logging.LogLevelSwitch.Level">
+            <summary>
+            Gets or sets the current log level
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Logging.LogValuesFormatter">
+            <summary>
+            Formatter to convert the named format items like {NamedformatItem} to <see cref="M:string.Format" /> format.
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Metrics.IMetricsCollector">
+            <summary>
+            Defines how the agent collects metrics.
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Metrics.IMetricsCollector.StartCollecting">
+            <summary>
+            After calling this method, the <see cref="T:Elastic.Apm.Metrics.IMetricsCollector" /> starts collecting metrics
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Metrics.IMetricsProvider">
+            <summary>
+            Defines an interface that every class, which provides some metric value, should implement.
+            This interface is known to the <see cref="T:Elastic.Apm.Metrics.MetricsCollector" /> type and you
+            can implement new providers for other metrics by implementing this interface
+            and adding it to <see cref="T:Elastic.Apm.Metrics.MetricsCollector" />.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Metrics.IMetricsProvider.ConsecutiveNumberOfFailedReads">
+            <summary>
+            Stores the number of calls to the <see cref="M:Elastic.Apm.Metrics.IMetricsProvider.GetSamples" /> method when it returned null, an empty list or
+            any of values is either NaN or Infinite. This is used by <see cref="T:Elastic.Apm.Metrics.MetricsCollector" />
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Metrics.IMetricsProvider.DbgName">
+            <summary>
+            The name that refers to the provider in the logs. E.g. "total process CPU time".
+            Make sure this is human understandable and tells the reader what type of value this provider is intended to provide.
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Metrics.IMetricsProvider.GetSamples">
+            <summary>
+            The main part of the provider, the implementor should do the work to read the value(s) of the given metric(s) in this
+            method.
+            </summary>
+            <returns>The key and the value of the metric(s)</returns>
+        </member>
+        <member name="P:Elastic.Apm.Metrics.IMetricsProvider.IsMetricAlreadyCaptured">
+            <summary>
+            Indicates if metrics were already collected - or there was an attempt to collect them.
+            Until this property is false, metrics from the implementor won't be collected.
+            This property exists to cover cases when the metric collection happens in the background
+            (e.g. collecting GC metrics through EventListener) and values are not captured directly in
+            the <see cref="M:Elastic.Apm.Metrics.IMetricsProvider.GetSamples"/> method.
+            If metrics are captured on the fly in <see cref="M:Elastic.Apm.Metrics.IMetricsProvider.GetSamples"/> just set this to <code>true</code>
+            during initialization.
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Metrics.MetricsCollector">
+            <summary>
+            Iterates through a list of <see cref="T:Elastic.Apm.Metrics.IMetricsProvider" /> and
+            sends the values through an <see cref="T:Elastic.Apm.Report.IPayloadSender" /> instance.
+            It collects the metrics on an interval read from the <see cref="T:Elastic.Apm.Config.IConfigurationReader" /> which is
+            passed to the constructor.
+            In case reading a value from an <see cref="T:Elastic.Apm.Metrics.IMetricsProvider" /> fails it retries <see cref="F:Elastic.Apm.Metrics.MetricsCollector.MaxTryWithoutSuccess" />
+            times,
+            after that it prints a log and won't retry anymore. This is to avoid endlessly trying to read values without success.
+            </summary>
+        </member>
+        <member name="F:Elastic.Apm.Metrics.MetricsCollector.MetricsProviders">
+            <summary>
+            List of all providers that can provide metrics values.
+            Add new providers to this list in case you want the agent to collect more metrics
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Metrics.MetricSet.Samples">
+            <inheritdoc />
+        </member>
+        <member name="P:Elastic.Apm.Metrics.MetricSet.Timestamp">
+            <inheritdoc />
+        </member>
+        <member name="T:Elastic.Apm.Metrics.MetricsProvider.CgroupMetricsProvider">
+            <summary>
+            Provides cgroup metrics, if applicable
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Metrics.MetricsProvider.CgroupMetricsProvider.#ctor(Elastic.Apm.Logging.IApmLogger,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Initializes a new instance of <see cref="T:Elastic.Apm.Metrics.MetricsProvider.CgroupMetricsProvider"/>
+            </summary>
+            <param name="logger">the logger</param>
+            <param name="collectMemLimitBytes">whether to collect <see cref="F:Elastic.Apm.Metrics.MetricsProvider.CgroupMetricsProvider.SystemProcessCgroupMemoryMemLimitBytes"/> metric</param>
+            <param name="collectMemUsageBytes">whether to collect <see cref="F:Elastic.Apm.Metrics.MetricsProvider.CgroupMetricsProvider.SystemProcessCgroupMemoryMemUsageBytes"/> metric</param>
+            <param name="collectStatsInactiveFileBytes">whether to collect <see cref="F:Elastic.Apm.Metrics.MetricsProvider.CgroupMetricsProvider.SystemProcessCgroupMemoryStatsInactiveFileBytes"/> metric</param>
+        </member>
+        <member name="M:Elastic.Apm.Metrics.MetricsProvider.CgroupMetricsProvider.#ctor(System.String,System.String,Elastic.Apm.Logging.IApmLogger,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Initializes a new instance of <see cref="T:Elastic.Apm.Metrics.MetricsProvider.CgroupMetricsProvider"/>
+            </summary>
+            <param name="procSelfCGroup">the <see cref="F:Elastic.Apm.Metrics.MetricsProvider.CgroupMetricsProvider.ProcSelfCgroup"/> file</param>
+            <param name="mountInfo">the <see cref="F:Elastic.Apm.Metrics.MetricsProvider.CgroupMetricsProvider.ProcSelfMountinfo"/> file</param>
+            <param name="logger">the logger</param>
+            <param name="collectMemLimitBytes">whether to collect <see cref="F:Elastic.Apm.Metrics.MetricsProvider.CgroupMetricsProvider.SystemProcessCgroupMemoryMemLimitBytes"/> metric</param>
+            <param name="collectMemUsageBytes">whether to collect <see cref="F:Elastic.Apm.Metrics.MetricsProvider.CgroupMetricsProvider.SystemProcessCgroupMemoryMemUsageBytes"/> metric</param>
+            <param name="collectStatsInactiveFileBytes">whether to collect <see cref="F:Elastic.Apm.Metrics.MetricsProvider.CgroupMetricsProvider.SystemProcessCgroupMemoryStatsInactiveFileBytes"/> metric</param>
+            <remarks>
+            Used for testing
+            </remarks>
+        </member>
+        <member name="T:Elastic.Apm.Metrics.MetricsProvider.CgroupFiles">
+            <summary>
+            Holds the collection of relevant cgroup files
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Metrics.MetricsProvider.FreeAndTotalMemoryProvider">
+            <summary>
+            Returns total and free system memory.
+            Currently Windows and Linux only, no macOS support at the moment.
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Metrics.MetricsProvider.GcMetricsProvider">
+            <summary>
+            A metrics provider that collects GC metrics.
+            On .NET Core it collects metrics through EventSource,
+            on Full Framework Microsoft.Diagnostics.Tracing.TraceEvent is used.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Metrics.MetricsProvider.GcMetricsProvider.TraceEventSessionName">
+            <summary>
+            The name of the TraceEventSession when using <see cref="T:Microsoft.Diagnostics.Tracing.Session.TraceEventSession"/>
+            to capture metrics, otherwise null.
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Metrics.MetricsProvider.GcMetricsProvider.GcEventListener">
+            <summary>
+            An event listener that collects the GC stats
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Model.Error.Context">
+            <summary>
+            <seealso cref="M:Elastic.Apm.Model.Error.ShouldSerializeContext" />
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Model.Error.Timestamp">
+            <summary>
+            Recorded time of the event, UTC based and formatted as microseconds since Unix epoch
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Model.Error.ShouldSerializeContext">
+            <summary>
+            Method to conditionally serialize <see cref="P:Elastic.Apm.Model.Error.Context" /> because context should be serialized only when the transaction
+            is sampled.
+            See
+            <a href="https://www.newtonsoft.com/json/help/html/ConditionalProperties.htm">the relevant Json.NET Documentation</a>
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Model.ExecutionSegmentCommon">
+            <summary>
+            Encapsulates common functionality shared between <see cref="T:Elastic.Apm.Model.Span" /> and <see cref="T:Elastic.Apm.Model.Transaction" />
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Model.ExecutionSegmentCommon.RegisterContinuation(System.Threading.Tasks.Task,Elastic.Apm.Api.ISpan)">
+            <summary>
+            Registers a continuation on the task.
+            Within the continuation it ends the transaction and captures errors
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Model.ExecutionSegmentCommon.CaptureErrorLog(Elastic.Apm.Api.ErrorLog,Elastic.Apm.Report.IPayloadSender,Elastic.Apm.Logging.IApmLogger,Elastic.Apm.Api.IExecutionSegment,Elastic.Apm.Config.IConfigSnapshot,Elastic.Apm.Model.Transaction,System.String,Elastic.Apm.ServerInfo.IApmServerInfo,System.Exception,System.Collections.Generic.Dictionary{System.String,Elastic.Apm.Api.Label})">
+            <summary>
+            Captures an error based on a log
+            </summary>
+            <param name="errorLog"></param>
+            <param name="payloadSender"></param>
+            <param name="logger"></param>
+            <param name="executionSegment"></param>
+            <param name="configSnapshot"></param>
+            <param name="enclosingTransaction"></param>
+            <param name="parentId"></param>
+            <param name="serverInfo"></param>
+            <param name="exception"></param>
+            <param name="labels"></param>
+        </member>
+        <member name="T:Elastic.Apm.Model.InstrumentationFlag">
+            <summary>
+            Represents the presence of a given instrumentation module. Each module can set its flag on a given span in
+            <see cref="P:Elastic.Apm.Model.Span.InstrumentationFlag" />.
+            With that every instrumentation module can know which other modules created the given span.
+            In case of "competing modules" <see cref="P:Elastic.Apm.Model.Span.InstrumentationFlag" /> can be used to detect if a
+            competing instrumentation module created the given span.
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Model.LabelsDictionary">
+            <summary>
+            The instance of this type holds the <see cref="T:System.Collections.Generic.Dictionary`2" /> that contains all the labels on a given
+            event.
+            The public interface of this mimics a Dictionary with <see cref="T:System.String" /> as both the key and the value.
+            The reason for this is backwards compatibility - this type makes sure that we don't break user that rely on the old
+            interface.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Model.LabelsDictionary.MergedDictionary">
+            <summary>
+            Merges the string dictionary with the InnerDictionary
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Model.NoopSpan">
+            <summary>
+            A span implementation which is used when the agent is not recording (either recording=false or enabled=false).
+            It has no knowledge about the PayloadSender and will be never sent to APM Server.
+            It only executes minimum amount of code and isn't guaranteed that values you set on it will be kept.
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Model.NoopTransaction">
+            <summary>
+            A transaction implementation which is used when the agent is not recording (either recording=false or enabled=false).
+            It has no knowledge about the PayloadSender and will be never sent to APM Server.
+            It only executes minimum amount of code and isn't guaranteed that values you set on it will be kept.
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Model.Span">
+            <inheritdoc />
+        </member>
+        <member name="P:Elastic.Apm.Model.Span.Context">
+            <summary>
+            Any other arbitrary data captured by the agent, optionally provided by the user.
+            <seealso cref="M:Elastic.Apm.Model.Span.ShouldSerializeContext" />
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Model.Span.Duration">
+            <inheritdoc />
+            <summary>
+            The duration of the span.
+            If it's not set (HasValue returns false) then the value
+            is automatically calculated when <see cref="M:Elastic.Apm.Model.Span.End" /> is called.
+            </summary>
+            <value>The duration.</value>
+        </member>
+        <member name="P:Elastic.Apm.Model.Span.Outcome">
+            <summary>
+            The outcome of the span: success, failure, or unknown.
+            Outcome may be one of a limited set of permitted values describing the success or failure of the span.
+            This field can be used for calculating error rates for outgoing requests.
+            </summary>
+        </member>
+        <member name="F:Elastic.Apm.Model.Span._outcome">
+            <summary>
+            In general if there is an error on the span, the outcome will be <see cref="F:Elastic.Apm.Api.Outcome.Failure"/>, otherwise it'll be <see cref="F:Elastic.Apm.Api.Outcome.Success"/>.
+            There are some exceptions to this (see spec: https://github.com/elastic/apm/blob/master/specs/agents/tracing-spans.md#span-outcome) when it can be <see cref="F:Elastic.Apm.Api.Outcome.Unknown"/>.
+            Use <see cref="F:Elastic.Apm.Model.Span._outcomeChangedThroughApi"/> to check if it was specifically set to <see cref="F:Elastic.Apm.Api.Outcome.Unknown"/>, or if it's just the default value.
+            </summary>
+        </member>
+        <member name="F:Elastic.Apm.Model.Span.RawStackTrace">
+            <summary>
+            This holds the raw stack trace that was captured when the span either started or ended (depending on the parameter
+            passed to the .ctor)
+            This will be turned into an elastic stack trace and sent to APM Server in the <see cref="P:Elastic.Apm.Model.Span.StackTrace" /> property
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Model.Span.SampleRate">
+            <summary>
+            Captures the sample rate of the agent when this span was created.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Model.Span.Timestamp">
+            <summary>
+            Recorded time of the event, UTC based and formatted as microseconds since Unix epoch
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Model.Span.ShouldSerializeContext">
+            <summary>
+            Method to conditionally serialize <see cref="P:Elastic.Apm.Model.Span.Context" /> - serialize only if it was accessed at least once.
+            See
+            <a href="https://www.newtonsoft.com/json/help/html/ConditionalProperties.htm">the relevant Json.NET Documentation</a>
+            </summary>
+        </member>
+        <member name="E:Elastic.Apm.Model.Span.Ended">
+            <summary>
+            When the transaction has ended and before being queued to send to APM server
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Model.Transaction.#ctor(Elastic.Apm.Logging.IApmLogger,System.String,System.String,Elastic.Apm.Sampler,Elastic.Apm.Api.DistributedTracingData,Elastic.Apm.Report.IPayloadSender,Elastic.Apm.Config.IConfigSnapshot,Elastic.Apm.ICurrentExecutionSegmentsContainer,Elastic.Apm.ServerInfo.IApmServerInfo,System.Boolean)">
+            <summary>
+            Creates a new transaction
+            </summary>
+            <param name="logger">The logger which logs debug information during the transaction  creation process</param>
+            <param name="name">The name of the transaction</param>
+            <param name="type">The type of the transaction</param>
+            <param name="sampler">The sampler implementation which makes the sampling decision</param>
+            <param name="distributedTracingData">Distributed tracing data, in case this transaction is part of a distributed trace</param>
+            <param name="sender">The IPayloadSender implementation which will record this transaction</param>
+            <param name="configSnapshot">The current configuration snapshot which contains the up-do-date config setting values</param>
+            <param name="currentExecutionSegmentsContainer" />
+            The ExecutionSegmentsContainer which makes sure this transaction flows
+            <param name="apmServerInfo">Component to fetch info about APM Server (e.g. APM Server version)</param>
+            <param name="ignoreActivity">
+            If set the transaction will ignore Activity.Current and it's trace id,
+            otherwise the agent will try to keep ids in-sync across async work-flows
+            </param>
+        </member>
+        <member name="F:Elastic.Apm.Model.Transaction._activity">
+            <summary>
+            The agent also starts an Activity when a transaction is started and stops it when the transaction ends.
+            The TraceId of this activity is always the same as the TraceId of the transaction.
+            With this, in case Activity.Current is null, the agent will set it and when the next Activity gets created it'll
+            have this activity as its parent and the TraceId will flow to all Activity instances.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Model.Transaction.ConfigSnapshot">
+            <summary>
+            Holds configuration snapshot (which is immutable) that was current when this transaction started.
+            We would like transaction data to be consistent and not to be affected by possible changes in agent's configuration
+            between the start and the end of the transaction. That is why the way all the data is collected for the transaction
+            and its spans is controlled by this configuration snapshot.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Model.Transaction.Context">
+            <summary>
+            Any arbitrary contextual information regarding the event, captured by the agent, optionally provided by the user.
+            <seealso cref="M:Elastic.Apm.Model.Transaction.ShouldSerializeContext" />
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Model.Transaction.Duration">
+            <inheritdoc />
+            <summary>
+            The duration of the transaction.
+            If it's not set (HasValue returns false) then the value
+            is automatically calculated when <see cref="M:Elastic.Apm.Model.Transaction.End" /> is called.
+            </summary>
+            <value>The duration.</value>
+        </member>
+        <member name="P:Elastic.Apm.Model.Transaction.HasCustomName">
+            <summary>
+            If true, then the transaction name was modified by external code, and transaction name should not be changed
+            or "fixed" automatically.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Model.Transaction.Outcome">
+            <summary>
+            The outcome of the transaction: success, failure, or unknown.
+            This is similar to 'result', but has a limited set of permitted values describing the success or failure of the
+            transaction from the service's perspective.
+            This field can be used for calculating error rates for incoming requests.
+            </summary>
+        </member>
+        <member name="F:Elastic.Apm.Model.Transaction._outcome">
+            <summary>
+            In general if there is an error on the span, the outcome will be <see cref="F:Elastic.Apm.Api.Outcome.Failure"/>, otherwise it'll be <see cref="F:Elastic.Apm.Api.Outcome.Success"/>.
+            There are some exceptions to this (see spec: https://github.com/elastic/apm/blob/master/specs/agents/tracing-spans.md#span-outcome) when it can be <see cref="F:Elastic.Apm.Api.Outcome.Unknown"/>.
+            Use <see cref="F:Elastic.Apm.Model.Transaction._outcomeChangedThroughApi"/> to check if it was specifically set to <see cref="F:Elastic.Apm.Api.Outcome.Unknown"/>, or if it's just the default value.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Model.Transaction.Result">
+            <inheritdoc />
+            <summary>
+            A string describing the result of the transaction.
+            This is typically the HTTP status code, or e.g. "success" for a background task.
+            </summary>
+            <value>The result.</value>
+        </member>
+        <member name="P:Elastic.Apm.Model.Transaction.SampleRate">
+            <summary>
+            Captures the sample rate of the agent when this transaction was created.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.Model.Transaction.Timestamp">
+            <summary>
+            Recorded time of the event, UTC based and formatted as microseconds since Unix epoch
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Model.Transaction.SetService(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elastic.Apm.Model.Transaction.ShouldSerializeContext">
+            <summary>
+            Method to conditionally serialize <see cref="P:Elastic.Apm.Model.Transaction.Context" /> because context should be serialized only when the transaction
+            is sampled.
+            See
+            <a href="https://www.newtonsoft.com/json/help/html/ConditionalProperties.htm">the relevant Json.NET Documentation</a>
+            </summary>
+        </member>
+        <member name="E:Elastic.Apm.Model.Transaction.Ended">
+            <summary>
+            When the transaction has ended and before being queued to send to APM server
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Model.Transaction.GetNameFromRouteContext(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Determines a name from the route values
+            </summary>
+            <remarks>
+            Based on: https://github.com/Microsoft/ApplicationInsights-aspnetcore
+            </remarks>
+        </member>
+        <member name="M:Elastic.Apm.Reflection.ExpressionBuilder.BuildPropertyGetter``2(System.String)">
+            <summary>
+            Builds a delegate to get a property of type <typeparamref name="TProperty"/> from an object
+            of type <typeparamref name="TObject"/>
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Reflection.ExpressionBuilder.BuildPropertyGetter(System.Type,System.Reflection.PropertyInfo)">
+            <summary>
+            Builds a delegate to get a property from an object. <paramref name="type"/> is cast to <see cref="T:System.Object"/>,
+            with the returned property cast to <see cref="T:System.Object"/>.
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Report.PayloadSenderV2">
+            <summary>
+            Responsible for sending the data to APM server. Implements Intake V2.
+            Each instance creates its own thread to do the work. Therefore, instances should be reused if possible.
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Report.PayloadSenderV2.TryAwaitOrTimeout(System.Threading.Tasks.Task,System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>
+            It's recommended to use this method (or another TryAwaitOrTimeout or AwaitOrTimeout method)
+            instead of just Task.WhenAny(taskToAwait, Task.Delay(timeout))
+            because this method cancels the timer for timeout while <c>Task.Delay(timeout)</c>.
+            If the number of “zombie” timer jobs starts becoming significant, performance could suffer.
+            For more detailed explanation see https://devblogs.microsoft.com/pfxteam/crafting-a-task-timeoutafter-method/
+            </summary>
+            <returns><c>true</c> if <c>taskToAwait</c> completed before the timeout, <c>false</c> otherwise</returns>
+        </member>
+        <member name="P:Elastic.Apm.Report.Metadata.Cloud">
+            <inheritdoc cref="T:Elastic.Apm.Api.Cloud"/>
+        </member>
+        <member name="M:Elastic.Apm.Report.Metadata.ShouldSerializeLabels">
+            <summary>
+            Method to conditionally serialize <see cref="P:Elastic.Apm.Report.Metadata.Labels" /> - serialize only when there is at least one label.
+            See
+            <a href="https://www.newtonsoft.com/json/help/html/ConditionalProperties.htm">the relevant Json.NET Documentation</a>
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Report.Serialization.PayloadItemSerializer">
+            <summary>
+            Serializes payloads to send to APM server
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Report.Serialization.PayloadItemSerializer.Deserialize``1(System.String)">
+            <summary>
+            Deserializes an instance of <typeparamref name="T"/> from JSON
+            </summary>
+            <param name="json">the JSON</param>
+            <typeparam name="T">the type to deserialize</typeparam>
+            <returns>a new instance of <typeparamref name="T"/></returns>
+        </member>
+        <member name="M:Elastic.Apm.Report.Serialization.PayloadItemSerializer.Serialize(System.Object)">
+            <summary>
+            Serializes the item to JSON
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Elastic.Apm.Report.Serialization.TruncateJsonConverter">
+            <summary>
+            Truncates a string to a given length
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.Sampler">
+            <summary>
+            A sampler is responsible for determining whether a transaction should be sampled.
+            In contrast to other tracing systems, in Elastic APM,  non-sampled transactions do get reported to the APM server.
+            However, to keep the size at a minimum, the reported transaction only contains the transaction name, the duration and
+            the id.
+            Also, spans of non-sampled transactions are not reported.
+            This implementation samples based on a sampling probability (AKA sampling rate) between 0.0 and 1.0.
+            A sampling rate of 0.5 means that 50% of all transactions should be sampled.
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.Sampler.#ctor(System.Double)">
+            <summary>
+            Constructs a new Sampler
+            </summary>
+            <param name="rate">Value of the rate - must be between 0 and 1 (including both)</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when rate is not between 0 and 1 (including both)</exception>
+            <returns>The same value as the given rate</returns>
+        </member>
+        <member name="M:Elastic.Apm.Sampler.RoundToPrecision(System.Double)">
+            <summary>
+            Rounds the sampling rate half away from zero to 4 decimal places so that the maximum precision of the sampling rate is
+            `0.0001` (0.01%).
+            Values greater than 0 but less than 0.0001 are rounded to 0.0001
+            </summary>
+            <param name="rate">The rate</param>
+            <returns>The rounded rate</returns>
+        </member>
+        <member name="M:Elastic.Apm.Sampler.DecideIfToSample(System.Byte[])">
+            <summary>
+            Decides if to sample or not based on the given randomBytes.
+            </summary>
+            <param name="randomBytes">Should contain at least 8 random bytes.</param>
+            <exception cref="T:System.ArgumentException">
+            When length of <paramref name="randomBytes">randomBytes</paramref> is less
+            than 8.
+            </exception>
+            <returns>True if and only if the decision is to sample</returns>
+        </member>
+        <member name="T:Elastic.Apm.ServerInfo.ApmServerInfo">
+            <summary>
+            A "real" <see cref="T:Elastic.Apm.ServerInfo.IApmServerInfo" /> implementation.
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.ServerInfo.ElasticVersion">
+            <summary>
+            An Elastic product version
+            </summary>
+        </member>
+        <member name="T:Elastic.Apm.ServerInfo.IApmServerInfo">
+            <summary>
+            Encapsulates information about the APM Server that receives data from the agent.
+            </summary>
+        </member>
+        <member name="P:Elastic.Apm.ServerInfo.IApmServerInfo.Version">
+            <summary>
+            The version of the APM server.
+            This can be <code>null</code> if the agent has not yet queried the APM server for its version or the query failed.
+            The agent should not depend on the APM server version and if the version is not (yet) available the agent should
+            default to a reasonable behaviour.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,7 @@
+{
+  "DiaryEntities":"AGENDA",
+  "FrontOfficeEntities":"frontoffice",
+  "BackOfficeEntities":"INSUDB",
+  "FrontOfficeConnectionString":"frontoffice",
+  "OracleDbContext":"oracle_user_password"
+}

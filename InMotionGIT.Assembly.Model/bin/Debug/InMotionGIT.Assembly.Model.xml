@@ -1,0 +1,188 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Assembly.Model
+</name>
+</assembly>
+<members>
+<member name="M:InMotionGIT.Assembly.Model.assemblyLoader.LoadAssemblyInformation(System.String,InMotionGIT.Assembly.Model.Enumerations.EnumLoadMode,System.String@)">
+ <summary>
+ Procesa toda la información de un dll
+ </summary>
+ <param name="assemblyFileName">Nombre del dll</param>
+ <param name="mode">Filtro usado para definri la información a extraer</param>
+</member>
+<member name="M:InMotionGIT.Assembly.Model.assemblyLoader.IsNotPrimitive(System.Type)">
+ <summary>
+ Returns True if a non primitive type is trying to be invoked
+ </summary>
+ <param name="objectType"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Assembly.Model.Factory.Setup(System.String)">
+ <summary>
+ Inicializa y carga el catlogo para dar soporte a todas la funciones de esta clase
+ </summary>
+ <param name="repositoryPath">'Ruta de la carpeta Repository</param>
+</member>
+<member name="M:InMotionGIT.Assembly.Model.Factory.GetAssemblyByFullName(System.String,System.String)">
+ <summary>
+ Devuelve el nombre de las librerias relacionadas con la clase a buscar
+ </summary>
+ <param name="repositoryPath">'Ruta de la carpeta Repository</param>
+ <param name="fullName">Nombre completo de la clase</param>
+ <returns>Librerias relacionadas </returns>
+</member>
+<member name="M:InMotionGIT.Assembly.Model.Factory.GetEntityByFullName(System.String,System.String)">
+ <summary>
+ Devuelve la información relacionadas con la clase a buscar
+ </summary>
+ <param name="repositoryPath">'Ruta de la carpeta Repository</param>
+ <param name="fullName">Nombre completo de la clase</param>
+ <returns>Información de la clase</returns>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.Assembly.Model.Data.EntityHierarchy">
+ <summary>
+ Class Summary
+ </summary>
+</member>
+<member name="P:InMotionGIT.Assembly.Model.Data.EntityHierarchy.assemblydependency">
+ <summary>
+ Nombre y ruta del assembly , asi como de sus depedencias
+ </summary>
+</member>
+<member name="P:InMotionGIT.Assembly.Model.Data.EntityHierarchy.namespaceIdentify">
+ <summary>
+ Namespace de acceso a la entidad
+ </summary>
+</member>
+<member name="P:InMotionGIT.Assembly.Model.Data.EntityHierarchy.name">
+ <summary>
+ Nombre de la entidad
+ </summary>
+</member>
+<member name="P:InMotionGIT.Assembly.Model.Data.EntityHierarchy.basetypefullname">
+ <summary>
+ Tipo de la entidad
+ </summary>
+</member>
+<member name="P:InMotionGIT.Assembly.Model.Data.EntityHierarchy.summary">
+ <summary>
+ Descripción de la entidad
+ </summary>
+</member>
+<member name="P:InMotionGIT.Assembly.Model.Data.EntityHierarchy.iscollection">
+ <summary>
+ Indica si la entidad es una colección
+ </summary>
+</member>
+<member name="P:InMotionGIT.Assembly.Model.Data.EntityHierarchy.commonlyused">
+ <summary>
+ Indica si la entidad es de uso comun
+ </summary>
+</member>
+<member name="P:InMotionGIT.Assembly.Model.Data.EntityHierarchy.ItemTypeFullName">
+ <summary>
+ Tipo de las instancia en que se basa la colección
+ </summary>
+</member>
+<member name="P:InMotionGIT.Assembly.Model.Data.EntityHierarchy.isenum">
+ <summary>
+ Indica si se trata de una lista enumerada
+ </summary>
+</member>
+<member name="T:InMotionGIT.Assembly.Model.Data.ElementCollection">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="T:InMotionGIT.Assembly.Model.Data.Entity">
+ <summary>
+ Class Summary
+ </summary>
+</member>
+<member name="P:InMotionGIT.Assembly.Model.Data.Entity.classid">
+ <summary>
+ Identificacion unica para las clase
+ </summary>
+</member>
+<member name="P:InMotionGIT.Assembly.Model.Data.Entity.assemblydependency">
+ <summary>
+ Nombre y ruta del assembly , asi como de sus depedencias
+ </summary>
+</member>
+<member name="P:InMotionGIT.Assembly.Model.Data.Entity.namespaceIdentify">
+ <summary>
+ Namespace de acceso a la entidad
+ </summary>
+</member>
+<member name="P:InMotionGIT.Assembly.Model.Data.Entity.name">
+ <summary>
+ Nombre de la entidad
+ </summary>
+</member>
+<member name="P:InMotionGIT.Assembly.Model.Data.Entity.Alias">
+ <summary>
+ Alias de la entidad
+ </summary>
+</member>
+<member name="P:InMotionGIT.Assembly.Model.Data.Entity.basetypefullname">
+ <summary>
+ Tipo de la entidad
+ </summary>
+</member>
+<member name="P:InMotionGIT.Assembly.Model.Data.Entity.summary">
+ <summary>
+ Descripción de la entidad
+ </summary>
+</member>
+<member name="P:InMotionGIT.Assembly.Model.Data.Entity.iscollection">
+ <summary>
+ Indica si la entidad es una colección
+ </summary>
+</member>
+<member name="P:InMotionGIT.Assembly.Model.Data.Entity.exclude">
+ <summary>
+ Indica si la entidad debe ser excluida del catalogo
+ </summary>
+</member>
+<member name="P:InMotionGIT.Assembly.Model.Data.Entity.ItemTypeFullName">
+ <summary>
+ Tipo de las instancia en que se basa la colección
+ </summary>
+</member>
+<member name="P:InMotionGIT.Assembly.Model.Data.Entity.isabstract">
+ <summary>
+ Indica si se trata de una lista enumerada
+ </summary>
+</member>
+<member name="P:InMotionGIT.Assembly.Model.Data.Entity.isenum">
+ <summary>
+ Indica si se trata de una lista enumerada
+ </summary>
+</member>
+<member name="T:InMotionGIT.Assembly.Model.Data.Element">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="P:InMotionGIT.Assembly.Model.Data.Element.memberid">
+ <summary>
+ Identificacion unica para las miembros
+ </summary>
+</member>
+<member name="P:InMotionGIT.Assembly.Model.Data.Element.ItemTypeFullName">
+ <summary>
+ Tipo de las instancia en que se basa la colección
+ </summary>
+</member>
+<member name="T:InMotionGIT.Assembly.Model.Data.EntityCollection">
+ <summary>
+ 
+ </summary>
+</member>
+</members>
+</doc>

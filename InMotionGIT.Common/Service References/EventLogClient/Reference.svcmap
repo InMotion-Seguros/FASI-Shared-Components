@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3ba560f1-37d6-4d6c-99a5-8b402707b1d6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://181.193.37.29:8082/EventLogManagerService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="EventLogManagerService3.xsd" MetadataType="Schema" ID="27138a01-3f95-427b-b114-603d0f0a82ea" SourceId="1" SourceUrl="http://181.193.37.29:8082/EventLogManagerService.svc?xsd=xsd1" />
+    <MetadataFile FileName="EventLogManagerService1.disco" MetadataType="Disco" ID="a1e55fa0-122a-4b3e-a3cd-481d3f9c188b" SourceId="1" SourceUrl="http://181.193.37.29:8082/EventLogManagerService.svc?disco" />
+    <MetadataFile FileName="EventLogManagerService31.xsd" MetadataType="Schema" ID="1d9362d9-d9b4-4efd-8c3a-4f046c9ab3a0" SourceId="1" SourceUrl="http://181.193.37.29:8082/EventLogManagerService.svc?xsd=xsd0" />
+    <MetadataFile FileName="EventLogManagerService32.xsd" MetadataType="Schema" ID="75dd9e55-e429-4bcd-abfe-8caa149bac3f" SourceId="1" SourceUrl="http://181.193.37.29:8082/EventLogManagerService.svc?xsd=xsd2" />
+    <MetadataFile FileName="Manager1.wsdl" MetadataType="Wsdl" ID="7d54a752-1fda-46fc-809f-8070b57f8cd5" SourceId="1" SourceUrl="http://181.193.37.29:8082/EventLogManagerService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

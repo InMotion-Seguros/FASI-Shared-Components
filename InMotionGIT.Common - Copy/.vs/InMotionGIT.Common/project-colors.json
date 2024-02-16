@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "7e7360b0-ea6a-4b93-852e-6f0ec759c02b": {
+      "ProjectGuid": "7e7360b0-ea6a-4b93-852e-6f0ec759c02b",
+      "DisplayName": "InMotionGIT.Common",
+      "ColorIndex": 0
+    },
+    "7ef09e0d-0f3b-4046-8952-f61ac5a1bea1": {
+      "ProjectGuid": "7ef09e0d-0f3b-4046-8952-f61ac5a1bea1",
+      "DisplayName": "InMotionGIT.Privileged.Access.Security",
+      "ColorIndex": 1
+    },
+    "342f4974-e64a-42d9-8c48-25322cbd9d92": {
+      "ProjectGuid": "342f4974-e64a-42d9-8c48-25322cbd9d92",
+      "DisplayName": "Console",
+      "ColorIndex": 2
+    },
+    "6ef1e94f-7371-45a8-a6cc-8e0e28ab260f": {
+      "ProjectGuid": "6ef1e94f-7371-45a8-a6cc-8e0e28ab260f",
+      "DisplayName": "InMotionGIT.Common.Proxy",
+      "ColorIndex": 3
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 4
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Elastic.Apm.EntityFramework6</name>
+    </assembly>
+    <members>
+        <member name="T:Elastic.Apm.EntityFramework6.Ef6Interceptor">
+            <summary>
+            An interceptor that automatically creates spans for DB operations executed by Entity Framework 6 (EF6) on behalf of the
+            application.
+            See
+            <see href="https://www.elastic.co/guide/en/apm/agent/dotnet/current/setup.html#entity-framework-6">
+            .NET Agent documentation
+            on how to set up auto instrumentation for Entity Framework 6
+            </see>
+            </summary>
+        </member>
+        <member name="M:Elastic.Apm.EntityFramework6.Ef6Interceptor.CreateImplIfReadyAndNoConflict">
+            <summary>
+            DB spans can be created only when there's a current transaction
+            which in turn means agent singleton instance should already be created.
+            Also checks for competing instrumentation. If SqlClient already instrumented, it'll return null, so the interceptor
+            won't create
+            duplicate spans
+            </summary>
+        </member>
+    </members>
+</doc>

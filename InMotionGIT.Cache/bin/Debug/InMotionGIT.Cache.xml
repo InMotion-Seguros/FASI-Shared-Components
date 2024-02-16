@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InMotionGIT.Cache</name>
+    </assembly>
+    <members>
+        <member name="T:InMotionGIT.Cache.CachingManager">
+            <summary>
+            Class manager of caching in difrente providers
+            </summary>
+        </member>
+        <member name="M:InMotionGIT.Cache.CachingManager.Exist(System.String)">
+            <summary>
+            Determina si una key existe en el _cache
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:InMotionGIT.Cache.CachingManager.NotExist(System.String)">
+            <summary>
+            Determina si una key no existe en el _cache
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:InMotionGIT.Cache.CachingManager.GetItem``1(System.String)">
+            <summary>
+            Retorna el objeto asociado a la key.
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:InMotionGIT.Cache.CachingManager.SetItem(System.String,System.Object,System.DateTimeOffset)">
+             <summary>
+            
+             </summary>
+             <param name="key"></param>
+             <param name="item"></param>
+             <param name="expiration"></param>
+             <example>Helpers.Caching.SetItem(token, object, DateTimeOffset.Now.AddMinutes(2))</example>
+        </member>
+        <member name="M:InMotionGIT.Cache.CachingManager.Remove(System.String)">
+            <summary>
+            Elimina el objeto asociado a la key.
+            </summary>
+            <param name="key"></param>
+        </member>
+    </members>
+</doc>
