@@ -1,0 +1,61 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32929.386
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InMotionGIT.FASI.Trace.Elasticsearch", "InMotionGIT.FASI.Trace.Elasticsearch\InMotionGIT.FASI.Trace.Elasticsearch.csproj", "{649C29CD-DF2E-4970-B166-C7D310AF8F12}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InMotionGIT.FASI.Trace.File", "InMotionGIT.FASI.Trace.File\InMotionGIT.FASI.Trace.File.csproj", "{78E4B413-D025-4381-8FE4-930B3873DE24}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InMotionGIT.FASI.Trace.Logic", "InMotionGIT.FASI.Trace.Logic\InMotionGIT.FASI.Trace.Logic.csproj", "{94290457-FFED-46C9-B4B3-C1653036DC0A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NuGetDependency", "NuGetDependency\NuGetDependency.csproj", "{07986925-4AAE-4F5E-B09A-5470142D93EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{649C29CD-DF2E-4970-B166-C7D310AF8F12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{649C29CD-DF2E-4970-B166-C7D310AF8F12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{649C29CD-DF2E-4970-B166-C7D310AF8F12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{649C29CD-DF2E-4970-B166-C7D310AF8F12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78E4B413-D025-4381-8FE4-930B3873DE24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78E4B413-D025-4381-8FE4-930B3873DE24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78E4B413-D025-4381-8FE4-930B3873DE24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78E4B413-D025-4381-8FE4-930B3873DE24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94290457-FFED-46C9-B4B3-C1653036DC0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94290457-FFED-46C9-B4B3-C1653036DC0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94290457-FFED-46C9-B4B3-C1653036DC0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94290457-FFED-46C9-B4B3-C1653036DC0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07986925-4AAE-4F5E-B09A-5470142D93EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07986925-4AAE-4F5E-B09A-5470142D93EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07986925-4AAE-4F5E-B09A-5470142D93EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07986925-4AAE-4F5E-B09A-5470142D93EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {43A73158-66F3-4A0F-BD0A-B5A823C722A0}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://devops.grupoinmotion.com/inmotiongit
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = NuGetDependency\\NuGetDependency.csproj
+		SccProjectName1 = NuGetDependency
+		SccLocalPath1 = NuGetDependency
+		SccProjectUniqueName2 = InMotionGIT.FASI.Trace.Logic\\InMotionGIT.FASI.Trace.Logic.csproj
+		SccProjectName2 = InMotionGIT.FASI.Trace.Logic
+		SccLocalPath2 = InMotionGIT.FASI.Trace.Logic
+		SccProjectUniqueName3 = InMotionGIT.FASI.Trace.Elasticsearch\\InMotionGIT.FASI.Trace.Elasticsearch.csproj
+		SccProjectName3 = InMotionGIT.FASI.Trace.Elasticsearch
+		SccLocalPath3 = InMotionGIT.FASI.Trace.Elasticsearch
+		SccProjectUniqueName4 = InMotionGIT.FASI.Trace.File\\InMotionGIT.FASI.Trace.File.csproj
+		SccProjectName4 = InMotionGIT.FASI.Trace.File
+		SccLocalPath4 = InMotionGIT.FASI.Trace.File
+	EndGlobalSection
+EndGlobal

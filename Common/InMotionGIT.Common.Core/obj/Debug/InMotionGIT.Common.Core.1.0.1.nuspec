@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>InMotionGIT.Common.Core</id>
+    <version>1.0.1</version>
+    <title>InMotionGIT.Common.Core</title>
+    <authors>InMotionGIT.Common.Core</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="37cb7d641277ee8d928a3adff02cac6b9e4119ff" />
+    <dependencies>
+      <group targetFramework="net8.0">
+        <dependency id="InMotionGIT.Common.Domain" version="1.0.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.VisualBasic" version="10.3.0" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="13.0.3" exclude="Build,Analyzers" />
+        <dependency id="System.ServiceModel.Primitives" version="8.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Projects\External\FASI-Shared-Components\Common\InMotionGIT.Common.Core\bin\Debug\net8.0\InMotionGIT.Common.Core.dll" target="lib\net8.0\InMotionGIT.Common.Core.dll" />
+  </files>
+</package>

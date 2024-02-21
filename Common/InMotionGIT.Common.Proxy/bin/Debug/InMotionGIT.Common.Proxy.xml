@@ -1,0 +1,630 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Common.Proxy
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.Common.Proxy.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Proxy.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Proxy.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Proxy.My.Resources.Resources.es">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Proxy.My.Resources.Resources.FirstTab">
+<summary>
+  Looks up a localized string similar to en:Home;es:Inicio;pt:iniciação.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Proxy.My.Resources.Resources.netherlands">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Proxy.My.Resources.Resources.NewTab">
+<summary>
+  Looks up a localized string similar to en:New Tab;es:Nuevo Tab;pt:Nova Tab.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Proxy.My.Resources.Resources.nl">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Proxy.My.Resources.Resources.portugal">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Proxy.My.Resources.Resources.pt">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Proxy.My.Resources.Resources.SecondTab">
+<summary>
+  Looks up a localized string similar to en:New Page;es:Nueva página;pt:Nova página.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Proxy.My.Resources.Resources.spain">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Proxy.My.Resources.Resources.unitedStates">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:InMotionGIT.Common.Proxy.My.Resources.Resources.us">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="T:InMotionGIT.Common.Proxy.DataManagerFactory">
+ <summary>
+ DataManagerFactory
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Proxy.DataManagerFactory.Statement">
+ <summary>
+ Instrucción SQL a ser ejecutada.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Proxy.DataManagerFactory.CompanyId">
+ <summary>
+ Identificación de la compañía actual.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.Proxy.DataManagerFactory.Id">
+ <summary>
+ Identificador de secuencia para id correlations
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.#ctor">
+ <summary>
+ Instancia la clase de acceso a datos
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.#ctor(System.String)">
+ <summary>
+ Instancia la clase de acceso a datos estableciendo la cadena de conexión.
+ </summary>
+ <param name="ConnectionStringName">Nombre de la cadena de conexión.</param>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.#ctor(System.String,System.Int32)">
+ <summary>
+ Instancia la clase de acceso a datos estableciendo la cadena de conexión y la identificación de la compañía actual.
+ </summary>
+ <param name="ConnectionStringName">Nombre de la cadena de conexión.</param>
+ <param name="companyId">Identificación de la compañía actual.</param>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.#ctor(System.String,System.String)">
+ <summary>
+ Instancia la clase de acceso a datos estableciendo la instrucción SQL a ser ejecutada, así como la cadena de conexión.
+ </summary>
+ <param name="statement">Instrucción SQL a ser ejecutada.</param>
+ <param name="ConnectionStringName">Nombre de la cadena de conexión.</param>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.#ctor(System.String,System.String,System.Int32)">
+ <summary>
+ Instancia la clase de acceso a datos estableciendo la instrucción SQL a ser ejecutada, el nombre de la tabla principal así como la identificación de la compañía actual.
+ </summary>
+ <param name="statement">Instrucción SQL a ser ejecutada.</param>
+ <param name="tableName">Nombre de la tabla principal usada en la instrucción SQL.</param>
+ <param name="companyId">Identificación de la compañía actual.</param>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.#ctor(System.String,System.String,System.String)">
+ <summary>
+ Instancia la clase de acceso a datos estableciendo la instrucción SQL a ser ejecutada, el nombre de la tabla principal así como la cadena de conexión.
+ </summary>
+ <param name="statement">Instrucción SQL a ser ejecutada.</param>
+ <param name="tableName">Nombre de la tabla principal usada en la instrucción SQL.</param>
+ <param name="ConnectionStringName">Nombre de la cadena de conexión.</param>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.#ctor(System.String,System.String,System.String,System.Int32)">
+ <summary>
+ Instancia la clase de acceso a datos estableciendo la instrucción SQL a ser ejecutada, el nombre de la tabla principal, la cadena de conexión y la identificación de la compañía actual.
+ </summary>
+ <param name="statement">Instrucción SQL a ser ejecutada.</param>
+ <param name="tableName">Nombre de la tabla principal usada en la instrucción SQL.</param>
+ <param name="ConnectionStringName">Nombre de la cadena de conexión.</param>
+ <param name="companyId">Identificación de la compañía actual.</param>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.#ctor(System.Boolean,System.String,System.String)">
+ <summary>
+ Instancia la clase de acceso a datos estableciendo el procedimiento almacenado a ser ejecutado y la cadena de conexión.
+ </summary>
+ <param name="procedure">Indicador que se desea ejecutar un procedimiento almacenado.</param>
+ <param name="procedureName">Nombre del procedimiento almacenado a ser ejecutada.</param>
+ <param name="ConnectionStringName">Nombre de la cadena de conexión.</param>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.#ctor(System.Boolean,System.String,System.String,System.Int32)">
+ <summary>
+ Instancia la clase de acceso a datos estableciendo el procedimiento almacenado a ser ejecutado, la cadena de conexión y la identificación de la compañía actual.
+ </summary>
+ <param name="procedure">Indicador que se desea ejecutar un procedimiento almacenado.</param>
+ <param name="procedureName">Nombre del procedimiento almacenado a ser ejecutada.</param>
+ <param name="ConnectionStringName">Nombre de la cadena de conexión.</param>
+ <param name="companyId">Identificación de la compañía actual.</param>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.QueryExecuteScalarToInteger">
+ <summary>
+ Método que permite devolver un valor del tipo entero como único resultado de una instrucción 'select'.
+ </summary>
+ <returns>Valor del tipo entero</returns>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.QueryExecuteScalarToDecimal">
+ <summary>
+ Método que permite devolver un valor del tipo decimal como único resultado de una instrucción 'select'.
+ </summary>
+ <returns>Valor del tipo decimal</returns>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.QueryExecuteScalarToString">
+ <summary>
+ Método que permite devolver un valor del tipo texto como único resultado de una instrucción 'select'.
+ </summary>
+ <returns>Valor del tipo texto</returns>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.QueryExecuteScalarToDate">
+ <summary>
+ Método que permite devolver un valor del tipo fecha como único resultado de una instrucción 'select'.
+ </summary>
+ <returns>Valor del tipo fecha</returns>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.QueryExecuteScalar``1">
+ <summary>
+ Método que permite devolver un valor basado en el tipo genérico como único resultado de una instrucción 'select'.
+ </summary>
+ <returns>Valor basado en el tipo genérico</returns>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.CommandExecute">
+ <summary>
+ Ejecuta una instrucción SQL sin esperar un "Record-set" como resultado.
+ </summary>
+ <returns>Cantidad de filas afectadas.</returns>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.CommandExecute(System.String)">
+ <summary>
+ Ejecuta una instrucción SQL sin esperar un "Record-set" como resultado.
+ </summary>
+ <param name="operation">Tipo de operación a realizar "Update", "Insert" o "Delete", este valor usado para referencias.</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.QueryExecuteToTable">
+ <summary>
+ Ejecuta una instrucción SQL esperando un "Record-set" como resultado.
+ </summary>
+ <returns>"Record-set" en forma de "DataTable".</returns>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.QueryExecuteToTable(System.Boolean)">
+ <summary>
+ Ejecuta una instrucción SQL esperando un "Record-set" como resultado.
+ </summary>
+<param name="resultEmpty">Indica que para el caso donde no exista ningún "Record-set" de igual forma se devuelva una instancia vacía de una "DataTable".</param>
+ <returns>"Record-set" en forma de "DataTable".</returns>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.DataStructure(System.String)">
+ <summary>
+ Ejecuta una instrucción SQL del tipo definición de estructura.
+ </summary>
+ <param name="statement">Instrucción SQL del tipo definición de estructura.</param>
+ <returns>Resultado de la ejecución.</returns>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.ResolveStatement(System.String)">
+ <summary>
+ Retorna la instrucción SQL con el reemplazo de valores para cada parámetro.
+ </summary>
+ <param name="operation">Tipo de operación a realizar "Update", "Insert" o "Delete", este valor usado para referencias.</param>
+ <returns>Instrucción SQL.</returns>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.ProcedureExecuteToTable">
+ <summary>
+ Ejecuta un procedimiento almacenado esperando un "Record-set" como resultado.
+ </summary>
+ <returns>"Record-set" en forma de "DataTable".</returns>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.ProcedureExecuteToTable(System.Boolean)">
+ <summary>
+ Ejecuta un procedimiento almacenado esperando un "Record-set" como resultado.
+ </summary>
+<param name="resultEmpty">Indica que para el caso donde no exista ningún "Record-set" de igual forma se devuelva una instancia vacía de una "DataTable".</param>
+ <returns>"Record-set" en forma de "DataTable".</returns>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.ProcedureExecuteResultSchema">
+ <summary>
+ Ejecuta un procedimiento almacenado para obtener la estructura de un "Record-set" como resultado. Operación especial de uso interno.
+ </summary>
+ <returns>"Record-set" en forma de "DataTable".</returns>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.ProcedureExecute">
+ <summary>
+ Ejecuta un procedimiento almacenado sin esperar un "Record-set" como resultado.
+ </summary>
+ <returns>Cantidad de filas afectadas.</returns>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.ConnectionStringIsOracle(System.String)">
+ <summary>
+ Indica si la cadena de conexión usa un proveedor del tipo "Oracle".
+ </summary>
+ <param name="ConnectionStringName">Nombre de la cadena de conexión.</param>
+ <returns>Verdadero en caso de ser tipo "Oracle", falso en caso contrario.</returns>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.Mapper``1(System.Data.DataTable)">
+ <summary>
+ Permite hacer el mapeo de forma automática entre un datatable y una clase, partiendo de que los nombres de las columnas son los mismo que la propiedades de la clase.
+ </summary>
+ <typeparam name="T">Tipo de clase a ser usando en el mapeo</typeparam>
+ <param name="dr">Datatable usando como fuentes de datos</param>
+ <returns>Instancia de la clase T con la información de la primera fila del datatable</returns>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.Mapper``2(System.Data.DataTable)">
+ <summary>
+ Permite hacer el mapeo de forma automática entre un datatable y una collection, partiendo de que los nombres de las columnas son los mismo que la propiedades de la clase.
+ </summary>
+ <typeparam name="T">Tipo de clase a ser usando en el mapeo</typeparam>
+ <typeparam name="Y">Tipo de la colección usada para almacenar la instancia de T</typeparam>
+ <param name="dr">Datatable usando como fuentes de datos</param>
+ <returns>Instancia de la colección Y con instancias de la clase T que contiene la información de todas las filas del datatable</returns>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.Mapper``2(System.Data.DataTable,System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ Permite hacer el mapeo de forma automática entre un data-table y una collection, partiendo de que los nombres de las columnas son los mismo que la propiedades de la clase.
+ </summary>
+ <typeparam name="T">Tipo de clase a ser usando en el mapeo</typeparam>
+ <typeparam name="Y">Tipo de la colección usada para almacenar la instancia de T</typeparam>
+ <param name="ExplicitPropertyMapping">Se definen qué propiedades deben apuntar de manera explícita a la columna,la relación es columna con propiedad</param>
+ <param name="dr">Data-table usando como fuentes de datos</param>
+ <returns>Instancia de la colección Y con instancias de la clase T que contiene la información de todas las filas del datatable</returns>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.Mapper``2(System.Data.DataTable,System.Collections.Generic.Dictionary{System.String,System.Type})">
+ <summary>
+ Permite hacer el mapeo de forma automática entre un data-table y una collection, partiendo de que los nombres de las columnas son los mismo que la propiedades de la clase.
+ </summary>
+ <typeparam name="T">Tipo de clase a ser usando en el mapeo</typeparam>
+ <typeparam name="Y">Tipo de la colección usada para almacenar la instancia de T</typeparam>
+ <param name="ExplicitPropertyType">Se definen qué propiedades deben apuntar de manera explícita a la columna,la relación es columna con propiedad</param>
+ <param name="dr">Data-table usando como fuentes de datos</param>
+ <returns>Instancia de la colección Y con instancias de la clase T que contiene la información de todas las filas del datatable</returns>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.GetDataBaseProvider(System.String)">
+ <summary>
+ Retorna el nombre del proveedor de ADO.Net usado por un cadena de conexión.
+ </summary>
+ <param name="connectionStringName">Nombre de la cadena de conexión</param>
+ <returns>Nombre del proveedor </returns>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.CompanyIdSelect">
+ <summary>
+ Retorna la identificación de la compañía actual en caso de que el sistema este configurado multi-compañía.
+ </summary>
+ <returns>Identificación de la compañía.</returns>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.ObjectExist(System.String,System.String,System.String,System.String)">
+ <summary>
+ Permite verificar la existencia de un objeto a nivel de la base de datos.
+ </summary>
+ <param name="owner">Propietario del objecto.</param>
+ <param name="type">Tipo de objeto.</param>
+ <param name="name">Nombre de objeto.</param>
+ <param name="ConnectionStringName">Nombre de la cadena de conexión.</param>
+ <returns>Verdadero en caso de existir el objeto, falso en caso contrario.</returns>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.Dispose(System.Boolean)">
+ <summary>
+ Implantación de la interface “IDisposable”.
+ </summary>
+ <param name="disposing">Usado para detectar llamada redundantes.</param>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.Dispose">
+ <summary>
+ Implantación de la interface “IDisposable”.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.QueryCacheAdd(InMotionGIT.Common.Services.Contracts.DataCommand,System.Boolean,System.Data.DataTable)">
+ <summary>
+ Add the hash of the query and the result thereof
+ </summary>
+ <param name="command">Command executed</param>
+ <param name="data">Result of the query executed</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.QueryCacheListAdd(InMotionGIT.Common.Services.Contracts.DataCommand,System.Boolean,System.Collections.Generic.List{InMotionGIT.Common.DataType.LookUpValue})">
+ <summary>
+ Add the hash of the query and the result thereof
+ </summary>
+ <param name="command">Command executed</param>
+ <param name="data">Result of the query executed</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.QueryCacheAddString(InMotionGIT.Common.Services.Contracts.DataCommand,System.Boolean,System.String)">
+ <summary>
+ Add the hash of the query and the result thereof
+ </summary>
+ <param name="command">Command executed</param>
+ <param name="data">Result of the query executed</param>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.QueryCacheAddOnDemand(InMotionGIT.Common.Services.Contracts.DataCommand,System.Boolean,System.Data.DataTable)">
+ <summary>
+ Add the hash of the query and the result thereof
+ </summary>
+ <param name="command">Command executed</param>
+ <param name="data">Result of the query executed</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.IsExistQueryCache(InMotionGIT.Common.Services.Contracts.DataCommand,System.Boolean)">
+ <summary>
+ If there is a query that is executed in cache
+ </summary>
+ <param name="command">Executing query</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.IsExistLookUpCache(InMotionGIT.Common.Services.Contracts.DataCommand,System.Boolean)">
+ <summary>
+ If there is a lookup that is executed in cache
+ </summary>
+ <param name="command">Executing query</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.IsExistQueryCacheList(InMotionGIT.Common.Services.Contracts.DataCommand,System.Boolean)">
+ <summary>
+ If there is a query that is executed in cache
+ </summary>
+ <param name="command">Executing query</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.IsExistQueryCacheString(InMotionGIT.Common.Services.Contracts.DataCommand,System.Boolean)">
+ <summary>
+ If there is a query that is executed in cache
+ </summary>
+ <param name="command">Executing query</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.IsExistQueryCacheOnDemand(InMotionGIT.Common.Services.Contracts.DataCommand)">
+ <summary>
+ IsExistQueryCacheOnDemand
+ </summary>
+ <param name="command"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.GetMd5Hash(InMotionGIT.Common.Services.Contracts.DataCommand)">
+ <summary>
+ MD5 generator to run the query
+ </summary>
+ <param name="command">Query</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.GetMd5Hash(System.String)">
+ <summary>
+ Sobre carga de contructor para string
+ </summary>
+ <param name="command"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.DataTableImport(System.Data.DataTable,System.String,System.Collections.Generic.List{InMotionGIT.Common.Services.Contracts.DataParameter})">
+ <summary>
+ Importart datos de otro datatable
+ </summary>
+ <param name="Data"></param>
+ <param name="pFilter"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.AddCommand(System.String,System.String,System.String)">
+ <summary>
+ AddCommand
+ </summary>
+ <param name="statement"></param>
+ <param name="tableName"></param>
+ <param name="operation"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.AddCommand(System.String,System.String,System.String,System.String)">
+ <summary>
+ AddCommand
+ </summary>
+ <param name="statement"></param>
+ <param name="tableName"></param>
+ <param name="operation"></param>
+ <param name="connectionStringsName">Nombre de la connexion a realizar el commando</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.PackageExecuteScalar">
+ <summary>
+
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.DataServiceInstance">
+ <summary>
+ Retorna una instancia del proxy del servicio de datos.
+ </summary>
+ <returns>Instancia del proxy del servicio de datos.</returns>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.InstanceDataManagerClient(System.String)">
+ <summary>
+ Obtiene una instancia del cliente 'DataManagerClient', condicionado al url (Https o Https)
+ </summary>
+ <param name="url">URL al que se debe apuntar la instancia de 'DataManagerClient'</param>
+ <returns>Retornar una Instancia de 'DataManagerClient', configurada al url que se solicitó </returns>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.SetConfiguration(InMotionGIT.Common.Services.Contracts.DataCommand)">
+ <summary>
+ Establece los parámetros de configuración asociados al limite de registros a ser retornados.
+ </summary>
+ <param name="command">Instancia de comando de datos.</param>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.QueryExecuteToLookup">
+ <summary>
+ Ejecuta una instrucción 'select' usada para una lista de valores. la instrucción select debe retornar solo dos columnas la que representa el código y la que representa la descripción.
+ </summary>
+ <returns>Lista de valores del tipo código y descripción.</returns>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.QueryExecuteToLookup(System.String)">
+ <summary>
+ Ejecuta una instrucción 'select' usada para una lista de valores. la instrucción select debe retornar solo dos columnas la que representa el código y la que representa la descripción.
+ </summary>
+<param name="emptyOption">Si está lleno indica que se debe agregar un elemento a la lista normalmente usando para indicar un valor vacío.</param>
+ <returns>Lista de valores del tipo código y descripción.</returns>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.ConnectionStringAll(System.String)">
+ <summary>
+ Get All connections validating for code.
+ </summary>
+ <param name="CodeValidator"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.ConnectionStringGet(System.String)">
+ <summary>
+ Get one connectionstring specific
+ </summary>
+ <param name="ConnectionStrinName"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.ConnectionStringUserAndPassword(System.String)">
+ <summary>
+ Get Credential for ConnectionString in specific
+ </summary>
+ <param name="ConecctionStringName"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.QueryExecuteToTableJSON">
+ <summary>
+ Overrible of method QueryExecuteToTableJSON
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.DataManagerFactory.QueryExecuteToTableJSON(System.Boolean)">
+ <summary>
+
+ </summary>
+ <param name="resultEmpty"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.Helpers.Language.GetAllTraductions(System.String)">
+ <summary>
+ Extrae todas los valores de determinado key en todos los recursos./Extracts all key values determined in all resources.
+ </summary>
+ <param name="keyName"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.Helpers.Language.GetAllTraductionsByCodeLanguageId(System.String)">
+ <summary>
+ Extrae todas los valores de determinado key en todos los recursos pero por código de traducción ./Extracts all key values determined in all resources by code lenguaje
+ </summary>
+ <param name="keyName"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.Helpers.Language.GetLanguageNameByLanguageId(System.Int32)">
+ <summary>
+ obtiene la traducción del valor del lenguaje/ obtains the value of language translation
+ </summary>
+ <param name="languageId"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.Helpers.Language.LookUpLanguageByCurrentInfo">
+ <summary>
+ Obtiene los posibles valores con el código de lenguaje del thread.currentinfo.name actual o sobrecargado con un id definido por el usuario/Possible values obtained with the current language code or overloaded thread.currentinfo.name a user defined id
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.Helpers.Language.LookUpLanguageByCurrentInfo(System.Int32)">
+ <summary>
+ Obtiene los posibles valores con el código de lenguaje del thread.currentinfo.name actual o sobrecargado con un id definido por el usuario/Possible values obtained with the current language code or overloaded thread.currentinfo.name a user defined id
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.Helpers.Language.LookUpLanguageByCurrentInfoExtend">
+ <summary>
+ Obtiene los posibles valores con el código de language del thread.currentinfo.name actual o sobrecargado con un id definido por el usuario/Possible values obtained with the current language code or overloaded thread.currentinfo.name a user defined id
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.Helpers.Language.GetLanguageIdCurrentContext">
+ <summary>
+ Obtiene el id del lenguage con el actual thread.curren.curreninfo.name/Gets the id of the current language thread.curren.curreninfo.name
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.Helpers.Language.GetLanguageIdCurrentContext(System.String)">
+ <summary>
+ Obtiene el id del lenguaje con el actual currentinfo.nama defindo por el usuarioGets the id of language to the current user currentinfo.nama defindo
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.Helpers.Language.GetLanguageNameByCultureInfo(System.String)">
+ <summary>
+ Retorna un cultureInfo.Name válido por cultureInfo.Name/Returns a valid cultureInfo.Name by cultureInfo.Name
+ </summary>
+ <param name="cultureName"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.Helpers.Language.GetAllCultureInfoName">
+ <summary>
+ Obtiene un loopUp de todos los cultureinfo.name disponible en base de datos/Gets a loopUp of all available cultureinfo.name database
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.Helpers.Language.ExistCode(System.Int32)">
+ <summary>
+ Verifica la existencia de un id de lenguaje con respecto a los existentes en base de datos/Checks for an id of language with respect to the existing database
+ </summary>
+ <param name="LanguageCode"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Proxy.Helpers.Language.GetCultureInfoByCode(System.Int32)">
+ <summary>
+ Se obtiene el cultureinfo.name por medio de código /The cultureinfo.name is obtained through code
+ </summary>
+ <param name="LanguageCode"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

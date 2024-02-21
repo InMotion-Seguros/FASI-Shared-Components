@@ -1,0 +1,59 @@
+***************Information****************
+Computer name:DESKTOP-O71M5CI
+Usernamme:jeffr
+UserDomain:DESKTOP-O71M5CI
+Date:2023.03.23.12:49:39.982
+IP:152.231.192.163
+******************************************
+Helpers\Language.vb
+My Project\DataSources\InMotionGIT.Common.DataType.LookUpPackage.datasource
+My Project\DataSources\InMotionGIT.Common.DataType.LookUpValue.datasource
+My Project\DataSources\InMotionGIT.Common.Services.Contracts.ConnectionString.datasource
+My Project\DataSources\InMotionGIT.Common.Services.Contracts.Credential.datasource
+My Project\DataSources\InMotionGIT.Common.Services.Contracts.info.datasource
+My Project\DataSources\InMotionGIT.Common.Services.Contracts.QueryResult.datasource
+My Project\DataSources\InMotionGIT.Common.Services.Contracts.StoredProcedureResult.datasource
+My Project\DataSources\System.Data.DataTable.datasource
+My Project\AssemblyInfo.vb
+My Project\Resources.Designer.vb
+My Project\Resources.resx
+Resources\flags\es.png
+Resources\flags\netherlands.png
+Resources\flags\nl.png
+Resources\flags\portugal.png
+Resources\flags\pt.png
+Resources\flags\spain.png
+Resources\flags\unitedStates.png
+Resources\flags\us.png
+Service References\DataManager\configuration.svcinfo
+Service References\DataManager\configuration91.svcinfo
+Service References\DataManager\DataManager.disco
+Service References\DataManager\DataManager.wsdl
+Service References\DataManager\DataManager.xsd
+Service References\DataManager\DataManager1.disco
+Service References\DataManager\DataManager1.wsdl
+Service References\DataManager\DataManager1.xsd
+Service References\DataManager\DataManager10.xsd
+Service References\DataManager\DataManager11.xsd
+Service References\DataManager\DataManager12.xsd
+Service References\DataManager\DataManager13.xsd
+Service References\DataManager\DataManager14.xsd
+Service References\DataManager\DataManager2.xsd
+Service References\DataManager\DataManager3.xsd
+Service References\DataManager\DataManager4.xsd
+Service References\DataManager\DataManager5.xsd
+Service References\DataManager\DataManager6.xsd
+Service References\DataManager\DataManager7.xsd
+Service References\DataManager\DataManager8.xsd
+Service References\DataManager\DataManager9.xsd
+Service References\DataManager\Reference.svcmap
+Service References\DataManager\Reference.vb
+app.config
+bk.ps1
+DataManagerFactory.vb
+InMotionGIT.Common.Proxy.snk
+InMotionGIT.Common.Proxy.vbproj
+InMotionGIT.Common.Proxy.vbproj.user
+InMotionGIT.Common.Proxy.vbproj.vspscc
+NUGET_ItMustBePackaged.txt
+track.info

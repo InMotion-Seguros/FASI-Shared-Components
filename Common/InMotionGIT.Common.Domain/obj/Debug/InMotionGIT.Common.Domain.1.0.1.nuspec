@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>InMotionGIT.Common.Domain</id>
+    <version>1.0.1</version>
+    <title>InMotionGIT.Common.Domain</title>
+    <authors>Equipo FASI (Costa Rica)</authors>
+    <description>DTOs de  Common</description>
+    <copyright>InMotionGIT.</copyright>
+    <repository type="git" commit="37cb7d641277ee8d928a3adff02cac6b9e4119ff" />
+    <dependencies>
+      <group targetFramework="net8.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Projects\External\FASI-Shared-Components\Common\InMotionGIT.Common.Domain\bin\Debug\net8.0\InMotionGIT.Common.Domain.dll" target="lib\net8.0\InMotionGIT.Common.Domain.dll" />
+  </files>
+</package>

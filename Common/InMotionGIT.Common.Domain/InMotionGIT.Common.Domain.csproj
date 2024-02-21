@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <FileVersion>1.0.1</FileVersion>
+    <Title>InMotionGIT.Common.Domain</Title>
+    <Authors>Equipo FASI (Costa Rica)</Authors>
+    <Company>InMotionGIT Costa Rica</Company>
+    <Description>DTOs de  Common</Description>
+    <Copyright>InMotionGIT.</Copyright>
+    <Version>1.0.1</Version>
+  </PropertyGroup>
+
+</Project>

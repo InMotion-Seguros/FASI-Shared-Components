@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "M8sJ4luuwc88iZNbAisq7t/bMOs8f+ukn+sUX3mBmmpn6e96r+Xc3FrdBzf+z11yg5dDVemx8zkPdXb/3n00xw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jeffr\\source\\repos\\FASI-Shared-Components\\Trace\\InMotionGIT.FASI.Trace.Logic\\InMotionGIT.FASI.Trace.Logic.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jeffr\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\jeffr\\.nuget\\packages\\system.componentmodel.composition\\8.0.0\\system.componentmodel.composition.8.0.0.nupkg.sha512",
+    "C:\\Users\\jeffr\\.nuget\\packages\\system.configuration.configurationmanager\\8.0.0\\system.configuration.configurationmanager.8.0.0.nupkg.sha512",
+    "C:\\Users\\jeffr\\.nuget\\packages\\system.data.datasetextensions\\4.5.0\\system.data.datasetextensions.4.5.0.nupkg.sha512",
+    "C:\\Users\\jeffr\\.nuget\\packages\\system.diagnostics.eventlog\\8.0.0\\system.diagnostics.eventlog.8.0.0.nupkg.sha512",
+    "C:\\Users\\jeffr\\.nuget\\packages\\system.security.cryptography.protecteddata\\8.0.0\\system.security.cryptography.protecteddata.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

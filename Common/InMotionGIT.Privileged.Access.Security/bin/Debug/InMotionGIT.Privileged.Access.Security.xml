@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InMotionGIT.Privileged.Access.Security</name>
+    </assembly>
+    <members>
+        <member name="T:InMotionGIT.Privileged.Access.Security.Manager">
+            <summary>
+            Backups con el dll de codigo fuente del projecto
+            </summary>
+        </member>
+    </members>
+</doc>

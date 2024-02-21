@@ -1,0 +1,614 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InMotionGIT.FASI.Trace.Logic</name>
+    </assembly>
+    <members>
+        <member name="T:InMotionGIT.FASI.Trace.Logic.Connection">
+            <summary>
+            Connection interface.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Trace.Logic.Connection.Controllers">
+            <summary>
+            List of controller.
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Trace.Logic.Connection.Provider">
+            <summary>
+            Define el provider que se va usar en el proceso
+            </summary>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Connection.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="provider">Controller provider type.</param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Connection.Setup(System.String)">
+            <summary>
+            Method that initializes log handling.
+            </summary>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Connection.WarningLog(System.String,System.String)">
+            <summary>
+            Overload method
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Connection.WarningLog(System.String,System.String,System.String)">
+            <summary>
+            Overload of method
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="prefix"></param>
+            <remarks></remarks>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Connection.WarningLog(System.String,System.String,System.String,System.Object)">
+            <summary>
+            Overload of method
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="prefix"></param>
+            <param name="customData"></param>
+            <remarks></remarks>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Connection.WarningLog(System.String,System.String,System.String,System.Object,System.Boolean)">
+            <summary>
+            Warning Log
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="prefix"></param>
+            <param name="customData"></param>
+            <param name="async"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Connection.TraceLog(System.String)">
+            <summary>
+            Writes an entry in the logbook file for trace.
+            </summary>
+            <param name="entry">Information to be recorded.</param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Connection.TraceLog(System.String,System.String)">
+            <summary>
+            Writes an entry in the logbook file for trace.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Connection.TraceLog(System.String,System.String,System.String)">
+            <summary>
+            Overload of method.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="prefix"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Connection.TraceLog(System.String,System.String,System.String,System.Object)">
+            <summary>
+            Overload of method.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="prefix"></param>
+            <param name="customData"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Connection.TraceLog(System.String,System.String,System.String,System.Object,System.Boolean)">
+            <summary>
+            Overload of method.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="prefix"></param>
+            <param name="customData"></param>
+            <param name="async"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Connection.ErrorLogInternal(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Error log internal.
+            </summary>
+            <param name="parameterInternal">Dictionary with internal parameters.</param>
+            <returns>Boolean value.</returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Connection.ErrorLog(System.Exception)">
+            <summary>
+            Writes an entry in the logbook file for errors.
+            </summary>
+            <param name="currentException">Exception that gives rise to record.</param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Connection.ErrorLog(System.String,System.String)">
+            <summary>
+            Writes an entry in the logbook file for errors.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Connection.ErrorLog(System.String,System.String,System.String)">
+            <summary>
+            Writes an entry in the logbook file for errors.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="prefix"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Connection.ErrorLog(System.String,System.String,System.Exception)">
+            <summary>
+            Writes an entry in the logbook file for errors.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="currentException">Exception that gives rise to record.</param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Connection.ErrorLog(System.String,System.String,System.Exception,System.String)">
+            <summary>
+            Writes an entry in the logbook file for errors.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="currentException">Exception that gives rise to record.</param>
+            <param name="prefix"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Connection.ErrorLog(System.String,System.String,System.Exception,System.String,System.Boolean)">
+            <summary>
+            Writes an entry in the logbook file for errors.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="currentException">Exception that gives rise to record.</param>
+            <param name="prefix"></param>
+            <param name="async"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Connection.ErrorLog(System.String,System.String,System.Exception,System.String,System.Boolean,System.String)">
+            <summary>
+            Writes an entry in the logbook file for errors.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="currentException">Exception that gives rise to record.</param>
+            <param name="prefix"></param>
+            <param name="async"></param>
+            <param name="code"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Connection.PerformanceLogBegin(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Start logbook file for trace performance.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="nameMethod">Name of method for registration.</param>
+            <param name="parameters">Parameters for trace performance.</param>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Connection.PerformanceLogFinish(System.String,System.String,System.Diagnostics.Stopwatch)">
+            <summary>
+            Stop logbook file for trace performance.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="nameMethod">Name of method for registration.</param>
+            <param name="control"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Connection.PerformanceLog(System.String,System.String,System.Boolean,System.Collections.Generic.Dictionary{System.String,System.Object},System.Diagnostics.Stopwatch)">
+            <summary>
+            New record in performance log
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="nameMethod">Name of method for registration.</param>
+            <param name="way"></param>
+            <param name="parametersByData"></param>
+            <param name="control"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Connection.PerformanceLogInternal(System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            New record in internal performance log
+            </summary>
+            <param name="parameterInternal">Internal parameter.</param>
+            <param name="parametersByData"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Connection.GetPath">
+            <summary>
+            Get path as files are stored.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:InMotionGIT.FASI.Trace.Logic.Interfaces.IConnection">
+            <summary>
+            Connection interface..
+            </summary>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IConnection.Setup(System.String)">
+            <summary>
+            Method that initializes log handling.
+            </summary>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IConnection.WarningLog(System.String,System.String)">
+            <summary>
+            Overload method
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IConnection.WarningLog(System.String,System.String,System.String)">
+            <summary>
+            Overload of method
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="prefix"></param>
+            <remarks></remarks>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IConnection.WarningLog(System.String,System.String,System.String,System.Object)">
+            <summary>
+            Overload of method
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="prefix"></param>
+            <param name="customData"></param>
+            <remarks></remarks>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IConnection.WarningLog(System.String,System.String,System.String,System.Object,System.Boolean)">
+            <summary>
+            Warning Log
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="prefix"></param>
+            <param name="customData"></param>
+            <param name="async"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IConnection.TraceLog(System.String)">
+            <summary>
+            Writes an entry in the logbook file for trace.
+            </summary>
+            <param name="entry">Information to be recorded.</param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IConnection.TraceLog(System.String,System.String)">
+            <summary>
+            Writes an entry in the logbook file for trace.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IConnection.TraceLog(System.String,System.String,System.String)">
+            <summary>
+            Overload of method.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="prefix"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IConnection.TraceLog(System.String,System.String,System.String,System.Object)">
+            <summary>
+            Overload of method.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="prefix"></param>
+            <param name="customData"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IConnection.TraceLog(System.String,System.String,System.String,System.Object,System.Boolean)">
+            <summary>
+            Overload of method.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="prefix"></param>
+            <param name="customData"></param>
+            <param name="async"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IConnection.ErrorLogInternal(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Error log internal.
+            </summary>
+            <param name="parameterInternal">Dictionary with internal parameters.</param>
+            <returns>Boolean value.</returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IConnection.ErrorLog(System.Exception)">
+            <summary>
+            Writes an entry in the logbook file for errors.
+            </summary>
+            <param name="currentException">Exception that gives rise to record.</param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IConnection.ErrorLog(System.String,System.String)">
+            <summary>
+            Writes an entry in the logbook file for errors.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IConnection.ErrorLog(System.String,System.String,System.String)">
+            <summary>
+            Writes an entry in the logbook file for errors.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="prefix"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IConnection.ErrorLog(System.String,System.String,System.Exception)">
+            <summary>
+            Writes an entry in the logbook file for errors.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="currentException">Exception that gives rise to record.</param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IConnection.ErrorLog(System.String,System.String,System.Exception,System.String)">
+            <summary>
+            Writes an entry in the logbook file for errors.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="currentException">Exception that gives rise to record.</param>
+            <param name="prefix"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IConnection.ErrorLog(System.String,System.String,System.Exception,System.String,System.Boolean)">
+            <summary>
+            Writes an entry in the logbook file for errors.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="currentException">Exception that gives rise to record.</param>
+            <param name="prefix"></param>
+            <param name="async"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IConnection.ErrorLog(System.String,System.String,System.Exception,System.String,System.Boolean,System.String)">
+            <summary>
+            Writes an entry in the logbook file for errors.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="currentException">Exception that gives rise to record.</param>
+            <param name="prefix"></param>
+            <param name="async"></param>
+            <param name="code"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IConnection.PerformanceLogBegin(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Writes an entry in the logbook file for trace performance.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="nameMethod">Name of method for registration.</param>
+            <param name="parameters">Parameters for trace performance.</param>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IConnection.PerformanceLogFinish(System.String,System.String,System.Diagnostics.Stopwatch)">
+            <summary>
+            Stop logbook file for trace performance.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="nameMethod">Name of method for registration.</param>
+            <param name="control"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IConnection.PerformanceLog(System.String,System.String,System.Boolean,System.Collections.Generic.Dictionary{System.String,System.Object},System.Diagnostics.Stopwatch)">
+            <summary>
+            New record in performance log
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="nameMethod">Name of method for registration.</param>
+            <param name="way"></param>
+            <param name="parametersByData"></param>
+            <param name="control"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IConnection.PerformanceLogInternal(System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            New record in internal performance log
+            </summary>
+            <param name="parameterInternal">Internal parameter.</param>
+            <param name="parametersByData"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IConnection.GetPath">
+            <summary>
+            Get path as files are stored.
+            </summary>
+            <param name="provider">Controller provider type.</param>
+            <returns></returns>
+        </member>
+        <member name="T:InMotionGIT.FASI.Trace.Logic.Interfaces.IController">
+            <summary>
+            Controller interface.
+            </summary>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IController.Setup">
+            <summary>
+            Method that initializes log handling.
+            </summary>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IController.WarningLog(System.String,System.String)">
+            <summary>
+            Overload method.
+            </summary>
+            <param name="source"></param>
+            <param name="entry"></param>
+            <remarks></remarks>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IController.WarningLog(System.String,System.String,System.String)">
+            <summary>
+            Overload of method.
+            </summary>
+            <param name="source"></param>
+            <param name="entry"></param>
+            <param name="prefix"></param>
+            <remarks></remarks>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IController.WarningLog(System.String,System.String,System.String,System.Object)">
+            <summary>
+            Overload of method.
+            </summary>
+            <param name="source"></param>
+            <param name="entry"></param>
+            <param name="prefix"></param>
+            <param name="customData"></param>
+            <remarks></remarks>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IController.WarningLog(System.String,System.String,System.String,System.Object,System.Boolean)">
+            <summary>
+            Warning log.
+            </summary>
+            <param name="source"></param>
+            <param name="entry"></param>
+            <param name="prefix"></param>
+            <param name="customData"></param>
+            <param name="async"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IController.TraceLog(System.String)">
+            <summary>
+            Writes an entry in the logbook file for trace.
+            </summary>
+            <param name="entry">Information to be recorded.</param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IController.TraceLog(System.String,System.String)">
+            <summary>
+            Writes an entry in the logbook file for trace.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IController.TraceLog(System.String,System.String,System.String)">
+            <summary>
+            Overload of method.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="prefix"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IController.TraceLog(System.String,System.String,System.String,System.Object)">
+            <summary>
+            Overload of method.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="prefix"></param>
+            <param name="customData"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IController.TraceLog(System.String,System.String,System.String,System.Object,System.Boolean)">
+            <summary>
+            Overload of method.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="prefix"></param>
+            <param name="customData"></param>
+            <param name="async"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IController.ErrorLogInternal(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Error log internal.
+            </summary>
+            <param name="parameterInternal">Dictionary with internal parameters.</param>
+            <returns>Boolean value.</returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IController.ErrorLog(System.Exception)">
+            <summary>
+            Writes an entry in the logbook file for errors.
+            </summary>
+            <param name="currentException">Exception that gives rise to record.</param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IController.ErrorLog(System.String,System.String)">
+            <summary>
+            Writes an entry in the logbook file for errors.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IController.ErrorLog(System.String,System.String,System.String)">
+            <summary>
+            Writes an entry in the logbook file for errors.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="prefix"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IController.ErrorLog(System.String,System.String,System.Exception)">
+            <summary>
+            Writes an entry in the logbook file for errors.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="currentException">Exception that gives rise to record.</param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IController.ErrorLog(System.String,System.String,System.Exception,System.String)">
+            <summary>
+            Writes an entry in the logbook file for errors.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="currentException">Exception that gives rise to record.</param>
+            <param name="prefix"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IController.ErrorLog(System.String,System.String,System.Exception,System.String,System.Boolean)">
+            <summary>
+            Writes an entry in the logbook file for errors.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="currentException">Exception that gives rise to record.</param>
+            <param name="prefix"></param>
+            <param name="async"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IController.ErrorLog(System.String,System.String,System.Exception,System.String,System.Boolean,System.String)">
+            <summary>
+            Writes an entry in the logbook file for errors.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="entry">Information to be recorded.</param>
+            <param name="currentException">Exception that gives rise to record.</param>
+            <param name="prefix"></param>
+            <param name="async"></param>
+            <param name="code"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IController.PerformanceLogBegin(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Writes an entry in the logbook file for trace performance.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="nameMethod">Name of method for registration.</param>
+            <param name="parameters">Parameters for trace performance.</param>
+            <returns></returns>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IController.PerformanceLogFinish(System.String,System.String,System.Diagnostics.Stopwatch)">
+            <summary>
+            Stop logbook file for trace performance.
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="nameMethod">Name of method for registration.</param>
+            <param name="control"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IController.PerformanceLog(System.String,System.String,System.Boolean,System.Collections.Generic.Dictionary{System.String,System.Object},System.Diagnostics.Stopwatch)">
+            <summary>
+            New record in performance log
+            </summary>
+            <param name="source">Key associated with the originating source registration.</param>
+            <param name="nameMethod">Name of method for registration.</param>
+            <param name="way"></param>
+            <param name="parametersByData"></param>
+            <param name="control"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IController.PerformanceLogInternal(System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            New record in internal performance log
+            </summary>
+            <param name="parameterInternal">Internal parameter.</param>
+            <param name="parametersByData"></param>
+        </member>
+        <member name="M:InMotionGIT.FASI.Trace.Logic.Interfaces.IController.GetPath">
+            <summary>
+            Get path as files are stored.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:InMotionGIT.FASI.Trace.Logic.Interfaces.IControllerMetadata">
+            <summary>
+            Interfaz de metadata del controlador
+            </summary>
+        </member>
+        <member name="P:InMotionGIT.FASI.Trace.Logic.Interfaces.IControllerMetadata.Name">
+            <summary>
+            Propiedad nombre del controlador
+            </summary>
+        </member>
+    </members>
+</doc>

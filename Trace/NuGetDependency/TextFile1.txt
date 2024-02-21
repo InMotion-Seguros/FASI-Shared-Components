@@ -1,0 +1,1 @@
+﻿xcopy "$(TargetDir)$(ProjectName).dll" "C:\VisualTimeNet\Libraries\Trace" /Y

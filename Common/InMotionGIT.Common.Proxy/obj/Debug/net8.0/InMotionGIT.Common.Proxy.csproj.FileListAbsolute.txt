@@ -1,0 +1,6 @@
+C:\Users\jeffr\source\repos\FASI-Shared-Components\InMotionGIT.Common.Proxy\obj\Debug\net8.0\InMotionGIT.Common.Proxy.csproj.AssemblyReference.cache
+C:\Users\jeffr\source\repos\FASI-Shared-Components\InMotionGIT.Common.Proxy\obj\Debug\net8.0\InMotionGIT.Common.Proxy.Resources.resources
+C:\Users\jeffr\source\repos\FASI-Shared-Components\InMotionGIT.Common.Proxy\obj\Debug\net8.0\InMotionGIT.Common.Proxy.csproj.GenerateResource.cache
+C:\Users\jeffr\source\repos\FASI-Shared-Components\InMotionGIT.Common.Proxy\obj\Debug\net8.0\InMotionGIT.Common.Proxy.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jeffr\source\repos\FASI-Shared-Components\InMotionGIT.Common.Proxy\obj\Debug\net8.0\InMotionGIT.Common.Proxy.csproj.CoreCompileInputs.cache
+C:\Users\jeffr\source\repos\FASI-Shared-Components\InMotionGIT.Common.Proxy\obj\Debug\net8.0\InMotionGIT.Common.Proxy.sourcelink.json

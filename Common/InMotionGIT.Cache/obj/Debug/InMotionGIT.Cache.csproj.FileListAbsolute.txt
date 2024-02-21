@@ -1,0 +1,39 @@
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\InMotionGIT.Cache.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\InMotionGIT.Cache.pdb
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\InMotionGIT.Common.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\Oracle.DataAccess.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\Newtonsoft.Json.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\InMotionGIT.Common.pdb
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\InMotionGIT.Common.xml
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\InMotionGIT.Common.dll.config
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\Newtonsoft.Json.xml
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\obj\Debug\InMotionGIT.Cache.csproj.AssemblyReference.cache
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\obj\Debug\InMotionGIT.Cache.csproj.CoreCompileInputs.cache
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\obj\Debug\InMotionGIT.Cache.csproj.CopyComplete
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\obj\Debug\InMotionGIT.Cache.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\obj\Debug\InMotionGIT.Cache.pdb
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\Pipelines.Sockets.Unofficial.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\StackExchange.Redis.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\System.Buffers.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\System.IO.Pipelines.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\System.Memory.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\System.Numerics.Vectors.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\System.Threading.Channels.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\Pipelines.Sockets.Unofficial.xml
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\StackExchange.Redis.xml
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\System.Buffers.xml
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\System.IO.Pipelines.xml
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\System.Memory.xml
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\System.Numerics.Vectors.xml
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\System.Threading.Channels.xml
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\DLI\FASI Shared Components\InMotionGIT.Cache\bin\Debug\InMotionGIT.Cache.xml
+C:\Users\jeffr\source\repos\FASI-Shared-Components\InMotionGIT.Cache\obj\Debug\InMotionGIT.Cache.csproj.AssemblyReference.cache
+C:\Users\jeffr\source\repos\FASI-Shared-Components\InMotionGIT.Cache\obj\Debug\InMotionGIT.Cache.csproj.CoreCompileInputs.cache
+C:\Users\jeffr\source\repos\FASI-Shared-Components\InMotionGIT.Cache\obj\Debug\InMotionGIT.Cache.dll
+C:\Users\jeffr\source\repos\FASI-Shared-Components\InMotionGIT.Cache\obj\Debug\InMotionGIT.Cache.pdb

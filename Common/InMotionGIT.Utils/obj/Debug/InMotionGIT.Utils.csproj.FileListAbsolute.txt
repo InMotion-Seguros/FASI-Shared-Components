@@ -1,0 +1,8 @@
+C:\DLI\FASI Shared Components\InMotionGIT.Utils\bin\Debug\InMotionGIT.Utils.dll.config
+C:\DLI\FASI Shared Components\InMotionGIT.Utils\bin\Debug\InMotionGIT.Utils.xml
+C:\DLI\FASI Shared Components\InMotionGIT.Utils\bin\Debug\InMotionGIT.Utils.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Utils\bin\Debug\InMotionGIT.Utils.pdb
+C:\DLI\FASI Shared Components\InMotionGIT.Utils\obj\Debug\InMotionGIT.Utils.csproj.CoreCompileInputs.cache
+C:\DLI\FASI Shared Components\InMotionGIT.Utils\obj\Debug\InMotionGIT.Utils.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Utils\obj\Debug\InMotionGIT.Utils.pdb
+C:\DLI\FASI Shared Components\InMotionGIT.Utils\obj\Debug\InMotionGIT.Utils.csproj.AssemblyReference.cache

@@ -1,0 +1,1549 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Common
+</name>
+</assembly>
+<members>
+<member name="P:InMotionGIT.Common.DataType.Notify.Source">
+ <summary>
+ Nombre de la propiedad o campo que da origen a la notificación
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.DataType.Notify.Severity">
+ <summary>
+ Severidad de la notificación
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.DataType.Notify.Id">
+ <summary>
+ Número que identifica de la notificación
+ </summary>
+</member>
+<member name="P:InMotionGIT.Common.DataType.Notify.Message">
+ <summary>
+ Mensaje a ser desplegado por la notificación
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.DataType.Notify.#ctor">
+ <summary>
+ Constructor base.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.DataType.Notify.HasErrors(System.Collections.Generic.List{InMotionGIT.Common.DataType.Notify})">
+ <summary>
+ Permite saber si existe un error en la colección de notificación.
+ </summary>
+ <param name="notifyList">colección de notificación</param>
+ <returns>Verdadero en caso de existir un error, falso en caso contrario</returns>
+</member>
+<member name="M:InMotionGIT.Common.DataType.Notify.HasWarnings(System.Collections.Generic.List{InMotionGIT.Common.DataType.Notify})">
+ <summary>
+ Permite saber si existe una advertencia en la colección de notificación.
+ </summary>
+ <param name="notifyList">colección de notificación</param>
+ <returns>Verdadero en caso de existir una advertencia, falso en caso contrario</returns>
+</member>
+<member name="M:InMotionGIT.Common.DataType.Notify.HasMessages(System.Collections.Generic.List{InMotionGIT.Common.DataType.Notify})">
+ <summary>
+ Permite saber si existe un mensaje en la colección de notificación.
+ </summary>
+ <param name="notifyList">colección de notificación</param>
+ <returns>Verdadero en caso de existir un mensaje, falso en caso contrario</returns>
+</member>
+<member name="T:InMotionGIT.Common.Exceptions.SecurityException">
+ <summary>
+ SecurityException class. // Clase SecurityException.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Exceptions.ServiceFaultException.Factory(System.Exception)">
+ <summary>
+ Returns the instance of 'FaultException' with the original text of the exception / Retorna la instancia de 'FaultException' con el texto original de la exception
+ </summary>
+ <param name="inner">Exception that perform devel tracking/Exception que se desa realizar tracking.</param>
+ <returns>Return instance of ' FaultException'/ Retorna Instancia de 'FaultException'</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Exceptions.ServiceFaultException.Factory(System.String,System.Exception)">
+ <summary>
+ Method that takes a throw of 'FaultException' with parameters 'Reason', 'Code' and 'Exception' / Metodo que realiza un throw de 'FaultException', con los parametros de 'Reason' , 'Code' y 'Exception'
+ </summary>
+ <param name="Reason">Errror message user friendly / Mensaje de errror amigable con el usuario</param>
+ <param name="inner">Exception that perform devel tracking/Exception que se desa realizar tracking.</param>
+ <returns>Return instance of ' FaultException'/ Retorna Instancia de 'FaultException'</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Exceptions.ServiceFaultException.Factory(System.String,System.String,System.Exception)">
+ <summary>
+ Method that takes a throw of 'FaultException' with parameters 'Reason', 'Code' and 'Exception' / Metodo que realiza un throw de 'FaultException', con los parametros de 'Reason' , 'Code' y 'Exception'
+ </summary>
+ <param name="Reason">Errror message user friendly / Mensaje de errror amigable con el usuario</param>
+ <param name="Code">The exception identifier for referencing in database or file/Identificador  de la excepcion para posteriores consultas en base de datos o archivos</param>
+ <param name="inner">Exception that perform devel tracking/Exception que se desa realizar tracking.</param>
+ <returns>Return instance of ' FaultException'/ Retorna Instancia de 'FaultException'</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Exceptions.ServiceFaultException.Factory(System.String,System.String)">
+ <summary>
+ Method that takes a throw of 'FaultException' with parameters 'Reason' and 'Code' / Metodo que realiza un throw de 'FaultException', con los parametros de 'Reason' y 'Code'
+ </summary>
+ <param name="Reason">Errror message user friendly / Mensaje de errror amigable con el usuario</param>
+ <param name="Code">The exception identifier for referencing in database or file/Identificador  de la excepcion para posteriores consultas en base de datos o archivos</param>
+ <returns>Return instance of ' FaultException'/ Retorna Instancia de 'FaultException'</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Exceptions.ServiceFaultException.Factory(System.String)">
+ <summary>
+ Method that takes a throw of 'FaultException' with parameters 'Reason'  / Metodo que realiza un throw de 'FaultException', con los parametros de 'Reason'
+ </summary>
+ <param name="Reason">Errror message user friendly / Mensaje de errror amigable con el usuario</param>
+ <returns>Return instance of ' FaultException'/ Retorna Instancia de 'FaultException'</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Exceptions.ServiceFaultException.Factory``1(``0,System.Exception)">
+ <summary>
+ Method that takes a throw of 'FaultException' with parameters 'TDetail' and 'Exception' / Metodo que realiza un throw de 'FaultException', con los parametros de 'TDetail' y 'Exception'
+ </summary>
+ <typeparam name="TDetail">Generic type parameter ' TDetail ' , which allows you to send personalized information about the exception/ Parametro generico de tipo 'TDetail', que permite enviar informacion personalizada de la excepcion </typeparam>
+ <param name="inner">Exception that perform devel tracking/Exception que se desa realizar tracking.</param>
+ <returns>Return instance of ' FaultException'/ Retorna Instancia de 'FaultException'</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Exceptions.ServiceFaultException.Factory``1(``0,System.String,System.String,System.Exception)">
+ <summary>
+ Method that takes a throw of 'FaultException' with parameters 'TDetail' , 'Reason', 'Exception' and 'Code' / Metodo que realiza un throw de 'FaultException', con los parametros de 'TDetail', 'Reason', 'Exception' y 'Code'
+ </summary>
+ <typeparam name="TDetail">Generic type parameter ' TDetail ' , which allows you to send personalized information about the exception/ Parametro generico de tipo 'TDetail', que permite enviar informacion personalizada de la excepcion </typeparam>
+ <param name="Container">Custum object containing information for exception / Objeto que contiene informacion custum para la exception</param>
+ <param name="Reason">Errror message user friendly / Mensaje de errror amigable con el usuario</param>
+ <param name="Code">The exception identifier for referencing in database or file/Identificador  de la excepcion para posteriores consultas en base de datos o archivos</param>
+ <param name="inner">Exception that perform devel tracking/Exception que se desa realizar tracking.</param>
+ <returns>Return instance of ' FaultException'/ Retorna Instancia de 'FaultException'</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Exceptions.ServiceFaultException.Factory``1(``0,System.String,System.String)">
+ <summary>
+ Method that takes a throw of 'FaultException' with parameters 'TDetail' , 'Reason' and 'Code' / Metodo que realiza un throw de 'FaultException', con los parametros de 'TDetail', 'Reason' y 'Code'
+ </summary>
+ <typeparam name="TDetail">Generic type parameter ' TDetail ' , which allows you to send personalized information about the exception/ Parametro generico de tipo 'TDetail', que permite enviar informacion personalizada de la excepcion </typeparam>
+ <param name="Container">Custum object containing information for exception / Objeto que contiene informacion custum para la exception</param>
+ <param name="Reason">Errror message user friendly / Mensaje de errror amigable con el usuario</param>
+ <param name="Code">The exception identifier for referencing in database or file/Identificador  de la excepcion para posteriores consultas en base de datos o archivos</param>
+ <returns>Return instance of ' FaultException'/ Retorna Instancia de 'FaultException'</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Exceptions.ServiceFaultException.Factory``1(``0,System.String)">
+ <summary>
+ Method that takes a throw of 'FaultException' with parameters 'TDetail' and 'Reason' / Metodo que realiza un throw de 'FaultException', con los parametros de 'TDetail' y 'Reason'
+ </summary>
+ <typeparam name="TDetail">Generic type parameter ' TDetail ' , which allows you to send personalized information about the exception/ Parametro generico de tipo 'TDetail', que permite enviar informacion personalizada de la excepcion </typeparam>
+ <param name="Container">Custum object containing information for exception / Objeto que contiene informacion custum para la exception</param>
+ <param name="Reason">Errror message user friendly / Mensaje de errror amigable con el usuario</param>
+ <returns>Return instance of ' FaultException'/ Retorna Instancia de 'FaultException'</returns>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.Common.Extensions.CollectionExtensions">
+ <summary>
+ Extension methods for the Collection data type
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.CollectionExtensions.IsEmptyAndNotContainsItems``1(System.Collections.ObjectModel.Collection{``0})">
+ <summary>
+ Defines whether a Collection is empty or contains elements within it/ Define si una colleccion es empty or no contiene elementos dentro de ella
+ </summary>
+ <typeparam name="T"></typeparam>
+ <param name="source"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.CollectionExtensions.CreateConcatenation``1(System.Collections.ObjectModel.Collection{``0},System.String,System.String)">
+ <summary>
+ Creates a string separated by the character indicated property values that difinio/Crea un string separado por el carácter que se indique de  los valores de la propiedad que se difinio
+ </summary>
+ <typeparam name="T"></typeparam>
+ <param name="source"></param>
+ <param name="separator"></param>
+ <param name="propertyName"></param>
+ <returns></returns>
+</member>
+<member name="T:InMotionGIT.Common.Extensions.DataCommandExtensions">
+ <summary>
+ Extension methods for the Services.Contracts.DataParameter data type
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.IEnumerableExtensions.JoinToString``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.String)">
+ <summary>
+ This method allows to make a 'String.Join' of an object that allows the IEnumerable / Este método permite hacer un 'String.Join' de un objeto que permite el IEnumerable
+ </summary>
+ <typeparam name="T">Type of object/ Tipo del objeto</typeparam>
+ <typeparam name="TProp">Type property for which you want to join/Tipo propiedad por la que se desea hacer el join</typeparam>
+ <param name="source">Colección o objeto que heredan de IEnumerable/Collection or object inheriting from IEnumerable</param>
+ <param name="[property]">Property for which you want to join/Propiedad por la que se desea hacer el join</param>
+ <param name="separator">Value with which it is desired to carry out the separation of the values/ vValor con los que se desea realizar la separación de los valores</param>
+ <returns></returns>
+</member>
+<member name="T:InMotionGIT.Common.Extensions.ListExtensions">
+ <summary>
+ Extension methods for the list data type
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.ListExtensions.IsEmptyAndNotContainsItems``1(System.Collections.Generic.List{``0})">
+ <summary>
+ Defines whether a list is empty or contains elements within it/ Define si una lista es empty or no contiene elementos dentro de ella
+ </summary>
+ <typeparam name="T"></typeparam>
+ <param name="source"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.ListExtensions.CreateConcatenation``1(System.Collections.Generic.List{``0},System.String,System.String)">
+ <summary>
+ Creates a string separated by the character indicated property values that difinio/Crea un string separado por el carácter que se indique de  los valores de la propiedad que se difinio
+ </summary>
+ <typeparam name="T"></typeparam>
+ <param name="source"></param>
+ <param name="separator"></param>
+ <param name="propertyName"></param>
+ <returns></returns>
+</member>
+<member name="T:InMotionGIT.Common.Extensions.BinaryExtensions">
+ <summary>
+ Extension methods for the string data type
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.BinaryExtensions.Compress(System.Byte[])">
+ <summary>
+ Metodo de comprescion de string, esto ose utiliza en el string de serializacion de datatable por medio de json
+ </summary>
+ <param name="Text">Strign a comprimir</param>
+ <returns>String comprimido</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.BinaryExtensions.Decompress(System.Byte[])">
+ <summary>
+ Metodo de descomprecion de string
+ </summary>
+ <param name="Text">String a descomprimir</param>
+ <returns>Retorna el strign descomprimido</returns>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.Common.Extensions.DataReaderExtensions">
+ <summary>
+ Extension methods for the DbDataReader type
+ </summary>
+</member>
+<member name="T:InMotionGIT.Common.Extensions.DataRowExtensions">
+ <summary>
+ Extension methods for the DataRow type
+ </summary>
+</member>
+<member name="T:InMotionGIT.Common.Extensions.DataSetExtensions">
+ <summary>
+ Extension methods for the object data type
+ </summary>
+</member>
+<member name="T:InMotionGIT.Common.Extensions.DataTableExtensions">
+ <summary>
+ Extension methods for the object data type
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.DataTableExtensions.ToJSON(System.Data.DataTable)">
+ <summary>
+ Extensión de serialización por Newtonsoft.JSON, para datatable específicos.
+ </summary>
+ <param name="pObjectSerializator">Data Table a serializar</param>
+ <returns>datatable en formato json contenido en un string</returns>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.Common.Extensions.DateExtensions">
+ <summary>
+ Extension methods for the date data type
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.DateExtensions.IsEmpty(System.DateTime)">
+ <summary>
+ Determines whether the specified date is null or empty.
+ </summary>
+ <param name="value">The date value to check.</param>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.DateExtensions.IsNotEmpty(System.DateTime)">
+ <summary>
+ Determines whether the specified date is not null or empty.
+ </summary>
+ <param name="value">The date value to check.</param>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.DateExtensions.EndTimeOfDay(System.DateTime)">
+ <summary>
+ Returns the current value adding 23 hours, 59 minutes and 59 seconds.
+ </summary>
+ <param name="value">The date value to check.</param>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.DateExtensions.IfEmpty(System.DateTime,System.DateTime)">
+ <summary>
+ Checks whether the string is date and returns a default value in case.
+ </summary>
+ <param name="value">The date to check.</param>
+ <param name="defaultValue">The default value.</param>
+ <returns>Either the date or the default value.</returns>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.DateExtensions.FirstDayOfMonth(System.DateTime)">
+ <summary>
+ Returns the first day of the month of the provided date.
+ </summary>
+ <param name="value">The date.</param>
+ <returns>The first day of the month.</returns>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.DateExtensions.LastDayOfMonth(System.DateTime)">
+ <summary>
+ Returns the last day of the month of the provided date.
+ </summary>
+ <param name="value">The date.</param>
+ <returns>The last day of the month</returns>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.DateExtensions.Tomorrow(System.DateTime)">
+ <summary>
+ Gets a DateTime representing Next Day
+ </summary>
+ <param name="value">The current day</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.DateExtensions.Yesterday(System.DateTime)">
+ <summary>
+ Gets a DateTime representing Previous Day
+ </summary>
+ <param name="value">The current day</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.DateExtensions.FirstDayOfWeek(System.DateTime)">
+ <summary>
+ Gets the first day of the week using the current culture.
+ </summary>
+ <param name="value">The date.</param>
+ <returns>The first day of the week</returns>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.DateExtensions.FirstDayOfWeek(System.DateTime,System.Globalization.CultureInfo)">
+ <summary>
+ Gets the first day of the week using the current culture.
+ </summary>
+ <param name="value">The date.</param>
+ <param name="cultureInfo">The culture to determine the first weekday of a week.</param>
+ <returns>The first day of the week</returns>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.DateExtensions.LastDayOfWeek(System.DateTime)">
+ <summary>
+ Gets the last day of the week using the current culture.
+ </summary>
+ <param name="value">The date.</param>
+ <returns>The last day of the week</returns>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.DateExtensions.LastDayOfWeek(System.DateTime,System.Globalization.CultureInfo)">
+ <summary>
+ Gets the last day of the week using the current culture.
+ </summary>
+ <param name="value">The date.</param>
+ <param name="cultureInfo">The culture to determine the first weekday of a week.</param>
+ <returns>The last day of the week</returns>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.DateExtensions.NumericDayOfWeek(System.DateTime)">
+ <summary>
+ Get of Number Day of week.
+ </summary>
+ <param name="value">The date.</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.DateExtensions.WeekOfMonth(System.DateTime)">
+ <summary>
+ Get the week of the month.
+ </summary>
+ <param name="value">The date.</param>
+ <returns>Week number of the month</returns>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.DateExtensions.ApplyExtension(System.DateTime,System.String)">
+ <summary>
+ Returns the value associated with the extension dynamically.
+ </summary>
+ <param name="value">The date.</param>
+ <param name="extensionName">Extension name.</param>
+ <returns>The value returned by the extension</returns>
+</member>
+<member name="T:InMotionGIT.Common.Extensions.DbDataReaderExtensions">
+ <summary>
+ Extension methods for the DbDataReader type
+ </summary>
+</member>
+<member name="T:InMotionGIT.Common.Extensions.EnumExtensions">
+ <summary>
+ Extension methods for the enum data type
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.EnumExtensions.NumericValue(System.Enum@)">
+ <summary>
+ Use this method to get the integer value of any enum.
+ </summary>
+ <param name="theEnum">The enum value.</param>
+</member>
+<member name="T:InMotionGIT.Common.Extensions.NotifyPropertyChangedExtensions">
+ <summary>
+ Extension methods for the DataRow type
+ </summary>
+</member>
+<member name="T:InMotionGIT.Common.Extensions.NumericExtensions">
+ <summary>
+ Extension methods for the numerics data type
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.NumericExtensions.IsEmpty(System.Int32)">
+ <summary>
+ Determines whether the specified integer is null or zero.
+ </summary>
+ <param name="value">The Integer value to check.</param>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.NumericExtensions.IsNotEmpty(System.Int32)">
+ <summary>
+ Determines whether the specified Integer is not null or empty.
+ </summary>
+ <param name="value">The Integer value to check.</param>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.NumericExtensions.IfEmpty(System.Int32,System.Int32)">
+ <summary>
+ Checks whether the Integer is empty and returns a default value in case.
+ </summary>
+ <param name="value">The Integer to check.</param>
+ <param name="defaultValue">The default value.</param>
+ <returns>Either the Integer or the default value.</returns>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.NumericExtensions.IfEmpty(System.Int32,System.String,System.Int32)">
+ <summary>
+ Checks whether the Integer is empty and returns a default value in case.
+ </summary>
+ <param name="value">The Integer to check.</param>
+ <param name="appSettingKey">AppSetting Key Name</param>
+ <param name="defaultValue">The default value.</param>
+ <returns>Either the Integer or the default value.</returns>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.NumericExtensions.IsEmpty(System.Int64)">
+ <summary>
+ Determines whether the specified integer is null or zero.
+ </summary>
+ <param name="value">The Integer value to check.</param>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.NumericExtensions.IsNotEmpty(System.Int64)">
+ <summary>
+ Determines whether the specified Integer is not null or empty.
+ </summary>
+ <param name="value">The Integer value to check.</param>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.NumericExtensions.IfEmpty(System.Int64,System.Int64)">
+ <summary>
+ Checks whether the Integer is empty and returns a default value in case.
+ </summary>
+ <param name="value">The Integer to check.</param>
+ <param name="defaultValue">The default value.</param>
+ <returns>Either the Integer or the default value.</returns>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.NumericExtensions.IfEmpty(System.Int64,System.String,System.Int64)">
+ <summary>
+ Checks whether the Integer is empty and returns a default value in case.
+ </summary>
+ <param name="value">The Integer to check.</param>
+ <param name="appSettingKey">AppSetting Key Name</param>
+ <param name="defaultValue">The default value.</param>
+ <returns>Either the Integer or the default value.</returns>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.NumericExtensions.IsEmpty(System.Decimal)">
+ <summary>
+ Determines whether the specified integer is null or zero.
+ </summary>
+ <param name="value">The Integer value to check.</param>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.NumericExtensions.IsNotEmpty(System.Decimal)">
+ <summary>
+ Determines whether the specified Integer is not null or empty.
+ </summary>
+ <param name="value">The Integer value to check.</param>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.NumericExtensions.IfEmpty(System.Decimal,System.Decimal)">
+ <summary>
+ Checks whether the Integer is empty and returns a default value in case.
+ </summary>
+ <param name="value">The Integer to check.</param>
+ <param name="defaultValue">The default value.</param>
+ <returns>Either the Integer or the default value.</returns>
+</member>
+<member name="T:InMotionGIT.Common.Extensions.ObjectExtensions">
+ <summary>
+ Extension methods for the object data type
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.ObjectExtensions.CloneObject``1(``0)">
+ <summary>
+ Este método permite realizar una clonación completa por medio de memberwiseclone
+ </summary>
+ <typeparam name="T"></typeparam>
+ <param name="source"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.ObjectExtensions.ExistsProperty(System.Object,System.String)">
+ <summary>
+ Checks whether the property in the object/ Verifica si existe la propiedad en el objeto
+ </summary>
+ <param name="srcObject"></param>
+ <param name="propertyName"></param>
+ <returns></returns>
+</member>
+<member name="T:InMotionGIT.Common.Extensions.StringExtensions">
+ <summary>
+ Extension methods for the string data type
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.StringExtensions.SpecialFormater(System.String,System.Object[])">
+ <summary>
+  Extension permite el formate de un string
+ </summary>
+ <param name="value">The string value to check.</param>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.StringExtensions.IsEmpty(System.String)">
+ <summary>
+ Determines whether the specified string is null or empty.
+ </summary>
+ <param name="value">The string value to check.</param>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.StringExtensions.IsNotEmpty(System.String)">
+ <summary>
+ Determines whether the specified string is not null or empty.
+ </summary>
+ <param name="value">The string value to check.</param>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.StringExtensions.IfEmpty(System.String,System.String)">
+ <summary>
+ Checks whether the string is empty and returns a default value in case.
+ </summary>
+ <param name="value">The string to check.</param>
+ <param name="defaultValue">The default value.</param>
+ <returns>Either the string or the default value.</returns>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.StringExtensions.CompressString(System.String)">
+ <summary>
+ Metodo de comprescion de string, esto ose utiliza en el string de serializacion de datatable por medio de json
+ </summary>
+ <param name="Text">Strign a comprimir</param>
+ <returns>String comprimido</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.StringExtensions.DecompressString(System.String)">
+ <summary>
+ Metodo de descomprecion de string
+ </summary>
+ <param name="Text">String a descomprimir</param>
+ <returns>Retorna el strign descomprimido</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Extensions.StringExtensions.MaskedFormat(System.String,System.Int32,System.Int32)">
+ <summary>
+ 'Nueva función MaskedFormat para crear la máscara de confidencialidad según nivel de esquema
+ </summary>
+ <param name="value">Valor a formatear</param>
+ <param name="displayRule"> Mostrar primeros o últimos carácteres</param>
+ <param name="numbersOfPositions">Número de carácteres a mostrar</param>
+ <returns>Valor con máscara</returns>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.ActiveDirectoryHelpers.ValidateUserPassword(System.String,System.String)">
+ <summary>
+ Validate el user and password in server from active directory
+ </summary>
+ <param name="username">Username of user</param>
+ <param name="password">Password of user in active directory</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.AssemblyHandler.#ctor(System.Int32)">
+ <summary>
+ Initializes a new instance of the AssemblyInfoCalling class.
+ </summary>
+ <param name="traceLevel">The trace level needed to get correct assembly
+ - will need to adjust based on where you put these classes in your project(s).</param>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.AssemblyHandler.GetCallingAssemblyAttribute``1(System.Func{``0,System.String})">
+ <summary>
+ Gets the calling assembly attribute.
+ </summary>
+ <typeparam name="T"></typeparam>
+ <param name="value">The value.</param>
+ <example>return GetCallingAssemblyAttribute&lt;AssemblyCompanyAttribute&gt;(a => a.Company);</example>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.AssemblyHandler.GetAssembly(System.Int32)">
+ <summary>
+ Go through the stack and gets the assembly
+ </summary>
+ <param name="stackTraceLevel">The stack trace level.</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.AssemblyHandler.GetUserNameWindows">
+ <summary>
+ Obtiene el nombre del usuario de windows.
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.AssemblyHandler.GetUserNameMachine">
+ <summary>
+ Obtiene el nombre de la maquina.
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.AssemblyHandler.GetOS">
+ <summary>
+ Obtiene el nombre de la sistema operativo.
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.AssemblyHandler.GetNameApplication">
+ <summary>
+ Obtiene el nombre de la sistema operativo.
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.ByteHandler.FileToBytes(System.String)">
+ <summary>
+ Method allows you to take a file and convert it to a byte array / Método permite tomar un archivo y convertirlo en un arreglo de bytes
+ </summary>
+ <param name="fileName">Name of the file to convert to bytes/ Nombre del archivo a  convertir en bytes</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.ByteHandler.BytesToFile(System.Byte[],System.String,System.String,System.String)">
+ <summary>
+Method that allows to convert a byte array to file / Método que permite convertir un arreglo de bytes en file
+ </summary>
+ <param name="FileInBytes">File in binary format/ </param>
+ <param name="Path">Path where the file is stored/Ruta donde se almacena el archivo</param>
+ <param name="NameFile">Name of the file to save/Nombre del archivo a guardar</param>
+ <param name="Extension">File Extension/Extensión del archivo</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.ByteHandler.BytesToFileHosted(System.Byte[],System.String,System.String)">
+ <summary>
+Method that allows to convert a byte array to file / Método que permite convertir un arreglo de bytes en file
+ </summary>
+ <param name="FileInBytes">File in binary format/ </param>
+ <param name="NameFile">Name of the file to save/Nombre del archivo a guardar</param>
+ <param name="Extension">File Extension/Extensión del archivo</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Caching.Exist(System.String)">
+ <summary>
+ Determina si una clave existe en el cache
+ </summary>
+ <param name="key"></param>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Caching.NotExist(System.String)">
+ <summary>
+ Determina si una clave no existe en el cache
+ </summary>
+ <param name="key"></param>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Caching.GetItem(System.String)">
+ <summary>
+ Retorna el objeto asociado a la clave.
+ </summary>
+ <param name="key"></param>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Caching.SetItem(System.String,System.Object,System.DateTimeOffset)">
+ <summary>
+ 
+ </summary>
+ <param name="key"></param>
+ <param name="item"></param>
+ <param name="expiration"></param>
+ <example>Helpers.Caching.SetItem(token, object, DateTimeOffset.Now.AddMinutes(2))</example>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Caching.Remove(System.String)">
+ <summary>
+ Elimina el objeto asociado a la clave.
+ </summary>
+ <param name="key"></param>
+</member>
+<member name="T:InMotionGIT.Common.Helpers.Context">
+ <summary>
+ Permite el manejo de las variables expuestas por el HttpContext.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Context.HttpValues">
+ <summary>
+ Recupera de forma unificada todas las variable form, querystring y de sesión, que este disponibles en el contexto.
+ </summary>
+ <returns>Diccionario con todas la variables del contexto.</returns>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Context.QueryStringToDictionary">
+ <summary>
+ Recupera las variable del querystring que este disponibles en el contexto.
+ </summary>
+ <returns>Diccionario con todas la variables del querystring.</returns>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Context.FormToDictionary">
+ <summary>
+ Recupera las variable del form que este disponibles en el contexto.
+ </summary>
+ <returns>Diccionario con todas la variables del form.</returns>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Context.SessionToDictionary">
+ <summary>
+ Recupera las variable de la sesión que este disponibles en el contexto.
+ </summary>
+ <returns>Diccionario con todas la variables de la sesión.</returns>
+</member>
+<member name="T:InMotionGIT.Common.Helpers.RegistryHandler">
+ <summary>
+Class allows certified operations - Clase permite realizar operaciones sobre certificados
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.Common.Helpers.Certificate">
+ <summary>
+Class allows certified operations - Clase permite realizar operaciones sobre certificados
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Certificate.OverrideCertificateValidation">
+ <summary>
+Handler that allows a self-certification, in this case self-signed cerificados - Manejador que permite realizar una auto certificación, en este caso de cerificados autofirmados
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Certificate.RemoteCertValidate(System.Object,System.Security.Cryptography.X509Certificates.X509Certificate,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors)">
+ <summary>
+ Method that allows the validation of 'ServicePointManager' - Metodo que permite la validación sobre 'ServicePointManager'
+ </summary>
+ <param name="sender"></param>
+ <param name="cert"></param>
+ <param name="chain"></param>
+ <param name="error"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Connection.IsLocalIpAddress">
+ <summary>
+ Determina si la ip es local o no
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Connection.IsLocalIpAddress(System.String)">
+ <summary>
+ Determina si la ip es local o no
+ </summary>
+ <param name="host"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Connection.NameHostFromIp(System.String)">
+ <summary>
+ Methodo que estrae el nombre de la maquina que hace el requeste
+ </summary>
+ <param name="ipSource">Ip de origen</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Connection.GetIPPublic">
+ <summary>
+ Trying to get the public IP
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Connection.GetIPEnviroment">
+ <summary>
+ Trying to get the public IP
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Connection.GetIPRequest">
+ <summary>
+ Get ip request.
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.ConnectionStrings.ConnectionStringUserAndPassword(System.String,System.Int32)">
+ <summary>
+ Methodo que optiene el user y el password por medio de conectionStringName
+ </summary>
+ <param name="ConectionStringName">El nombre de conectionstring</param>
+ <returns>La clase credential, que contiene el nombre y el password de la coneccion solicitada</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.ConnectionStrings.GetCredentialUserAndPasss(System.String,System.String,System.String,System.Int32,System.Boolean)">
+ <summary>
+ 'Metodo de creacion de credential
+ </summary>
+ <param name="connectionStrinName">Nombre del connectionstring</param>
+ <param name="connectionString">Connectionstring</param>
+ <param name="provider">Nombre del proveedor</param>
+ <param name="companyId">Company id</param>
+ <param name="filter">Filto concatenacion de user and password</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.ConnectionStrings.ConnectionStringGetAll(System.String,System.Int32)">
+ <summary>
+ Method que retorna todas las connectionString en un lista de tipo conecctionstring
+ </summary>
+ <returns>Retorna una coleccion de tipo ConnectionStrings</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.ConnectionStrings.ConnectionStringGet(System.String,System.Int32)">
+ <summary>
+ Method que retorna todas las connectionString en un lista de tipo conecctionstring
+ </summary>
+ <returns>Retorna una coleccion de tipo ConnectionStrings</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.ConnectionStrings.GetConnectionStrings(System.String,System.String,System.String,System.Int32,System.Boolean)">
+ <summary>
+ 'Crea la Instancia de ConnectionStrings
+ </summary>
+ <param name="connectionStrinName">Nombre del connectionString</param>
+ <param name="connectionString">Conectionstring</param>
+ <param name="provider">Nombre del proveedor</param>
+ <param name="companyId">Company Id</param>
+ <param name="filter">Filto concatenacion de user and password</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.CryptAes.EncryptingString(System.String,System.String,System.String@)">
+ <summary>
+ Encrypts the given string using the AES algorithm @128bits, a key and an initialization vector.
+ </summary>
+ <param name="plainText">Text to be encrypted</param>
+ <param name="Key">Key used for the algorithm (stored in the config file)</param>
+ <param name="IV">Initialization vector</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.CryptAes.DecryptString(System.String,System.String,System.String)">
+ <summary>
+ Decrypts the given string using the AES algorithm @128bits, a key and an initialization vector.
+ </summary>
+ <param name="cipherText">Cipher text to be decrypted</param>
+ <param name="Key">Key used for the algorithm (stored in the config file)</param>
+ <param name="IV">Initialization vector</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.FileHandler.SaveContent(System.String,System.String)">
+ <summary>
+ Permite crear un archivo a patir del string
+ </summary>
+ <param name="fileName">Nombre y ruta del archivo a ser creado</param>
+ <param name="content">Contenido a ser almacenado en el arhcivo </param>
+ <returns>Verdadero en caso de poder crear el archivo, Falso en caso contraio</returns>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.FileHandler.DuplicateFileAndDirectory(System.String,System.String)">
+ <summary>
+ It allows duplicate a directory completely at both directories and archivos internos in on a specific route / Permite duplicar un directorio de manera completa tanto a nivel de directorios internos y archivos en una ruta específica
+ </summary>
+ <param name="rootSource"></param>
+ <param name="rootTarget"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.FileHandler.FileToBinary(System.String)">
+ <summary>
+  Reads a file and converts it into a vector of bytes/ Lee un archivo y lo convierte en un vector de bytes
+ </summary>
+ <param name="FileName">Name of the file you want to convert to bytes/ Nombre del archivo que deseas convertir a bytes</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.FileHandler.Exist(System.String)">
+ <summary>
+ Checks if a file exists on a specific path / Verifica si existe un archivo en un ruta específica
+ </summary>
+ <param name="fileName">Name of the file you want to convert to bytes/ Nombre del archivo que deseas convertir a bytes</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.FileHandler.NotExist(System.String)">
+ <summary>
+ Checks if a file not exists on a specific path / Verifica si no existe un archivo en un ruta específica
+ </summary>
+ <param name="fileName">Name of the file you want to convert to bytes/ Nombre del archivo que deseas convertir a bytes</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.SessionHandler.Save(System.String,System.Object)">
+ <summary>
+ Almacena objetos en la sección.
+ </summary>
+ <param name="key">Nombre con que se almacena el objeto</param>
+ <param name="value">Objeto a almacenar</param>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.SessionHandler.Remove(System.String)">
+ <summary>
+  Elimina el objetos en la sección.
+ </summary>
+ <param name="key">Nombre del objeto a eliminar</param>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.SessionHandler.Retrieve(System.String)">
+ <summary>
+ Retorna el objeto en la sección.
+ </summary>
+ <param name="key">Nombre con que se almacena el objeto</param>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.SessionHandler.Exist(System.String)">
+ <summary>
+ Verifica si existe el key de un objeto en sección
+ </summary>
+ <param name="key">Nombre a verificar la existencia en el sección</param>
+ <returns></returns>
+</member>
+<member name="T:InMotionGIT.Common.Helpers.CryptSupportNew">
+ <summary>
+ Library that allows you to encrypt and decrypt using native libraries with parameters of the framework, not to use the size or the key, the Liberia uses the following AppSetting:
+  1. Security.Key: Defines the key to generate or decrypt the encrypted text.
+  2. Security.Size: Defines the size of the key used in the encrypted or decrypted
+ / Libreria que permite encriptar y desencriptar con parámetros utilizando librerias nativas del framework, de no utilizar el size o el key, la liberia utiliza los siguientes AppSetting:
+  1. Security.Key: Define el clave para generar el texto encriptado o desencriptar.
+  2. Security.Size: Define el tamano de la clave a utilizar en el encriptado o desencripta
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.CryptSupportNew.EncryptString(System.String,System.String)">
+ <summary>
+ Text encryption method / Método de encriptación de texto
+ </summary>
+ <param name="text">Text to encrypt/ Texto a encriptar</param>
+ <param name="Password"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.CryptSupportNew.DecryptString(System.String,System.String)">
+ <summary>
+ Decryption method / Método de desencriptación
+ </summary>
+ <param name="sText">Text decrypt/Texto a desecriptar</param>
+ <param name="Password"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.CryptSupportNew.KeyGenerate(System.Int32,System.String)">
+ <summary>
+ Generates the key according to the requested size
+ </summary>
+ <param name="SecurityKeySize">key Size</param>
+ <param name="SecurityKey">Text for Security Key</param>
+ <returns>Key of Formated</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.CryptSupportNew.EncryptStringInternal(System.String)">
+ <summary>
+ Método de cifrado de texto con el parametro de 'textPlaint'/ Text encryption method with the parameter 'textPlaint'
+ </summary>
+ <param name="textPlaint">Text decrypt/Texto a desecriptar</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.CryptSupportNew.EncryptStringInternal(System.String,System.String,System.Int32)">
+ <summary>
+ Text encryption method with the parameter 'textPlaint', 'key' and 'size', Método de cifrado de texto con el parametro de 'textPlaint', 'key' y 'size'
+ </summary>
+ <param name="textPlaint">Text decrypt/Texto a desecriptar</param>
+ <param name="key">Encryption key/Clave de encriptación </param>
+ <param name="size">Encryption size/Tamaño de la clave</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.CryptSupportNew.EncryptStringToBytes_Aes(System.String,System.Byte[],System.Int32)">
+ <summary>
+ Configurable Encryption Method / Método de cifrado configurable
+ </summary>
+ <param name="plainText">Text to encrypt/ Texto para cifrar</param>
+ <param name="Key">Private Key Encryption/El cifrado de clave privada</param>
+ <param name="Size">Key size/Tamaño de la clave</param>
+ <returns>Encrypted Text</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.CryptSupportNew.DecryptStringInternal(System.String)">
+ <summary>
+ Method that of 'DecryptStringInternal' with parameter 'textPlaint' / Metodo que realiza un 'DecryptStringInternal', con los parametro de 'textPlaint'
+ </summary>
+ <param name="textPlaint">Text to encrypted/Texto encriptado</param>
+ <returns>De Encrypt Text</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.CryptSupportNew.DecryptStringInternal(System.String,System.String,System.Int32)">
+ <summary>
+ Method that takes a throw of 'DecryptStringInternal' with parameters 'textPlaint', 'key' and 'size' / Metodo que realiza un 'DecryptStringInternal', con los parametros de 'textPlaint' , 'key' y 'size'
+ </summary>
+ <param name="textPlaint">Text to encrypted/Texto encriptado</param>
+ <param name="Key">Private Key Encryption/El cifrado de clave privada</param>
+ <param name="Size">Key size/Tamaño de la clave</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.CryptSupportNew.DecryptStringFromBytes_Aes(System.Byte[],System.Byte[],System.Int32)">
+ <summary>
+ Configurable De Encryption Method / Configurable De Método de cifrado
+ </summary>
+ <param name="cipherText">Text to encrypted</param>
+ <param name="Key">Private Key Encryption/El cifrado de clave privada</param>
+ <param name="Size">Key size/Tamaño de la clave</param>
+ <returns>De Encrypt Text</returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Data.CreateRefCursorParameter(System.Data.Common.DbParameter)">
+ <summary>
+ Create a new parameter of RefCursor type
+ </summary>
+ <param name="parameterInstance"></param>
+ <returns>DbParameter with DbType RefCursor</returns>
+ <remarks>
+ Usage: command.Parameters.Add(CreateRefCursorParameter(dbProviderFactory.CreateParameter()))
+ </remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Data.CommandExecute(System.String)">
+ <summary>
+Execute the queries
+ </summary>
+ <param name="command">Query to execute</param>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Data.CommandExecute(System.String,System.String)">
+ <summary>
+Execute the queries
+ </summary>
+ <param name="command">Query to execute</param>
+ <param name="connectionStringName">Name of the input of ConnectionStrings</param>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.DataAccessLayer.QueryExecuteToTableJSON(System.Data.Common.DbCommand,System.Data.Common.DbConnection,System.Data.CommandBehavior,System.String,System.Boolean)">
+ <summary>
+ Método que consume por los servicios tipo json en su canal
+ </summary>
+ <param name="command">Comando a ejecutar</param>
+ <param name="currentConnection">Connexion actual</param>
+ <param name="behavior">Ambiente de ejecución</param>
+ <param name="table">Nombre de la tabla</param>
+ <param name="returnEmptyDataTable">retornar data-table vació</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.DataAccessLayer.CreateDateTimeOffsetParameter(System.Data.Common.DbParameter)">
+ <summary>
+ Custom for parameter type Oracle.DataAccess.Client.OracleDbType.TimeStamp
+ </summary>
+ <param name="parameterInstance"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.DataAccessLayer.CreateRefCursorParameter(System.Data.Common.DbParameter)">
+ <summary>
+ Create a new parameter of RefCursor type
+ </summary>
+ <param name="parameterInstance"></param>
+ <returns>DbParameter with DbType RefCursor</returns>
+ <remarks>
+ Usage: command.Parameters.Add(CreateRefCursorParameter(dbProviderFactory.CreateParameter()))
+ </remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.KeyValidator.GenerateKey">
+ <summary>
+ It generates a key based on the number of the week in the month the number of concatenated day of the week.
+ </summary>
+ <returns>Key generated</returns>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.KeyValidator.KeyValidator(System.String)">
+ <summary>
+ Validator key for boor
+ </summary>
+ <param name="key"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.LogHandler.WarningLog(System.String,System.String)">
+ <summary>
+ Overload method
+ </summary>
+ <param name="source"></param>
+ <param name="entry"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.LogHandler.WarningLog(System.String,System.String,System.String)">
+ <summary>
+ Overload of method
+ </summary>
+ <param name="source"></param>
+ <param name="entry"></param>
+ <param name="prefix"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.LogHandler.WarningLog(System.String,System.String,System.String,System.Object)">
+ <summary>
+ Overrable
+ </summary>
+ <param name="source"></param>
+ <param name="entry"></param>
+ <param name="prefix"></param>
+ <param name="customData"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.LogHandler.WarningLog(System.String,System.String,System.String,System.Object,System.Boolean)">
+ <summary>
+
+ </summary>
+ <param name="source"></param>
+ <param name="entry"></param>
+ <param name="prefix"></param>
+ <param name="customData"></param>
+ <param name="Async"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.LogHandler.WarningLogInternal(System.Collections.Generic.Dictionary{System.String,System.Object})">
+ <summary>
+ Method of the Internal WarnningLog
+ </summary>
+ <param name="parameterInternal"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.LogHandler.PerformanceLogBegin(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+ <summary>
+ Writes an entry in the logbook file for trace
+ </summary>
+ <param name="nameMethod">Nombre del método que llama</param>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.LogHandler.TraceLog(System.String)">
+ <summary>
+ Writes an entry in the logbook file for trace
+ </summary>
+ <param name="entry">Information to be recorded</param>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.LogHandler.TraceLog(System.String,System.String)">
+ <summary>
+ Writes an entry in the logbook file for trace
+ </summary>
+ <param name="source">Key associated with the originating source registration</param>
+ <param name="entry">Information to be recorded</param>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.LogHandler.TraceLog(System.String,System.String,System.String,System.Object)">
+ <summary>
+ Overload method
+ </summary>
+ <param name="source">Key associated with the originating source registration</param>
+ <param name="entry">Information to be recorded</param>
+ <param name="prefix"></param>
+ <param name="customData"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.LogHandler.TraceLog(System.String,System.String,System.String,System.Object,System.Boolean)">
+ <summary>
+ Method Base of the TraceLog,
+ </summary>
+ <param name="source"></param>
+ <param name="entry"></param>
+ <param name="prefix"></param>
+ <param name="customData"></param>
+ <param name="Async"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.LogHandler.TraceLogInternal(System.Collections.Generic.Dictionary{System.String,System.Object})">
+ <summary>
+ Internal method of the Tracelog
+ </summary>
+ <param name="pParamters"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.LogHandler.ErrorLog(System.String,System.String)">
+ <summary>
+ Writes an entry in the logbook file for errors
+ </summary>
+ <param name="source">Key associated with the originating source registration</param>
+ <param name="entry">Information to be recorded</param>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.LogHandler.ErrorLog(System.String,System.String,System.Exception,System.String,System.Boolean)">
+ <summary>
+ Writes an entry in the logbook file for errors
+ </summary>
+ <param name="source">Key associated with the originating source registration</param>
+ <param name="entry">Information to be recorded</param>
+ <param name="currentException">Exception that gives rise to record</param>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.LogHandler.ErrorLog(System.String,System.String,System.Exception,System.String,System.Boolean,System.String)">
+ <summary>
+ Writes an entry in the logbook file for errors
+ </summary>
+ <param name="source">Key associated with the originating source registration</param>
+ <param name="entry">Information to be recorded</param>
+ <param name="currentException">Exception that gives rise to record</param>
+ <param name="prefix"></param>
+ <param name="Async"></param>
+ <param name="Code"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.LogHandler.TraceInnerExceptionMessage2(System.Exception,System.Int32,System.IO.StreamWriter)">
+ <summary>
+ Gets all the detail of exception
+ </summary>
+ <param name="ex">Exception that gives rise to record</param>
+ <param name="level">level of exception</param>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.Common.Helpers.Inflector">
+ <summary>
+ The Inflector class transforms words from one
+ form to another. For example, from singular to plural.
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Inflector.Capitalize(System.String)">
+ <summary>
+ Capitalizes a word.
+ </summary>
+ <param name="word">The word to be capitalized.</param>
+ <returns><paramref name="word" /> capitalized.</returns>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Inflector.Pluralize(System.String)">
+ <summary>
+ Return the plural of a word.
+ </summary>
+ <param name="word">The singular form</param>
+ <returns>The plural form of <paramref name="word" /></returns>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Inflector.Singularize(System.String)">
+ <summary>
+ Return the singular of a word.
+ </summary>
+ <param name="word">The plural form</param>
+ <returns>The singular form of <paramref name="word" /></returns>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Language.LanguageToCultureName(System.Int32)">
+ <summary>
+ Extracts the name of the enum Cultural Language/Extrae el cultural name del enum de lenguaje
+ </summary>
+ <param name="language">Lenguaje/Language</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Language.CultureNameToLanguage(System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="CultureName"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Serialize.JsonSerializer``1(``0)">
+ <summary>
+ JSON Serialization
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Serialize.ConvertJsonDateToDateString(System.Text.RegularExpressions.Match)">
+ <summary>
+ Convert Serialization Time /Date(1319266795390+0800) as String
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Serialize.JsonDeserialize``1(System.String)">
+ <summary>
+ JSON Deserialization
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Serialize.ConvertDateStringToJsonDate(System.Text.RegularExpressions.Match)">
+ <summary>
+ Convert Date String as Json Time
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Helpers.Utility.ExecuteSuiteApp(System.String,System.String,System.Int32)">
+ <summary>
+ Execute a Application of the suite
+ </summary>
+ <param name="appName">Application Name</param>
+ <param name="modelID">Model Identification</param>
+ <param name="release">Model Release</param>
+ <remarks>
+ Form Designer,Workflow Designer,Query Designer,CRUD Form Designer
+ 
+ Arguments samples:
+ http://robindotnet.wordpress.com/2010/03/21/how-to-pass-arguments-to-an-offline-clickonce-application/
+ </remarks>
+</member>
+<member name="M:InMotionGIT.Common.VisualTimeConfig.Setting(System.String,System.String,System.Boolean)">
+ <summary>
+ Devuelve un setting existe en el archivo visualtimeconfig.xml
+ </summary>
+ <param name="section">Sección que agrupa al setting</param>
+ <param name="key">Clave del setting</param>
+ <param name="decrypt">Indica si el valor debe set desencriptado</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.Common.Attributes.ElementSourceAttribute">
+ <summary>
+ Establece la procedencia de la propiedad a nivel de source
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.Common.Attributes.EntityCommonlyUsedAttribute">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.Common.Attributes.EntitySourceAttribute">
+ <summary>
+Establece la procedencia del la entidad a nivel de modelo
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Common.Attributes.EntitySourceAttribute.Source">
+ <summary>
+ List of properties that define the primary key
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Attributes.EntitySourceAttribute.#ctor(System.String)">
+ <summary>
+ Initializes a new instance of the EntityPrimaryKeyMembers class
+ </summary>
+ <param name="source">List of properties that define the primary key</param>
+ <remarks>Ejemplo: &lt;EntityPrimaryKeyMembers("RecordOwner,KeyToAddressRecord,RecordEffectiveDate")&gt;</remarks>
+</member>
+<member name="T:InMotionGIT.Common.Attributes.ElementBehaviorAttribute">
+ <summary>
+ Define las características de tamaño, precisión y/o escala dependiendo del tipo asociado a la propiedad.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.Common.Attributes.ElementDesignerAttribute">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.Common.Attributes.ElementEnglishDesigner">
+ <summary>
+ Define la etiqueta y tooltips en ingles asociado a la propiedad.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.Common.Attributes.ElementLookupAttribute">
+ <summary>
+ Define como acceder la tabla que contiene la lista de valores hacer usado por la propiedad.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.Common.Attributes.ElementRequiredAttribute">
+ <summary>
+ Establece si la propiedad debe llenarse de forma obligatoria.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.Common.Attributes.ElementSpanishDesigner">
+ <summary>
+ Define la etiqueta y tooltips en español asociado a la propiedad.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.Common.Attributes.EntityDesignerAttribute">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.Common.Attributes.EntityEnglishDesigner">
+ <summary>
+ Define el titulo o nombre completo en ingles asociado a la clase.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.Common.Attributes.EntityExcludeAttribute">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.Common.Attributes.EntityPrimaryKeyMembersAttribute">
+ <summary>
+ Allows you to indicate the properties of the class to be used as primary key to be used to persist information in a table.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Common.Attributes.EntityPrimaryKeyMembersAttribute.PrimaryKeyMembers">
+ <summary>
+ List of properties that define the primary key
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Attributes.EntityPrimaryKeyMembersAttribute.#ctor(System.String)">
+ <summary>
+ Initializes a new instance of the EntityPrimaryKeyMembers class
+ </summary>
+ <param name="primaryKeyMembers">List of properties that define the primary key</param>
+ <remarks>Ejemplo: &lt;EntityPrimaryKeyMembers("RecordOwner,KeyToAddressRecord,RecordEffectiveDate")&gt;</remarks>
+</member>
+<member name="T:InMotionGIT.Common.Attributes.EntitySpanishDesigner">
+ <summary>
+ Define el titulo o nombre completo en español  asociado a la clase.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.Common.Attributes.TypeStructureAttribute">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Common.Attributes.TypeStructureAttribute.DefaultMember">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="M:InMotionGIT.Common.Services.DataManager.QueryExecuteToLookup(InMotionGIT.Common.Services.Contracts.DataCommand)">
+ <summary>
+ Método que permite devolver valores en modo Lookup / Method to return values mode Lookup
+ </summary>
+ <param name="command"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Common.Services.DataManager.ConnectionOpenLocal(InMotionGIT.Common.Services.Contracts.DataCommand)">
+ <summary>
+ Over method for connectionstringsraw
+ </summary>
+ <param name="command"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Services.DataManager.ConnectionOpenLocal(System.String)">
+ <summary>
+ Over method for connectionstringsraw
+ </summary>
+ <param name="connectionName"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Services.DataManager.QueryExecuteScalarToDecimal(InMotionGIT.Common.Services.Contracts.DataCommand)">
+ <summary>
+ Método que permite devolver el valor en decimal/ Method to return the value in decimal
+ </summary>
+ <param name="command"></param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Common.Services.DataManager.ResolveStatement(InMotionGIT.Common.Services.Contracts.DataCommand)">
+ <summary>
+  Build the command for making to script - Construye el comando para convertirlo en un script
+ </summary>
+ <param name="command"> Command executed - Comando ejecutado</param>
+ <returns>Real statement - Comando real</returns>
+</member>
+<member name="M:InMotionGIT.Common.Services.DataManager.ObjectExist(InMotionGIT.Common.Services.Contracts.DataCommand)">
+ <summary>
+
+ </summary>
+ <param name="command"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Services.DataManager.BuildParameters(InMotionGIT.Common.Services.Contracts.DataCommand,System.Data.Common.DbCommand)">
+ <summary>
+
+ </summary>
+ <param name="command"></param>
+ <param name="commandItem"></param>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Services.DataManager.CreateRefCursorParameter(System.Data.Common.DbParameter)">
+ <summary>
+ Create a new parameter of RefCursor type
+ </summary>
+ <param name="parameterInstance"></param>
+ <returns>DbParameter with DbType RefCursor</returns>
+ <remarks>
+ Usage: command.Parameters.Add(CreateRefCursorParameter(dbProviderFactory.CreateParameter()))
+ </remarks>
+</member>
+<member name="M:InMotionGIT.Common.Services.DataManager.ProcedureExecuteToTable(InMotionGIT.Common.Services.Contracts.DataCommand,System.Boolean)">
+ <summary>
+ Permite la ejecución de un procedure tipado con retorno de un table
+ </summary>
+ <param name="command"></param>
+ <param name="resultEmpty"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Services.DataManager.PackageExecuteScalar(System.Collections.Generic.List{InMotionGIT.Common.Services.Contracts.DataCommand})">
+ <summary>
+ Sobre carga para poder envir un conjunto de commandos y ejecutar como instruccion atomica
+ </summary>
+ <param name="commands"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Services.DataManager.PackageExecuteScalar(System.Collections.Generic.List{InMotionGIT.Common.Services.Contracts.DataCommand},System.String)">
+ <summary>
+ Método poder enviar un conjunto de commandos y ejecutar como instrucción atómica
+ </summary>
+ <param name="commands"></param>
+ <param name="connectionName"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Services.DataManager.PackageExecuteToLookUp(System.Collections.Generic.List{InMotionGIT.Common.Services.Contracts.DataCommand})">
+ <summary>
+ Sobre carga para poder envir un conjunto de commandos y ejecutar como instruccion atomica
+ </summary>
+ <param name="commands"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Services.DataManager.PackageExecuteToLookUp(System.Collections.Generic.List{InMotionGIT.Common.Services.Contracts.DataCommand},System.String)">
+ <summary>
+ Método poder enviar un conjunto de commandos y ejecutar como instrucción atómica
+ </summary>
+ <param name="commands"></param>
+ <param name="connectionName"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Services.DataManager.ProcedureExecuteResultSchema(InMotionGIT.Common.Services.Contracts.DataCommand)">
+ <summary>
+ Retorna el la structura de un sp
+ </summary>
+ <param name="command"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:InMotionGIT.Common.Services.DataManager.GetDataBaseProvider(System.String)">
+ <summary>
+  Obtiene el provider de ConnectionString que se solicita.
+ </summary>
+ <param name="repositoryName">Nombre del ConnectionString</param>
+ <returns></returns>
+</member>
+<member name="M:InMotionGIT.Common.Services.DataManager.GetSettingValue(System.String,System.String)">
+ <summary>
+ Devuelve el valor del appSetting según el nombre del setting
+ </summary>
+ <param name="repositoryName">nombre del repositorio</param>
+ <param name="settingName">nombre del setting</param>
+</member>
+<member name="M:InMotionGIT.Common.Services.DataManager.Check">
+ <summary>
+ Method que permite realizar check
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:InMotionGIT.Common.Interfaces.IBusinessEntities.IsNew">
+ <summary>
+ Gets or sets the object state is loaded from the database or not.
+ </summary>
+ <value>true if the object is loaded from database; otherwise, false.</value>
+</member>
+<member name="P:InMotionGIT.Common.Interfaces.IBusinessEntities.isDirty">
+ <summary>
+ Gets or sets if the object state is modified or not.
+ </summary>
+ <value>true if the object is modified; otherwise, false.</value>
+</member>
+<member name="P:InMotionGIT.Common.Interfaces.IBusinessEntities.isDeletedMark">
+ <summary>
+ Gets or sets if the object state is pending for delete or not.
+ </summary>
+ <value>true if the object is delete masked; otherwise, false.</value>
+</member>
+<member name="P:InMotionGIT.Common.Interfaces.IBusinessEntities.Tag">
+ <summary>
+ Gets or sets the object that contains data about the object.
+ </summary>
+ <value>An Object that contains data about the object. The default is null reference (Nothing in Visual Basic).</value>
+ <returns>System.Object</returns>
+</member>
+</members>
+</doc>

@@ -1,0 +1,857 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+InMotionGIT.Core.Configuration
+</name>
+</assembly>
+<members>
+<member name="T:InMotionGIT.Core.Configuration.Enumerations.EnumSecurityMode">
+ <summary>
+ Enumerated type that defines the authentication system
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:InMotionGIT.Core.Configuration.FASI.Enumerations.EnumSecurityMode">
+ <summary>
+ Enumerated type that defines the authentication system
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.General.DefaultLanguage">
+ <summary>
+ Default language of the web portal.
+ Idioma predeterminado del portal web.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.General.DefaultTheme">
+ <summary>
+ Default theme of the web portal.
+ Tema predeterminado del portal web.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.General.UrlHome">
+ <summary>
+  Define la URL al home del aplicación
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Mail.Mode">
+ <summary>
+ Behavior for sen e-mail.
+ Comportamiento para enviar correos.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Mail.Host">
+ <summary>
+ SMTP (Simple Mail Transfer Protocol).
+ SMTP (Protocolo Simple de Transferencia de Correo).
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Mail.Port">
+ <summary>
+ SMTP Port (Simple Mail Transfer Protocol).
+ SMTP Puerto (Protocolo Simple de Transferencia de Correo).
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Mail.SupportMail">
+ <summary>
+ E-mail for support of send
+ Correo electrónico para el soporte del envio
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Mail.CredentialUserName">
+ <summary>
+ E-mail for send the mail.
+ Correo electrónico para enviar el correo
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Mail.CredentialPassword">
+ <summary>
+ Password for send the e-mail.
+ Contraseña del correo electrónico.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Mail.EnableSSL">
+ <summary>
+ Enable connection for secure port.
+ Habilitar la conexión por puerto seguro.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Mail.TemplatesPath">
+ <summary>
+ Address where the templates are located.
+ Dirección donde están localizadas las plantillas.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Security.PasswordStrengthRegularExpression">
+ <summary>
+ Gets the regular expression used to evaluate a password.//Obtiene la expresión regular utilizada para evaluar una contraseña.
+ </summary>
+ <value>Gets the regular expression used to evaluate a password.//Obtiene la expresión regular utilizada para evaluar una contraseña.</value>
+ <returns>Gets the regular expression used to evaluate a password.//Obtiene la expresión regular utilizada para evaluar una contraseña.</returns>
+ <remarks>The PasswordStrengthRegularExpression property gets the regular expression used to evaluate password complexity from the provider specified in the Provider property.</remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Security.MinRequiredPasswordLength">
+ <summary>
+ Gets the minimum length required for a password.//Obtiene la longitud mínima requerida para una contraseña.
+ </summary>
+ <value> Gets the minimum length required for a password.//Obtiene la longitud mínima requerida para una contraseña.</value>
+ <returns> Gets the minimum length required for a password.//Obtiene la longitud mínima requerida para una contraseña.</returns>
+ <remarks>The MinRequiredPasswordLength property gets the minimum number of characters that must be entered to create a valid password for the membership provider specified in the Provider property.//La propiedad MinRequiredPasswordLength obtiene la cantidad mínima de caracteres que deben ingresarse para crear una contraseña válida para el proveedor de membresía especificado en la propiedad del Proveedor.</remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Security.MaxRequiredPasswordLength">
+ <summary>
+ Gets the maximum length required for a password.//Obtiene la longitud máxima requerida para una contraseña.
+ </summary>
+ <value> Gets the maximum length required for a password.//Obtiene la longitud máxima requerida para una contraseña.</value>
+ <returns> Gets the maximum length required for a password.//Obtiene la longitud máxima requerida para una contraseña.</returns>
+ <remarks>The MaxRequiredPasswordLength property gets the maximum number of characters that must be entered to create a valid password for the membership provider specified in the Provider property.//La propiedad MaxRequiredPasswordLength obtiene la cantidad máxima de caracteres que deben ingresarse para crear una contraseña válida para el proveedor de membresía especificado en la propiedad del Proveedor.</remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Security.MinRequiredNonAlphanumericCharacters">
+ <summary>
+ Gets the minimum number of special characters that must be present in a valid password.//Obtiene la cantidad mínima de caracteres especiales que deben estar presentes en una contraseña válida.
+ </summary>
+ <value>Gets the minimum number of special characters that must be present in a valid password.//Obtiene la cantidad mínima de caracteres especiales que deben estar presentes en una contraseña válida.</value>
+ <returns>Gets the minimum number of special characters that must be present in a valid password.//Obtiene la cantidad mínima de caracteres especiales que deben estar presentes en una contraseña válida.</returns>
+ <remarks>The MinRequiredNonAlphanumericCharacters property returns the minimum number of special, non-alphanumeric characters that must be entered to create a valid password for the membership provider specified in the Provider property.//La propiedad MinRequiredNonAlphanumericCharacters devuelve el número mínimo de caracteres especiales no alfanuméricos que se deben ingresar para crear una contraseña válida para el proveedor de pertenencia especificado en la propiedad del Proveedor.</remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Security.PasswordFormat">
+ <summary>
+ Gets a value indicating the format for storing passwords in the membership data store.//Obtiene un valor que indica el formato para almacenar contraseñas en el almacén de datos de membresía.
+ </summary>
+ <value>Enumerated type PasswordFormat</value>
+ <returns>Enumerated type PasswordFormat</returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Security.PasswordAttemptWindow">
+ <summary>
+ Gets the time window between which consecutive failed attempts to provide a valid password or password answer are tracked.//Obtiene la ventana de tiempo entre la que se realiza un seguimiento de los intentos fallidos consecutivos de proporcionar una contraseña válida o una respuesta de contraseña.
+ </summary>
+ <value>Gets the time window between which consecutive failed attempts to provide a valid password or password answer are tracked.//Obtiene la ventana de tiempo entre la que se realiza un seguimiento de los intentos fallidos consecutivos de proporcionar una contraseña válida o una respuesta de contraseña.</value>
+ <returns>Gets the time window between which consecutive failed attempts to provide a valid password or password answer are tracked.//Obtiene la ventana de tiempo entre la que se realiza un seguimiento de los intentos fallidos consecutivos de proporcionar una contraseña válida o una respuesta de contraseña.</returns>
+ <remarks>The PasswordAttemptWindow property works in conjunction with the MaxInvalidPasswordAttempts property to help guard against an unwanted source guessing the password or password answer of a membership user through repeated attempts. When a user attempts to log in with, change, or reset his or her password, only a certain number of consecutive attempts are allowed within a specified time window. The length of this time window is specified in the PasswordAttemptWindow property, which identifies the number of minutes allowed between invalid attempts.//La propiedad PasswordAttemptWindow funciona junto con la propiedad MaxInvalidPasswordAttempts para protegerse contra una fuente no deseada adivinando la contraseña o la contraseña de un usuario de membresía a través de intentos repetidos. Cuando un usuario intenta iniciar sesión, cambiar o restablecer su contraseña, solo se permite un cierto número de intentos consecutivos dentro de una ventana de tiempo específica. La duración de esta ventana de tiempo se especifica en la propiedad PasswordAttemptWindow, que identifica la cantidad de minutos permitidos entre intentos no válidos.</remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Security.UserIsOnlineTimeWindow">
+ <summary>
+ Specifies the number of minutes after the last-activity date/time stamp for a user during which the user is considered online.
+ </summary>
+ <value>Specifies the number of minutes after the last-activity date/time stamp for a user during which the user is considered online.</value>
+ <returns>Specifies the number of minutes after the last-activity date/time stamp for a user during which the user is considered online.</returns>
+ <remarks>The UserIsOnlineTimeWindow property value is checked during the call to GetNumberOfUsersOnline. If the LastActivityDate for a user is greater than the current date and time minus the UserIsOnlineTimeWindow value in minutes, then the user is considered online. You can determine whether a membership user is considered online with the IsOnline property of the MembershipUser class.</remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Security.MaxInvalidPasswordAttempts">
+ <summary>
+ Gets the number of invalid password or password-answer attempts allowed before the membership user is locked out.//Obtiene la cantidad de intentos de contraseña inválida o de respuesta de contraseña permitida antes de que el usuario miembro se bloquee.
+ </summary>
+ <value>Gets the number of invalid password or password-answer attempts allowed before the membership user is locked out.//Obtiene la cantidad de intentos de contraseña inválida o de respuesta de contraseña permitida antes de que el usuario miembro se bloquee.</value>
+ <returns>Gets the number of invalid password or password-answer attempts allowed before the membership user is locked out.//Obtiene la cantidad de intentos de contraseña inválida o de respuesta de contraseña permitida antes de que el usuario miembro se bloquee.</returns>
+ <remarks>The MaxInvalidPasswordAttempts property works in conjunction with the PasswordAttemptWindow property to guard against an unwanted source using repeated attempts to guess the password or password answer of a membership user.//La propiedad MaxInvalidPasswordAttempts funciona junto con la propiedad PasswordAttemptWindow para protegerse de una fuente no deseada utilizando repetidos intentos de adivinar la contraseña o la contraseña de un usuario miembro.</remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Security.PasswordRotation">
+ <summary>
+ Validate rotation of the  passwords when is changed
+ Validar la rotación de las contraseñas cuando se cambiar la misma
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Security.PasswordExpirationCount">
+ <summary>
+ Number of days to expire the password of user
+ Cantidad de días a expirar la contraseña del usuario
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Security.EnablePasswordRetrieval">
+ <summary>
+ Gets a value indicating whether the current membership provider is configured to allow users to retrieve their passwords.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks>If EnablePasswordRetrieval is false, the underlying membership provider may throw a HttpException.</remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Security.RequiresQuestionAndAnswer">
+ <summary>
+ Gets a value indicating whether the default membership provider requires the user to answer a password question for password reset and retrieval.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks>If RequiresQuestionAndAnswer is false, the underlying membership provider may throw a HttpException.</remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Security.RecaptchaEnable">
+ <summary>
+ Define el estado de utilizar o no el ReCaptcha de Google
+ Define the status of whether or not to use the Google ReCaptcha
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Security.Mode">
+ <summary>
+ Property that defines the type of authentication system
+ Propiedad que definen el tipo de autenticación del sistema
+ </summary>
+ <value>Enumerated type EnumSecurityMode</value>
+ <returns>Enumerated type EnumSecurityMode</returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Security.AnonymousRole">
+ <summary>
+ Name of the anonymous role assigned to the user not logged.
+ Nombre del rol anónimo asignado al usuario que no está logueado.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Security.DefaultRole">
+ <summary>
+ Name of the default role assigned to the user.
+ Nombre del rol por defecto asignado al usuario.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Security.AdministratorUser">
+ <summary>
+ User name defined as administrator.
+ Nombre del usuario definido como administrador.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Security.ClientRole">
+ <summary>
+ Name of the client role assigned to the user of same type.
+ Nombre del rol de cliente asignado al usuario del mismo tipo.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Security.ProducerRole">
+ <summary>
+ Name of the producer role assigned to the user of same type.
+ Nombre del rol de productor asignado al usuario del mismo tipo.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Security.AdministratorRole">
+ <summary>
+ Nombre del role definido como administrador.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Security.EmployeeRole">
+ <summary>
+ Nombre del role definido como Empleado.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASI.Security.TokenExpirationTime">
+ <summary>
+ Define cuanto tiempo se tiene valido el token de usertoken        
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Authentification.EmailSuffix">
+ <summary>
+ Suffix of the email generated automatically when the user is of type 'Employee'.
+ Sufijo del correo electrónico que se generar automáticamnete cuando el usuario sea de tipo 'Empleado'.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Authentification.ForceEmailSuffix">
+ <summary>
+ If the value is true will take the suffix of the email when the user is of type 'Employee'.
+ Si el valor es verdadero se tomará el sufijo del correo electrónico cuando el usuario sea de tipo 'Empleado'.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Authentification.InvalidAnswerAttempts">
+ <summary>
+ Number of attempts available to put the secret answer wrong.
+ Cantidad de intentos disponibles para colocar erronea la respuesta secreta.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Authentification.LinkLoginOnUrl">
+ <summary>
+ Page address of login by the version (~/dropthings/LogOnPage.aspx).
+ Dirección de la página de logueo según la versión.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Authentification.LinkChangePasswordUrl">
+ <summary>
+ Page address to change your password by version (~/dropthings/ChangePassword.aspx).
+ Dirección de la página para cambiar la contraseña según la versión.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Authentification.LinkUserProfileUrl">
+ <summary>
+ Page address to display the data the user logged into the portal depending the version (~/dropthings/UserInformation.aspx?tipo=change).
+ Dirección de la página para los datos del usuario conectado en el portal según la versión.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Authentification.SecretQuestionKind">
+ <summary>
+ Type of secret question, possible values: 'color' or 'work e-mail'.
+ Tipo de pregunta secreta, valores posibles: 'color' o 'correo electrónico del trabajo'.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Authentification.PasswordRecoveryVisible">
+ <summary>
+ Shows the option to recover the password (link).
+ Se muestrar la opción de recuperar la contraseña(vínculo).
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Authentification.RememberMeVisible">
+ <summary>
+ Shows the option 'Remember Password' (checkbox) for the next time you access the Web site.
+ Se muestrar la opción de recordar la contraseña(checkBox) para la próxima vez que ingresar al sitio Web.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Authentification.RememberMeDisabled">
+ <summary>
+ Enable the option 'Remember Password' (checkbox) for the next time you access the Web site.
+ Se habilitar la opción de recordar la contraseña(checkBox) para la próxima vez que ingresar al sitio Web.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Authentification.RegisterVisible">
+ <summary>
+ Show the option 'Register'(link)in the menu of site.
+ Se muestrar la opción de registro de usuarios(link) del sitio Web.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Authentification.ChangePasswordEnabled">
+ <summary>
+ Enable the option 'Change your password'(link)in the menu of site.
+ Se habilitar la opción de cambiar la contraseña(link) del sitio Web.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Authentification.ProfileEnabled">
+ <summary>
+ Show the option 'Profile'(link) in the menu of site.
+ Se habilitar la opción del perfil del usuario(link) para mostrar los datos del mismo.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Authentification.ShowStartUpMessage">
+ <summary>
+ If enabled the PopUp window displays.
+ Si está activo se muestra la ventana PopUp.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Authentification.StartUpMessage">
+ <summary>
+ Message displayed on the popup.
+ Texto del mensaje que se muestra en la popup.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.General.DefaultLanguage">
+ <summary>
+ Default language of the web portal.
+ Idioma predeterminado del portal web.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.General.DefaultTheme">
+ <summary>
+ Default theme of the web portal.
+ Tema predeterminado del portal web.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.General.DefaultVersion">
+ <summary>
+ Default version of the web portal.
+ Versión predeterminado del portal web.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.General.EnabledFrontOffice">
+ <summary>
+ Set configuration of FrontOffice.
+ Establecer la configuración del FrontOffice.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.General.EnabledBackOffice">
+ <summary>
+ Set configuration of BackOffice.
+ Establecer la configuración del BackOffice.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.General.EnabledResearch">
+ <summary>
+ Enable the combobox for show the windows's list of BackOffice.
+ Habilitar el combo para mostrar la lista de ventanas del BackOffice.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Mail.Mode">
+ <summary>
+ Behavior for sen e-mail.
+ Comportamiento para enviar correos.
+ </summary>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Mail.Host">
+ <summary>
+ SMTP (Simple Mail Transfer Protocol).
+ SMTP (Protocolo Simple de Transferencia de Correo).
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Mail.Port">
+ <summary>
+ SMTP Port (Simple Mail Transfer Protocol).
+ SMTP Puerto (Protocolo Simple de Transferencia de Correo).
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Mail.SupportMail">
+ <summary>
+ E-mail for support of send
+ Correo electrónico para el soporte del envio
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Mail.CredentialUserName">
+ <summary>
+ E-mail for send the mail.
+ Correo electrónico para enviar el correo
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Mail.CredentialPassword">
+ <summary>
+ Password for send the e-mail.
+ Contraseña del correo electrónico.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Mail.EnableSSL">
+ <summary>
+ Enable connection for secure port.
+ Habilitar la conexión por puerto seguro.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Mail.TemplatesPath">
+ <summary>
+ Address where the templates are located.
+ Dirección donde están localizadas las plantillas.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.PortalBehavior.Port">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.PortalBehavior.Language">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.PortalBehavior.Theme">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.PortalBehavior.WebSiteTitle">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.PortalBehavior.HeaderLogo">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.PortalBehavior.Header">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.PortalBehavior.SubHeader">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.PortalBehavior.Copyright">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.PortalBehavior.CopyrightExtend">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.QueryManager.TimeFormat">
+ <summary>
+ Date format used in the query widget for date's columns.
+ Formato de la hora que se usar en el widget de la consulta para las columnas de tipo fecha.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Release.Version">
+ <summary>
+ Release version number of the portal.
+ Número de versión de liberación del portal.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Release.Date">
+ <summary>
+ Release date number of the portal.
+ Fecha de liberación del portal.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Schedule.BeginWorkingTime">
+ <summary>
+ Start time of the time of work time day interval of the day view and work week view.
+ Hora de inicio del tiempo de intervalo de día de tiempo de trabajo de la vista del día y la vista de la semana de trabajo.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Schedule.EndWorkingTime">
+ <summary>
+ End time of the time of work time day interval of the day view and work week view.
+ Hora de finalización del tiempo de intervalo de día de tiempo de trabajo de la vista del día y la vista de la semana de trabajo.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Schedule.BeginVisibleTime">
+ <summary>
+ Start time interval visible in the working area of the day view and work week view.
+ Inicio del intervalo de tiempo visible en el área de trabajo de la vista del día y la vista de la semana de trabajo.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Schedule.EndVisibleTime">
+ <summary>
+ End time interval visible in the working area of the day view and work week view.
+ Fin del intervalo de tiempo visible en el área de trabajo de la vista del día y la vista de la semana de trabajo
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Security.Mode">
+ <summary>
+ Property that defines the type of authentication system
+ Propiedad que definen el tipo de autenticación del sistema
+ </summary>
+ <value>Enumerated type EnumSecurityMode</value>
+ <returns>Enumerated type EnumSecurityMode</returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Security.URLAuthentication">
+ <summary>
+ Property that defines the type of authentication system
+ Propiedad que definen el tipo de autenticación del sistema
+ </summary>
+ <value>Enumerated type EnumSecurityMode</value>
+ <returns>Enumerated type EnumSecurityMode</returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Security.DefaultRole">
+ <summary>
+ Name of the default role assigned to the user.
+ Nombre del rol por defecto asignado al usuario.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Security.AnonymousRole">
+ <summary>
+ Name of the anonymous role assigned to the user not logged.
+ Nombre del rol anónimo asignado al usuario que no está logueado.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Security.ClientRole">
+ <summary>
+ Name of the client role assigned to the user of same type.
+ Nombre del rol de cliente asignado al usuario del mismo tipo.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Security.ProducerRole">
+ <summary>
+ Name of the producer role assigned to the user of same type.
+ Nombre del rol de productor asignado al usuario del mismo tipo.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Security.UserPasswordExpiration">
+ <summary>
+ Number of days to expire the password of user
+ Cantidad de días a expirar la contraseña del usuario
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Security.EmployeePasswordExpiration">
+ <summary>
+ Number of days to expire the password of employee
+ Cantidad de días a expirar la contraseña del empleado
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Security.PasswordRotation">
+ <summary>
+ Validate rotation of the  passwords when is changed
+ Validar la rotación de las contraseñas cuando se cambiar la misma
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Security.AdministratorUser">
+ <summary>
+ User name defined as administrator.
+ Nombre del usuario definido como administrador.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.Security.RecaptchaEnable">
+ <summary>
+ Define el estado de utilizar o no el ReCaptcha de Google 
+ Define the status of whether or not to use the Google ReCaptcha
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASIConfiguration.Security">
+ <summary>
+ This class contains properties related to the security of the website.
+ Esta clase contiene las propiedades relacionadas con la seguridad del sitio web.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASIConfiguration.Mail">
+ <summary>
+ This class contains properties related to the security of the website.
+ Esta clase contiene las propiedades relacionadas con la seguridad del sitio web.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.FASIConfiguration.General">
+ <summary>
+ This class contains properties related to the portal settings.
+ Esta clase contiene las propiedades relacionadas con los ajustes del portal.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.VisualTIME.Authentification">
+ <summary>
+ This class contains properties related to the authentication of the website.
+ Esta clase contiene las propiedades relacionadas con la autentificación del sitio web.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.VisualTIME.Security">
+ <summary>
+ This class contains properties related to the security of the website.
+ Esta clase contiene las propiedades relacionadas con la seguridad del sitio web.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.VisualTIME.Mail">
+ <summary>
+ This class contains properties related to the send the e- mails of the website.
+ Esta clase contiene las propiedades relacionadas con el envio de correos del sitio web.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.VisualTIME.Schedule">
+ <summary>
+ This class contains properties related to the schedule of the website.
+ Esta clase contiene las propiedades relacionadas con el calendario del sitio web.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.VisualTIME.QueryManager">
+ <summary>
+ This class contains properties related to the query widget.
+ Esta clase contiene las propiedades relacionadas con el widget de consulta.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.VisualTIME.Release">
+ <summary>
+ This class contains properties related to the portal release.
+ Esta clase contiene las propiedades relacionadas con la liberación del portal.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:InMotionGIT.Core.Configuration.VisualTIME.General">
+ <summary>
+ This class contains properties related to the portal settings.
+ Esta clase contiene las propiedades relacionadas con los ajustes del portal.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

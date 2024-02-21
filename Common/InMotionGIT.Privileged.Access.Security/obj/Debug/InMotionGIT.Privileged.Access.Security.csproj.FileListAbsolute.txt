@@ -1,0 +1,28 @@
+C:\DLI\FASI Shared Components\InMotionGIT.Privileged.Access.Security\bin\Debug\InMotionGIT.Privileged.Access.Security.dll.config
+C:\DLI\FASI Shared Components\InMotionGIT.Privileged.Access.Security\bin\Debug\InMotionGIT.Privileged.Access.Security.xml
+C:\DLI\FASI Shared Components\InMotionGIT.Privileged.Access.Security\bin\Debug\InMotionGIT.Privileged.Access.Security.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Privileged.Access.Security\bin\Debug\InMotionGIT.Privileged.Access.Security.pdb
+C:\DLI\FASI Shared Components\InMotionGIT.Privileged.Access.Security\bin\Debug\CyberarkNET.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Privileged.Access.Security\bin\Debug\EntityFramework.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Privileged.Access.Security\bin\Debug\EntityFramework.SqlServer.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Privileged.Access.Security\bin\Debug\InMotionGIT.Common.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Privileged.Access.Security\bin\Debug\NetPasswordSDK.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Privileged.Access.Security\bin\Debug\Newtonsoft.Json.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Privileged.Access.Security\bin\Debug\Oracle.DataAccess.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Privileged.Access.Security\bin\Debug\EntityFramework.xml
+C:\DLI\FASI Shared Components\InMotionGIT.Privileged.Access.Security\bin\Debug\EntityFramework.SqlServer.xml
+C:\DLI\FASI Shared Components\InMotionGIT.Privileged.Access.Security\bin\Debug\InMotionGIT.Common.pdb
+C:\DLI\FASI Shared Components\InMotionGIT.Privileged.Access.Security\bin\Debug\InMotionGIT.Common.xml
+C:\DLI\FASI Shared Components\InMotionGIT.Privileged.Access.Security\bin\Debug\Newtonsoft.Json.xml
+C:\DLI\FASI Shared Components\InMotionGIT.Privileged.Access.Security\obj\Debug\InMotionGIT.Privileged.Access.Security.g.resources
+C:\DLI\FASI Shared Components\InMotionGIT.Privileged.Access.Security\obj\Debug\InMotionGIT.Privileged.Access.Security.csproj.CoreCompileInputs.cache
+C:\DLI\FASI Shared Components\InMotionGIT.Privileged.Access.Security\obj\Debug\InMotionGIT.Privileged.Access.Security.csproj.CopyComplete
+C:\DLI\FASI Shared Components\InMotionGIT.Privileged.Access.Security\obj\Debug\InMotionGIT.Privileged.Access.Security.dll
+C:\DLI\FASI Shared Components\InMotionGIT.Privileged.Access.Security\obj\Debug\InMotionGIT.Privileged.Access.Security.pdb
+C:\DLI\FASI Shared Components\InMotionGIT.Privileged.Access.Security\obj\Debug\InMotionGIT.Privileged.Access.Security.csproj.AssemblyReference.cache
+C:\DLI\FASI Shared Components\InMotionGIT.Privileged.Access.Security\bin\Debug\InMotionGIT.Common.dll.config
+C:\Users\jeffr\source\repos\FASI-Shared-Components\InMotionGIT.Privileged.Access.Security\obj\Debug\InMotionGIT.Privileged.Access.Security.csproj.AssemblyReference.cache
+C:\Users\jeffr\source\repos\FASI-Shared-Components\InMotionGIT.Privileged.Access.Security\obj\Debug\InMotionGIT.Privileged.Access.Security.g.resources
+C:\Users\jeffr\source\repos\FASI-Shared-Components\InMotionGIT.Privileged.Access.Security\obj\Debug\InMotionGIT.Privileged.Access.Security.csproj.CoreCompileInputs.cache
+C:\Users\jeffr\source\repos\FASI-Shared-Components\InMotionGIT.Privileged.Access.Security\obj\Debug\InMotionGIT.Privileged.Access.Security.dll
+C:\Users\jeffr\source\repos\FASI-Shared-Components\InMotionGIT.Privileged.Access.Security\obj\Debug\InMotionGIT.Privileged.Access.Security.pdb

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "InMotionGIT.Common.Domain/1.0.1": {
+        "runtime": {
+          "InMotionGIT.Common.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "InMotionGIT.Common.Domain/1.0.1": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
