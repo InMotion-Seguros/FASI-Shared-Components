@@ -16,7 +16,7 @@ namespace InMotionGIT.Azure.Integration.UT
             string AZURE_CLIENT_SECRET = ConfigurationManager.AppSettings["AZURE_CLIENT_SECRET"];
             string KEY_VAULT_URI = ConfigurationManager.AppSettings["KEY_VAULT_URI"];
 
-            0var strSecret = InMotionGIT.Azure.Integration.Manager.GetKeyVaultSecret(
+            var strSecret = InMotionGIT.Azure.Integration.Manager.GetKeyVaultSecret(
                             KEY_VAULT_URI,
                             "Key",
                             AZURE_TENANT_ID,
