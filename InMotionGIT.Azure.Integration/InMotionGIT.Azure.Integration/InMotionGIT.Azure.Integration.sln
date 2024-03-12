@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34601.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMotionGIT.Azure.Integration", "InMotionGIT.Azure.Integration.csproj", "{A4D4C5B8-DAC7-4F3D-BE71-E1E06F52D36B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMotionGIT.Azure.Integration.UT", "..\InMotionGIT.Azure.Integration.UT\InMotionGIT.Azure.Integration.UT.csproj", "{DEAEA4BD-D30E-451C-8767-7876DE45832F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A4D4C5B8-DAC7-4F3D-BE71-E1E06F52D36B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4D4C5B8-DAC7-4F3D-BE71-E1E06F52D36B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4D4C5B8-DAC7-4F3D-BE71-E1E06F52D36B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4D4C5B8-DAC7-4F3D-BE71-E1E06F52D36B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEAEA4BD-D30E-451C-8767-7876DE45832F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEAEA4BD-D30E-451C-8767-7876DE45832F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEAEA4BD-D30E-451C-8767-7876DE45832F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEAEA4BD-D30E-451C-8767-7876DE45832F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {34FE007C-9099-42FE-8623-2466208DB06D}
+	EndGlobalSection
+EndGlobal
